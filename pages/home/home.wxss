@@ -1,0 +1,139 @@
+/**index.wxss**/
+.homeWrap{
+  height: 100%;
+  padding: 0 20rpx;
+}
+.homeWrap .topBox{
+  height: 76rpx;
+  padding-bottom: 10rpx;
+}
+.homeWrap .topBox .addressBox{
+  height: 76rpx;
+  float: left;
+}
+.homeWrap .topBox .addressBox .local{
+  width: 25rpx;
+  height: 30rpx;
+  float: left;
+  margin-top: 25rpx;
+}
+.homeWrap .topBox .addressBox .address{
+  float: left;
+  height: 76rpx;
+  line-height: 76rpx;
+	font-family: PingFangSC-Regular;
+	font-size: 30rpx;
+	color: #333;
+  margin: 0 12rpx;
+  max-width: 240rpx;
+}
+.homeWrap .topBox .addressBox .next{
+  width: 9rpx;
+  height: 17rpx;
+  float: left;
+  margin-top: 30rpx;
+}
+.homeWrap .topBox .searchBox{
+  width: 400rpx;
+  height: 76rpx;
+  line-height: 76rpx;
+	background-color: #f4f4f4;
+	border-radius: 38rpx;
+  float: right;
+}
+.homeWrap .topBox .searchBox .serch{
+  width: 26rpx;
+  height: 26rpx;
+  float: left;
+  margin: 25rpx 18rpx 0 37rpx;
+}
+.homeWrap .topBox .searchBox .ipt{
+	font-family: PingFangSC-Regular;
+	font-size: 26rpx;
+	color: #999;
+  float: left;
+  height: 76rpx;
+  line-height: 76rpx;
+}
+/* banner */
+.homeWrap .bannerBox{
+  height: 290rpx;
+}
+.homeWrap .bannerBox .bannerImg{
+  width: 100%;
+  height: 100%;
+}
+/* guanggao */
+.homeWrap .guanggaoBox{
+  width: 100%;
+  height: 127rpx;
+  margin-top: 10rpx;
+}
+.homeWrap .guanggaoBox .guanggao{
+  width: 100%;
+  height: 100%;
+}
+/* main */
+.homeWrap .sortBox{
+  height: 40rpx;
+  line-height: 40rpx;
+  padding-top: 30rpx
+}
+.homeWrap .sortBox .sortText{
+  height: 40rpx;
+	font-family: PingFangSC-Regular;
+	font-size: 26rpx;
+	color: #666;
+  float: left;
+  margin-right: 60rpx;
+}
+.homeWrap .sortBox .sortText.active{
+	font-size: 30rpx;
+	color: #333;
+	font-family: PingFangSC-Semibold;
+}
+.homeWrap .mainBox{
+  padding-top: 30rpx;
+}
+.homeWrap .mainBox .mainBlock{
+  height: 160rpx;
+  margin-bottom: 60rpx;
+  position: relative;
+}
+.homeWrap .mainBox .mainBlock .img{
+  width: 160rpx;
+  height: 160rpx;
+  float: left;
+}
+.homeWrap .mainBox .mainBlock .rightBox{
+  margin-left: 170rpx;
+}
+.homeWrap .mainBox .mainBlock .rightBox .name{
+	font-family: PingFangSC-Semibold;
+	font-size: 30rpx;
+	color: #333;
+  padding-top: 10rpx;
+}
+.homeWrap .mainBox .mainBlock .rightBox .second{
+	font-family: PingFangSC-Regular;
+	font-size: 22rpx;
+	color: #333;
+  padding: 22rpx 0 18rpx;
+}
+.homeWrap .mainBox .mainBlock .rightBox .second .two{
+  margin: 0 20rpx;
+	color: #999;
+}
+.homeWrap .mainBox .mainBlock .rightBox .third{
+	font-family: PingFangSC-Regular;
+	font-size: 22rpx;
+	color: #333;
+}
+.homeWrap .mainBox .mainBlock .juli{
+	font-family: PingFangSC-Regular;
+	font-size: 22rpx;
+	color: #333;
+  position: absolute;
+  right: 0;
+  bottom: 56rpx;
+}

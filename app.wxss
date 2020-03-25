@@ -1,0 +1,72 @@
+/**app.wxss**/
+.overflow{
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+}
+.clearfix:after{
+  content:"";
+  height:0;
+  line-height:0;
+  display:block;
+  visibility:hidden;
+  clear:both
+}
+.clearfix{
+  zoom:1;
+}
+.bottonClass{
+  background: transparent;
+  margin: 0;
+  font-size: 24rpx;
+  line-height: 24rpx;
+  padding: 0;
+}
+.bottonClass::after{
+  border: none;
+}
+/* nav */
+.navBox{
+	height: 98rpx;
+  width: 100%;
+	background-color: #ffffff;
+	box-shadow: 0 2rpx 20rpx 0 
+		rgba(224, 223, 223, 0.5);
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  z-index: 99;
+}
+.navBox .col{
+  width: 25%;
+  float: left;
+  text-align: center;
+}
+.navBox .col .home{
+  width: 43rpx;
+  height: 39rpx;
+  padding-top: 14rpx;
+}
+.navBox .col .order{
+  width: 34rpx;
+  height: 40rpx;
+  padding-top: 14rpx;
+}
+.navBox .col .shop{
+  width: 39rpx;
+  height: 39rpx;
+  padding-top: 14rpx;
+}
+.navBox .col .my{
+  width: 34rpx;
+  height: 39rpx;
+  padding-top: 14rpx;
+}
+.navBox .col .text{
+	font-family: PingFangSC-Regular;
+	font-size: 22rpx;
+	color: #999;
+}
+.navBox .col .text.active{
+	color: #333;
+}

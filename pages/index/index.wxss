@@ -1,0 +1,98 @@
+/* pages/index/index.wxss */
+.indexWrap{
+  height: 100%
+}
+.indexWrap .loadingBox{
+  text-align: center;
+  padding-top: 300rpx;
+}
+.indexWrap .noLocationBox{
+  text-align: center;
+  padding-top: 100rpx;
+}
+.indexWrap .noLocationBox .logo{
+  width: 140rpx;
+  height: 140rpx;
+}
+.indexWrap .noLocationBox .name{
+	font-family: PingFangSC-Regular;
+  font-size: 30rpx;
+  color: #333;
+  padding-top: 60rpx;
+}
+.indexWrap .noLocationBox .second{
+	font-family: PingFangSC-Regular;
+  font-size: 26rpx;
+  color: #999;
+}
+.indexWrap .noLocationBox .open{
+	width: 660rpx;
+	height: 88rpx;
+  margin: 30rpx auto 0;
+  line-height: 88rpx;
+	background-color: #2c2e81;
+	border-radius: 5rpx;
+	font-family: PingFangSC-Regular;
+	font-size: 32rpx;
+	color: #fff;
+}
+.loading {
+  border: 0 solid transparent;
+  border-radius: 50%;
+  position: relative;
+  width: 100rpx;
+  height: 100rpx;
+  margin: 0 auto;
+}
+.loading:before,
+.loading:after {
+  content: '';
+  border: .2em solid #2c2e81;
+  border-radius: 50%;
+  width: inherit;
+  height: inherit;
+  position: absolute;
+  top: 0;
+  left: 0;
+  -webkit-animation: loading 1s linear infinite;
+  animation: loading 1s linear infinite;
+  opacity: 0;
+}
+.loading:before {
+  -webkit-animation-delay: 1s;
+  animation-delay: 1s;
+}
+.loading:after {
+  -webkit-animation-delay: .5s;
+  animation-delay: .5s;
+}
+@-webkit-keyframes loading {
+  0% {
+    -webkit-transform: scale(0);
+    transform: scale(0);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    opacity: 0;
+  }
+}
+@keyframes loading {
+  0% {
+    -webkit-transform: scale(0);
+    transform: scale(0);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    opacity: 0;
+  }
+}

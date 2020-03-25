@@ -1,0 +1,91 @@
+/* pages/search/search.wxss */
+.searchWrap{
+  height: 100%;
+  padding: 0 20rpx;
+}
+.searchWrap .searchBox{
+  height: 76rpx;
+  line-height: 76rpx;
+	background-color: #f4f4f4;
+	border-radius: 10rpx;
+}
+.searchWrap .searchBox .serch{
+  width: 26rpx;
+  height: 26rpx;
+  float: left;
+  margin: 25rpx 18rpx 0 37rpx;
+}
+.searchWrap .searchBox .ipt{
+	font-family: PingFangSC-Regular;
+	font-size: 26rpx;
+	color: #999;
+  height: 76rpx;
+  line-height: 76rpx;
+  margin-left: 85rpx;
+}
+/* sort */
+.searchWrap .sortBox{
+  height: 90rpx;
+  border-top: 1rpx solid #eee;
+  border-bottom: 1rpx solid #eee;
+}
+.searchWrap .sortBox > view{
+  height: 90rpx;
+  line-height: 90rpx;
+  width: 33.3%;
+  text-align: center;
+	font-family: PingFangSC-Regular;
+	font-size: 28rpx;
+	color: #666;
+  float: left;
+}
+.searchWrap .sortBox >view.active{
+	font-family: PingFangSC-Semibold;
+	color: #333;
+}
+/* main */
+.searchWrap .mainBox{
+  padding-top: 30rpx;
+}
+.searchWrap .mainBox .mainBlock{
+  height: 160rpx;
+  margin-bottom: 60rpx;
+  position: relative;
+}
+.searchWrap .mainBox .mainBlock .img{
+  width: 160rpx;
+  height: 160rpx;
+  float: left;
+}
+.searchWrap .mainBox .mainBlock .rightBox{
+  margin-left: 170rpx;
+}
+.searchWrap .mainBox .mainBlock .rightBox .name{
+	font-family: PingFangSC-Semibold;
+	font-size: 30rpx;
+	color: #333;
+  padding-top: 10rpx;
+}
+.searchWrap .mainBox .mainBlock .rightBox .second{
+	font-family: PingFangSC-Regular;
+	font-size: 22rpx;
+	color: #333;
+  padding: 22rpx 0 18rpx;
+}
+.searchWrap .mainBox .mainBlock .rightBox .second .two{
+  margin: 0 20rpx;
+	color: #999;
+}
+.searchWrap .mainBox .mainBlock .rightBox .third{
+	font-family: PingFangSC-Regular;
+	font-size: 22rpx;
+	color: #333;
+}
+.searchWrap .mainBox .mainBlock .juli{
+	font-family: PingFangSC-Regular;
+	font-size: 22rpx;
+	color: #333;
+  position: absolute;
+  right: 0;
+  bottom: 56rpx;
+}

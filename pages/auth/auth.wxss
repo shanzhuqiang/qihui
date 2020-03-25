@@ -1,0 +1,35 @@
+/* pages/auth/auth.wxss */
+.authWrap{
+  height: 100%;
+}
+.authWrap .authBox{
+  padding: 80rpx 30rpx 0;
+  text-align: center;
+}
+.authWrap .authBox .logo{
+  width: 140rpx;
+  height: 140rpx;
+}
+.authWrap .authBox .name{
+	font-family: PingFangSC-Semibold;
+	font-size: 42rpx;
+	color: #333;
+  padding: 100rpx 0 30rpx;
+}
+.authWrap .authBox .text{
+	font-family: PingFangSC-Regular;
+	font-size: 30rpx;
+	color: #545454;
+  padding-bottom: 60rpx;
+}
+.authWrap .authBox .btnBox{
+	width: 694rpx;
+	height: 88rpx;
+  line-height: 88rpx;
+	background-color: #2c2e81;
+	border-radius: 5rpx;
+	font-family: PingFangSC-Regular;
+	font-size: 32rpx;
+	color: #fff;
+  font-weight: normal;
+}

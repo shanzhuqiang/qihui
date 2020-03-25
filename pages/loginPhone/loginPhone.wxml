@@ -1,0 +1,21 @@
+<!--pages/login/login.wxml-->
+<view class="loginPhoneWrap">
+  <!-- 登录页面 -->
+  <view class='loginBox'>
+    <form bindsubmit="formLogin">
+      <view class='iptBox'>
+        <input class='input' name="phone" maxlength='11' type='number' bindinput="bindPhone" placeholder='请输入手机号' placeholder-style='color: #b9b9c0'></input>
+      </view>
+      <view class='iptBox' style='margin-top: 30rpx;'>
+        <input class='input' name="code" maxlength='6' type='number' placeholder='请输入验证码' placeholder-style='color: #b9b9c0'></input>
+        <view class="codeBox {{ !codeBtn ? 'codeBtn' : '' }}">
+          <text wx:if="{{ codeBtn }}" bindtap="getCode">立即获取</text>
+          <text wx:if="{{ !codeBtn }}">{{ codeNum }}秒后重发</text>
+        </view>
+      </view>
+      <button class='bottonClass loginBtn' form-type="submit">
+        <view class="login">立即登录</view>
+      </button>
+    </form>
+  </view>
+</view>

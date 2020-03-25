@@ -1,0 +1,12 @@
+<!--pages/index/index.wxml-->
+<view class="indexWrap">
+  <view class="loadingBox" wx:if="{{ getLocation }}">
+    <view class="loading"></view>
+  </view>
+  <view class="noLocationBox" wx:if="{{ !getLocation }}">
+    <image class="logo" src="../../images/logo.png"></image>
+    <view class="name">未获取到定位</view>
+    <view class="second">请检查网络定位权限</view>
+    <view class="open" bindtap="goSetting">重试</view>
+  </view>
+</view>

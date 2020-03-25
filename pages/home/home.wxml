@@ -1,0 +1,120 @@
+<!--index.wxml-->
+<view class="homeWrap">
+  <view class="topBox">
+    <view class="addressBox" bindtap="goChooseCity">
+      <image class="local" src="../../images/local.png"></image>
+      <view class="address overflow">{{ address }}</view>
+      <image class="next" src="../../images/next.png"></image>
+    </view>
+    <view class="searchBox" bindtap="goSearch">
+      <image class="serch" src="../../images/serch.png"></image>
+      <input class="ipt" placeholder="请输入商家名称" disabled></input>
+    </view>
+  </view>
+  <view class='bannerBox'>
+    <swiper autoplay indicator-dots>
+      <block wx:for="{{bannerImg}}" wx:key="index">
+        <swiper-item>
+          <image src="{{item}}" class="bannerImg" />
+          <!-- <view class="bannerTitle">{{item.title}}</view> -->
+        </swiper-item>
+      </block>
+    </swiper>
+  </view>
+  <view class="guanggaoBox">
+    <image class="guanggao" src="../../images/guanggao.png"></image>
+  </view>
+  <!-- nav -->
+  <view class="navBox">
+    <view class="col">
+      <image class="home" src="../../images/home1.png"></image>
+      <view class="text active">首页</view>
+    </view>
+    <view class="col">
+      <image class="order" src="../../images/order.png"></image>
+      <view class="text">首页</view>
+    </view>
+    <view class="col">
+      <image class="shop" src="../../images/shop.png"></image>
+      <view class="text">首页</view>
+    </view>
+    <view class="col">
+      <image class="my" src="../../images/my.png"></image>
+      <view class="text">首页</view>
+    </view>
+  </view>
+  <!-- main -->
+  <view class="sortBox">
+    <view class="sortText active">距离最近</view>
+    <view class="sortText">价格优先</view>
+    <view class="sortText">销量最高</view>
+  </view>
+  <view class="mainBox">
+    <view class="mainBlock">
+      <image class="img" src="../../images/img.png"></image>
+      <view class="rightBox">
+        <view class="name">衢州土菜馆</view>
+        <view class="second">
+          <text class="one">美团评分：4.2</text>
+          <text class="two">|</text>
+          <text class="three">月售卖2799</text>
+        </view>
+        <view class="third">人均32</view>
+      </view>
+      <view class="juli">距您1.8km</view>
+    </view>
+    <view class="mainBlock">
+      <image class="img" src="../../images/img.png"></image>
+      <view class="rightBox">
+        <view class="name">衢州土菜馆</view>
+        <view class="second">
+          <text class="one">美团评分：4.2</text>
+          <text class="two">|</text>
+          <text class="three">月售卖2799</text>
+        </view>
+        <view class="third">人均32</view>
+      </view>
+      <view class="juli">距您1.8km</view>
+    </view>
+    <view class="mainBlock">
+      <image class="img" src="../../images/img.png"></image>
+      <view class="rightBox">
+        <view class="name">衢州土菜馆</view>
+        <view class="second">
+          <text class="one">美团评分：4.2</text>
+          <text class="two">|</text>
+          <text class="three">月售卖2799</text>
+        </view>
+        <view class="third">人均32</view>
+      </view>
+      <view class="juli">距您1.8km</view>
+    </view>
+    <view class="mainBlock">
+      <image class="img" src="../../images/img.png"></image>
+      <view class="rightBox">
+        <view class="name">衢州土菜馆</view>
+        <view class="second">
+          <text class="one">美团评分：4.2</text>
+          <text class="two">|</text>
+          <text class="three">月售卖2799</text>
+        </view>
+        <view class="third">人均32</view>
+      </view>
+      <view class="juli">距您1.8km</view>
+    </view>
+    <view class="mainBlock">
+      <image class="img" src="../../images/img.png"></image>
+      <view class="rightBox">
+        <view class="name">衢州土菜馆</view>
+        <view class="second">
+          <text class="one">美团评分：4.2</text>
+          <text class="two">|</text>
+          <text class="three">月售卖2799</text>
+        </view>
+        <view class="third">人均32</view>
+      </view>
+      <view class="juli">距您1.8km</view>
+    </view>
+    <view style="height: 80rpx;"></view>
+  </view>
+</view>

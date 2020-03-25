@@ -1,0 +1,80 @@
+<!--pages/search/search.wxml-->
+<view class="searchWrap">
+  <view class="searchBox" bindtap="goSearch">
+    <image class="serch" src="../../images/serch.png"></image>
+    <input class="ipt" placeholder="你想搜什么？"></input>
+  </view>
+  <view class="sortBox">
+    <view class="active">距离最近</view>
+    <view>价格优先</view>
+    <view>销量最高</view>
+  </view>
+  <view class="mainBox">
+    <view class="mainBlock">
+      <image class="img" src="../../images/img.png"></image>
+      <view class="rightBox">
+        <view class="name">衢州土菜馆</view>
+        <view class="second">
+          <text class="one">美团评分：4.2</text>
+          <text class="two">|</text>
+          <text class="three">月售卖2799</text>
+        </view>
+        <view class="third">人均32</view>
+      </view>
+      <view class="juli">距您1.8km</view>
+    </view>
+    <view class="mainBlock">
+      <image class="img" src="../../images/img.png"></image>
+      <view class="rightBox">
+        <view class="name">衢州土菜馆</view>
+        <view class="second">
+          <text class="one">美团评分：4.2</text>
+          <text class="two">|</text>
+          <text class="three">月售卖2799</text>
+        </view>
+        <view class="third">人均32</view>
+      </view>
+      <view class="juli">距您1.8km</view>
+    </view>
+    <view class="mainBlock">
+      <image class="img" src="../../images/img.png"></image>
+      <view class="rightBox">
+        <view class="name">衢州土菜馆</view>
+        <view class="second">
+          <text class="one">美团评分：4.2</text>
+          <text class="two">|</text>
+          <text class="three">月售卖2799</text>
+        </view>
+        <view class="third">人均32</view>
+      </view>
+      <view class="juli">距您1.8km</view>
+    </view>
+    <view class="mainBlock">
+      <image class="img" src="../../images/img.png"></image>
+      <view class="rightBox">
+        <view class="name">衢州土菜馆</view>
+        <view class="second">
+          <text class="one">美团评分：4.2</text>
+          <text class="two">|</text>
+          <text class="three">月售卖2799</text>
+        </view>
+        <view class="third">人均32</view>
+      </view>
+      <view class="juli">距您1.8km</view>
+    </view>
+    <view class="mainBlock">
+      <image class="img" src="../../images/img.png"></image>
+      <view class="rightBox">
+        <view class="name">衢州土菜馆</view>
+        <view class="second">
+          <text class="one">美团评分：4.2</text>
+          <text class="two">|</text>
+          <text class="three">月售卖2799</text>
+        </view>
+        <view class="third">人均32</view>
+      </view>
+      <view class="juli">距您1.8km</view>
+    </view>
+    <view style="height: 80rpx;"></view>
+  </view>
+</view>

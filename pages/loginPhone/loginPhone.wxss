@@ -1,0 +1,56 @@
+/* pages/login/login.wxss */
+.loginPhoneWrap{
+  height: 100%;
+  padding: 0 50rpx;
+}
+.loginPhoneWrap .loginBox{
+  position: relative;
+  padding-top: 100rpx;
+}
+.loginPhoneWrap .loginBox .iptBox{
+  width: 100%;
+  height: 88rpx;
+  line-height: 88rpx;
+	border-bottom: solid 1rpx #e3e3e3;
+}
+.loginPhoneWrap .loginBox .iptBox .input{
+  float: left;
+  height: 88rpx;
+  line-height: 88rpx;
+	font-size: 32rpx;
+  width: 400rpx;
+	font-family: PingFangSC-Regular;
+	color: #acacac;
+}
+.loginPhoneWrap .loginBox .iptBox .codeBox{
+  float: right;
+	width: 180rpx;
+	height: 60rpx;
+  line-height: 60rpx;
+	border-radius: 10rpx;
+	border: solid 1rpx #2c2e81;
+	font-family: PingFangSC-Regular;
+	font-size: 26rpx;
+	color: #2c2e81;
+  text-align: center;
+}
+.loginPhoneWrap .loginBox .iptBox .codeBox.codeBtn{
+	color: #a0a0a0;
+	border: solid 1rpx #a0a0a0;
+}
+.loginPhoneWrap .loginBox .loginBtn{
+	height: 100rpx;
+  width: 100%;
+  margin: 50rpx auto 0;
+}
+.loginPhoneWrap .loginBox .loginBtn .login{
+  width: 100%;
+	height: 100rpx;
+  line-height: 100rpx;
+	background-color: #2c2e81;
+	border-radius: 5rpx;
+	font-family: PingFangSC-Regular;
+	font-size: 32rpx;
+  text-align: center;
+	color: #ffffff;
+}
