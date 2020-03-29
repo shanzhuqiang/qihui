@@ -1,7 +1,7 @@
 <!--index.wxml-->
 <view class="homeWrap">
   <view class="topBox">
-    <view class="addressBox" bindtap="goChooseCity">
+    <view class="addressBox" bindtap="choosePlace">
       <image class="local" src="../../images/local.png"></image>
       <view class="address overflow">{{ address }}</view>
       <image class="next" src="../../images/next.png"></image>
@@ -24,25 +24,6 @@
   <view class="guanggaoBox">
     <image class="guanggao" src="../../images/guanggao.png"></image>
   </view>
-  <!-- nav -->
-  <view class="navBox">
-    <view class="col">
-      <image class="home" src="../../images/home1.png"></image>
-      <view class="text active">首页</view>
-    </view>
-    <view class="col">
-      <image class="order" src="../../images/order.png"></image>
-      <view class="text">首页</view>
-    </view>
-    <view class="col">
-      <image class="shop" src="../../images/shop.png"></image>
-      <view class="text">首页</view>
-    </view>
-    <view class="col">
-      <image class="my" src="../../images/my.png"></image>
-      <view class="text">首页</view>
-    </view>
-  </view>
   <!-- main -->
   <view class="sortBox">
     <view class="sortText active">距离最近</view>
@@ -50,7 +31,7 @@
     <view class="sortText">销量最高</view>
   </view>
   <view class="mainBox">
-    <view class="mainBlock">
+    <view class="mainBlock" bindtap="goShoper">
       <image class="img" src="../../images/img.png"></image>
       <view class="rightBox">
         <view class="name">衢州土菜馆</view>
@@ -115,6 +96,24 @@
       </view>
       <view class="juli">距您1.8km</view>
     </view>
-    <view style="height: 80rpx;"></view>
   </view>
+  <!-- nav -->
+  <!-- <view class="navBox">
+    <view class="col">
+      <image class="home" src="../../images/home1.png"></image>
+      <view class="text active">首页</view>
+    </view>
+    <view class="col">
+      <image class="order" src="../../images/order.png"></image>
+      <view class="text">订单</view>
+    </view>
+    <view class="col">
+      <image class="shop" src="../../images/shop.png"></image>
+      <view class="text">生活平台</view>
+    </view>
+    <view class="col" bindtap="goMy">
+      <image class="my" src="../../images/my.png"></image>
+      <view class="text">我的</view>
+    </view>
+  </view> -->
 </view>

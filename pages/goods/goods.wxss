@@ -1,0 +1,633 @@
+/* pages/goodss/goodss.wxss */
+/* 首頁商品信息 */
+page{
+  height: 100%;
+}
+.goodsWrap {
+  height: 100%;
+}
+/* bgTop */
+.goodsWrap .bgTopBox{
+  height: 340rpx;
+  background: #F5F5F5;
+}
+.goodsWrap .bgTopBox .bgTop {
+	height: 240rpx;
+	background-color: #e4364e;
+	border-radius: 0 0 60rpx 60rpx;
+  position: relative;
+}
+.goodsWrap .bgTopBox .bgTop .topBox{
+  height: 150rpx;
+  padding: 20rpx 20rpx 0;
+}
+.goodsWrap .bgTopBox .bgTop .topBox .shopImg{
+  height: 150rpx;
+  width: 150rpx;
+  border: 2rpx solid #c7233a;
+  box-sizing: border-box;
+  border-radius: 10rpx;
+  float: left;
+}
+.goodsWrap .bgTopBox .bgTop .topBox .topRightBox{
+  margin-left: 165rpx;
+	color: #fff;
+}
+.goodsWrap .bgTopBox .bgTop .topBox .topRightBox .name{
+	font-family: PingFangSC-Semibold;
+	font-size: 30rpx;
+  height: 32rpx;
+  line-height: 32rpx;
+  padding-top: 6rpx;
+}
+.goodsWrap .bgTopBox .bgTop .topBox .topRightBox .gonggao{
+	font-family: PingFangSC-Regular;
+	font-size: 22rpx;
+  height: 24rpx;
+  line-height: 24rpx;
+  padding: 26rpx 0;
+}
+.goodsWrap .bgTopBox .bgTop .topBox .topRightBox .three{
+	font-family: PingFangSC-Regular;
+	font-size: 22rpx;
+}
+.goodsWrap .bgTopBox .bgTop .topBox .topRightBox .three > text {
+  margin: 0 20rpx;
+}
+/* address */
+.goodsWrap .bgTopBox .bgTop .addressWrap{
+  padding: 34rpx 20rpx 0;
+}
+.goodsWrap .bgTopBox .bgTop .addressWrap .addressBox{
+	height: 130rpx;
+	background-color: #fff;
+	border-radius: 14rpx;
+  position: relative;
+}
+.goodsWrap .bgTopBox .bgTop .addressWrap .addressBox .local2Box{
+  width: 62rpx;
+  height: 100%;
+  float: left;
+}
+.goodsWrap .bgTopBox .bgTop .addressWrap .addressBox .local2Box .local2{
+  width: 22rpx;
+  height: 26rpx;
+  padding: 34rpx 0 0 20rpx;
+}
+.goodsWrap .bgTopBox .bgTop .addressWrap .addressBox .addressTextBox{
+  padding-top: 20rpx;
+}
+.goodsWrap .bgTopBox .bgTop .addressWrap .addressBox .addressTextBox .addressText{
+	font-family: PingFangSC-Regular;
+  margin-left: 65rpx;
+	font-size: 22rpx;
+	line-height: 30rpx;
+	color: #333;
+  width: 400rpx;
+  text-overflow: -o-ellipsis-lastline;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+.goodsWrap .bgTopBox .bgTop .addressWrap .addressBox .juli{
+	font-family: PingFangSC-Regular;
+	font-size: 22rpx;
+	color: #999;
+  padding-top: 8rpx;
+}
+.goodsWrap .bgTopBox .bgTop .addressWrap .addressBox .typeBtn{
+	width: 170rpx;
+	height: 58rpx;
+	background-color: #f3475f;
+	border-radius: 29rpx;
+  position: absolute;
+  right: 30rpx;
+  top: 40rpx;
+}
+.goodsWrap .bgTopBox .bgTop .addressWrap .addressBox  .typeBtn > view{
+  width: 79rpx;
+  float: left;
+  height: 48rpx;
+  line-height: 48rpx;
+  margin-top: 6rpx;
+	font-family: PingFangSC-Regular;
+	font-size: 22rpx;
+	color: #fff;
+  text-align: center;
+}
+.goodsWrap .bgTopBox .bgTop .addressWrap .addressBox  .typeBtn > view.active{
+  background: #fff;
+	color: #f3475f;
+	border-radius: 24rpx;
+}
+/* main */
+/* 点餐/商家信息 */
+.goodsWrap .mainBox{
+  background: #fff;
+  /* background: red; */
+  height: 100%;
+}
+.goodsWrap .mainBox .topNav{
+  height: 90rpx;
+  line-height: 90rpx;
+  border-bottom: 1rpx solid #eeeeee;
+  padding: 0 80rpx;
+}
+.goodsWrap .mainBox .topNav > view{
+  width: 50%;
+  float: left;
+  text-align: center;
+	font-family: PingFangSC-Regular;
+	font-size: 28rpx;
+	color: #666;
+  position: relative;
+}
+.goodsWrap .mainBox .topNav > view.active{
+	font-family: PingFangSC-Semibold;
+	color: #333;
+}
+.goodsWrap .mainBox .topNav > view.active::after{
+  content: "";
+	width: 40rpx;
+	height: 6rpx;
+	background-color: #2c2e81;
+  position: absolute;
+  left: 50%;
+  margin-left: -20rpx;
+  bottom: 0;
+}
+/* menu */
+.goodsWrap .mainBox .mainShop{
+  height: calc(100% - 91rpx)
+}
+.goodsWrap .mainBox .mainShop .leftScroll{
+  float: left;
+  width: 168rpx;
+	background-color: #ededed;
+}
+.goodsWrap .mainBox .mainShop .menu-item {
+	font-family: PingFangSC-Regular;
+	font-size: 28rpx;
+  line-height: 30rpx;
+	color: #333;
+  padding: 26rpx  15rpx;
+}
+.goodsWrap .mainBox .mainShop .menu-item .icon{
+  width: 41rpx;
+  height: 39rpx;
+  top: 6rpx;
+}
+.goodsWrap .mainBox .mainShop .menu-item:current {
+  position: relative;
+  z-index: 10;
+  margin-top: -1px;
+  background: red;
+  font-weight: 700;
+}
+/* goods list */
+.goodsWrap .mainBox .mainShop .rightScroll{
+  margin-left: 168rpx;
+  width: calc(100% - 168rpx);
+}
+.goodsWrap .rightScroll .food-list .title {
+  padding-left: 14rpx;
+  border-left: 2rpx solid #d9dde1;
+  background: #f3f5f7;
+	font-family: PingFangSC-Semibold;
+	font-size: 28rpx;
+	color: #333;
+  height: 40rpx;
+  line-height: 40rpx;
+}
+.goodsWrap .rightScroll .food-list .food-item {
+  position: relative;
+  height: 190rpx;
+  padding: 20rpx 0 20rpx 20rpx;
+}
+.goodsWrap .rightScroll .food-list .food-item:last-child {
+  border: none;
+  margin-bottom: 0;
+}
+.goodsWrap .rightScroll .food-list .food-item .icon {
+  float: left;
+  width: 190rpx;
+  height: 190rpx;
+}
+.goodsWrap .rightScroll .food-list .food-item .content {
+  margin-left: 210rpx;
+  position: relative;
+}
+.goodsWrap .rightScroll .food-list .food-item .content .name {
+	font-family: PingFangSC-Semibold;
+	font-size: 26rpx;
+  height: 30rpx;
+  line-height: 30rpx;
+	color: #333;
+}
+.goodsWrap .rightScroll .food-list .food-item .content .desc {
+	font-family: PingFangSC-Regular;
+	font-size: 22rpx;
+  padding-right: 20rpx;
+  height: 30rpx;
+  line-height: 30rpx;
+	color: #949494;
+  padding-top: 10rpx;
+}
+.goodsWrap .rightScroll .food-list .food-item .content .price {
+  font-weight: 700px;
+	font-family: PingFangSC-Semibold;
+	font-size: 26rpx;
+	color: #f64143;
+  padding-top: 40rpx;
+}
+.goodsWrap .cartControl-wrapper {
+  position: absolute;
+  right: 0;
+  bottom: -16rpx;
+}
+/* cartControl 样式 */
+.goodsWrap .cartControl-wrapper .cartControl {
+  font-size: 0;
+}
+.goodsWrap .cartControl-wrapper .cartControl .cart-decrease,
+.cart-add {
+  display: inline-block;
+  padding: 4px 6px 6px 6px;
+}
+.goodsWrap .cartControl-wrapper .cartControl .cart-decrease,
+.cart-add :fade-enter-active, :fade-leave-active {
+  transition: all 0.4s linear;
+}
+.goodsWrap .cartControl-wrapper .cartControl .cart-decrease,
+.cart-add :fade-enter, :fade-leave-active {
+  opacity: 0 transform translate3d(24px, 0, 0);
+}
+.goodsWrap .cartControl-wrapper .cartControl .cart-decrease,
+.cart-add .inner {
+  display: inline-block;
+  line-height: 24px;
+  font-size: 24px;
+  vertical-align: top;
+  color: rgb(0, 160, 220, 0.2);
+}
+.goodsWrap .cartControl-wrapper .cartControl .cart-decrease,
+.cart-add :inner-enter-active, :inner-leave-active {
+  transition: all 0.4s linear;
+  transform: rotate(0);
+}
+.goodsWrap .cartControl-wrapper .cartControl .cart-decrease,
+.cart-add :inner-enter, :inner-leave-active {
+  opacity: 0 transform rotate(180deg);
+}
+.goodsWrap .cartControl-wrapper .cartControl .cart-count {
+  display: inline-block;
+  font-size: 13px;
+  width: 12px;
+  vertical-align: top;
+  padding-top: 8px;
+  text-align: center;
+	font-family: PingFangSC-Semibold;
+	color: #333333;
+}
+.goodsWrap .cartControl-wrapper .cartControl .cart-add {
+  display: inline-block;
+  padding: 6px;
+  line-height: 24px;
+  font-size: 24px;
+  vertical-align: top;
+  color: rgb(0, 160, 220, 0.2);
+}
+/* shopcart 样式 */
+.goodsWrap .shopCart {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  z-index: 50;
+  width: 100%;
+  height: 100rpx;
+}
+.goodsWrap .shopCart .content {
+  position: relative;
+  background: #505052;
+}
+.goodsWrap .shopCart .content .content-left .logo-wrapper {
+  display: inline-block;
+  position: relative;
+  top: -20rpx;
+  margin: 0 24rpx;
+  padding: 10rpx;
+  width: 100rpx;
+  height: 100rpx;
+  box-sizing: border-box;
+  vertical-align: top;
+  border-radius: 50%;
+  background: #444;
+}
+.goodsWrap .shopCart .content .content-left .logo-wrapper .num {
+  position: absolute;
+  top: 8rpx;
+  right: 8rpx;
+  width: 30rpx;
+  height: 30rpx;
+  line-height: 30rpx;
+  text-align: center;
+  border-radius: 50%;
+	font-family: PingFangSC-Regular;
+	font-size: 18rpx;
+  color: #fff;
+	background-image: linear-gradient(135deg, 
+		#ed5134 0%, 
+		#f36128 50%, 
+		#f8701b 100%), 
+	linear-gradient(
+		#ff0000, 
+		#ff0000);
+	background-blend-mode: normal, 
+		normal;
+}
+.goodsWrap .shopCart .content .content-left .logo-wrapper .logo {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  border-radius: 50%;
+  background: #363636;
+}
+.goodsWrap .shopCart .content .content-left .logo-wrapper .logo.highlight {
+  background: #ff855f;
+}
+.goodsWrap .shopCart .content .content-left .logo-wrapper .logo .icon-gouwuche {
+  line-height: 44px;
+  font-size: 24px;
+  color: #6e6d72;
+}
+.goodsWrap .shopCart .content .content-left .logo-wrapper .logo.highlight .icon-gouwuche {
+  color: #fff;
+}
+.goodsWrap .shopCart .content .content-left .noPrice {
+  display: inline-block;
+  vertical-align: top;
+  margin-top: 12px;
+	font-family: PingFangSC-Semibold;
+	font-size: 26rpx;
+	color: #fff;
+}
+.goodsWrap .shopCart .content .content-left .price {
+  display: inline-block;
+  vertical-align: top;
+  margin-top: 12px;
+	font-family: PingFangSC-Semibold;
+	font-size: 26rpx;
+	color: #fff;
+}
+.goodsWrap .shopCart .content .content-left .price.highlight {
+  color: #fff;
+}
+/* .goodsWrap .shopCart .content .content-left .desc {
+  display: inline-block;
+  vertical-align: top;
+  line-height: 24px;
+  margin-left: 12px;
+  margin-top: 12px;
+  color: rgba(255, 255, 255, 0.4);
+  font-size: 10px;
+} */
+.goodsWrap .shopCart .content .content-right {
+  /* flex: 0 0 105px; */
+  width: 105px;
+}
+.goodsWrap .shopCart .content .content-right .pay {
+	width: 160rpx;
+	height: 74rpx;
+  line-height: 74rpx;
+  text-align: center;
+	background-color: #3fc976;
+	border-radius: 10rpx;
+	font-size: 30rpx;
+	color: #ffffff;
+  position: absolute;
+  right: 25rpx;
+  top: 13rpx;
+}
+.goodsWrap .shopCart .content .content-right .pay.not-enough {
+  background: #2b333b;
+}
+.goodsWrap .shopCart .content .content-right .pay.enough {
+  background: #00b43c;
+  color: #fff;
+}
+.goodsWrap .shopCart .ball-container .ball {
+  position: fixed;
+  left: 32px;
+  bottom: 22px;
+  z-index: 200;
+  transition: all 0.6s cubic-bezier(0.49, -0.29, 0.75, 0.41);
+}
+.goodsWrap .shopCart .ball-container .ball .inner {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: rgb(0, 160, 220);
+  transition: all 0.4s linear;
+}
+.goodsWrap .shopCart .shopcart-list {
+  position: fixed;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  width: 100%;
+  background: rgba(0, 0, 0, 0.6);
+}
+.goodsWrap .shopCart .shopcart-list .shopcart-box{
+  position: absolute;
+  bottom: 100rpx;
+  left: 0;
+  z-index: -1;
+  width: 100%;
+  padding-bottom: 20rpx;
+  background: #fff;
+}
+.goodsWrap .shopCart .shopcart-list :fade-enter-active, :fade-leave-active {
+  transition: all 0.5s transform translate3d(0, -100%, 0);
+}
+.goodsWrap .shopCart .shopcart-list :fade-enter, :fade-leave-active {
+  transform: translate3d(0, 0, 0);
+}
+.goodsWrap .shopCart .shopcart-list .list-header {
+  height: 80rpx;
+  line-height: 80rpx;
+  padding: 0 10px;
+  background: #f3f3f3;
+}
+.goodsWrap .shopCart .shopcart-list .list-header .title {
+  float: left;
+	font-family: PingFangSC-Regular;
+	font-size: 26rpx;
+	color: #4e5052;
+}
+.goodsWrap .shopCart .shopcart-list .list-header .empty {
+  float: right;
+	font-family: PingFangSC-Regular;
+	font-size: 26rpx;
+	color: #4e5052;
+}
+.goodsWrap .shopCart .shopcart-list .list-content {
+  max-height: 550rpx;
+  overflow: hidden;
+  background: #fff;
+  box-sizing: border-box;
+}
+.goodsWrap .shopCart .shopcart-list .list-content .shopcart-food {
+  position: relative;
+  height: 100rpx;
+  line-height: 100rpx;
+  padding: 0 20rpx;
+	border-bottom: solid 1rpx #f3f3f3;
+  overflow: hidden;
+}
+.goodsWrap .shopCart .shopcart-list .list-content .shopcart-food .name {
+	font-family: PingFangSC-Regular;
+	font-size: 30rpx;
+	color: #333;
+  display: inline-block;
+  max-width: 240rpx;
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+}
+.goodsWrap .shopCart .shopcart-list .list-content .shopcart-food .des{
+	font-family: PingFangSC-Regular;
+	font-size: 22rpx;
+	color: #999;
+  display: inline-block;
+  max-width: 160rpx;
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+  padding-left: 10rpx;
+}
+.goodsWrap .shopCart .shopcart-list .list-content .shopcart-food .price {
+	font-family: PingFangSC-Semibold;
+	font-size: 30rpx;
+	color: #fd4958;
+  float: right;
+  margin-right: 140rpx;
+}
+.goodsWrap .shopCart .shopcart-list .list-content .shopcart-food .cartControl-wrapper{
+  bottom: -22rpx;
+}
+.goodsWrap .shopCart .shopcart-list .list-content .shopcart-food .cartControl-wrapper .cartControl .cart-count{
+  line-height: 32rpx;
+}
+/* 选择规格 */
+.goodsWrap .chooseRule{
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  top: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 51
+}
+.goodsWrap .chooseRule .ruleContent{
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transform: translateY(100%);
+  background: #fff;
+  max-height: 900rpx;
+  padding-bottom: 50rpx;
+}
+.goodsWrap .chooseRule .ruleContent .topBox{
+  padding: 30rpx;
+  height: 190rpx;
+}
+.goodsWrap .chooseRule .ruleContent .topBox .icon{
+  width: 190rpx;
+  height: 190rpx;
+  float: left;
+  display: block;
+}
+.goodsWrap .chooseRule .ruleContent .topBox .content{
+  margin-left: 210rpx;
+}
+.goodsWrap .chooseRule .ruleContent .topBox .cha{
+  font-size: 20rpx;
+  padding: 10rpx;
+  border: 1rpx solid #969696;
+  color: #969696;
+  border-radius: 50%;
+  position: absolute;
+  right: 20rpx;
+  top: 30rpx;
+}
+.goodsWrap .chooseRule .ruleContent .topBox .content .name{
+	font-family: PingFangSC-Semibold;
+	font-size: 30rpx;
+	color: #333;
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+  padding-right: 30rpx;
+}
+.goodsWrap .chooseRule .ruleContent .topBox .content .des{
+	font-family: PingFangSC-Regular;
+	font-size: 22rpx;
+	color: #5d5d5d;
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+  padding-top: 20rpx;
+}
+.goodsWrap .chooseRule .ruleContent .topBox .content .price{
+	font-family: PingFangSC-Semibold;
+	font-size: 36rpx;
+	color: #ff4240;
+  padding-top: 50rpx;
+}
+.goodsWrap .chooseRule .ruleContent .ruleBox{
+  /* padding: 0 30rpx; */
+}
+.goodsWrap .chooseRule .ruleContent .ruleBox .title{
+	font-family: PingFangSC-Regular;
+	font-size: 26rpx;
+	color: #333;
+  padding: 15rpx 0 30rpx 30rpx
+}
+.goodsWrap .chooseRule .ruleContent .ruleBox  .ruleItemBox{
+
+}
+.goodsWrap .chooseRule .ruleContent .ruleBox  .ruleItemBox .ruleItem{
+	height: 66rpx;
+  line-height: 66rpx;
+	background-color: #fff;
+	border-radius: 4rpx;
+	border: solid 2rpx #f0f0f0;
+	font-family: PingFangSC-Regular;
+	font-size: 24rpx;
+	color: #666;
+  display: inline-block;
+  padding: 0 40rpx;
+  margin: 0 0 20rpx 30rpx;
+}
+.goodsWrap .chooseRule .ruleContent .ruleBox  .ruleItemBox .ruleItem.active{
+	background-color: #fff9fc;
+	border: solid 2rpx #f3475f;
+}
+.goodsWrap .chooseRule .ruleContent .chooseBtn{
+	width: 670rpx;
+	height: 80rpx;
+  line-height: 80rpx;
+  text-align: center;
+  margin: 0 auto;
+	background-color: #f3475f;
+	border-radius: 40rpx;
+	font-family: PingFangSC-Semibold;
+	font-size: 30rpx;
+	color: #fff;
+  margin-top: 30rpx;
+}

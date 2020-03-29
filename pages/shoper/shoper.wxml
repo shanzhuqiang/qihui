@@ -1,0 +1,68 @@
+<!--pages/shoper/shoper.wxml-->
+<view class="shoperWrap">
+  <scroll-view scroll-y="true" style="height: calc(100% - 100rpx)" scroll-top="{{ scrollTop }}">
+    <view class="bgTopBox">
+      <view class="bgTop">
+        <view class="topBox">
+          <image class="shopImg" src="../../images/img.png"></image>
+          <view class="topRightBox">
+            <view class="name overflow">柳州螺蛳粉（临平尚峰轩店）</view>
+            <view class="gonggao overflow">公告：这里是公告这里是公告这里是公告这里是公告这里是公告这里是公告</view>
+            <view class="three overflow">美团评分：4.2<text>|</text>月售2799</view>
+          </view>
+        </view>
+        <view class="addressWrap">
+          <view class="addressBox">
+            <view class="local2Box">
+              <image class="local2" src="../../images/local2.png"></image>
+            </view>
+            <view class="addressTextBox">
+              <view class="addressText">
+                浙江省杭州市余杭区乔司街道东海水景城XXX街道XXX号
+              </view>
+            </view>
+            <view class="juli">距您1.5km</view>
+            <view class="typeBtn">
+              <view class="active" style="margin-left: 6rpx;">堂食</view>
+              <view style="margin-right: 6rpx;">外带</view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="mainBox">
+      <view class="topNav">
+        <view class="active">点餐</view>
+        <view>商家信息</view>
+      </view>
+      <view class="mainShop">
+        <scroll-view scroll-y="true" class="leftScroll" style="height: 100%;" bindscroll="clickScroll">
+          <view class="item">蛋糕卷蛋糕卷蛋糕卷蛋糕卷蛋糕卷蛋糕卷蛋糕卷蛋糕卷蛋糕卷<image class="icon" src="../../images/dangao.png"></image></view>
+          <view class="item">千层<image class="icon" src="../../images/dangao.png"></image></view>
+          <view class="item">发酵乳<image class="icon" src="../../images/dangao.png"></image></view>
+        </scroll-view>
+        <scroll-view scroll-y="true" class="rightScroll" style="height: 100%;" bindscroll="clickScroll">
+          <view class="scrollView" style="background: yellow"></view>
+          <view class="scrollView" style="background: #1AAD19"></view>
+          <view class="scrollView" style="background: blue"></view>
+          <view class="scrollView" style="background: yellow"></view>
+          <view class="scrollView" style="background: #1AAD19"></view>
+          <view class="scrollView" style="background: blue"></view>
+          <view class="scrollView" style="background: yellow"></view>
+          <view class="scrollView" style="background: #1AAD19"></view>
+          <view class="scrollView" style="background: blue"></view>
+          <view class="scrollView" style="background: yellow"></view>
+          <view class="scrollView" style="background: #1AAD19"></view>
+          <view class="scrollView" style="background: blue"></view>
+          <view class="scrollView" style="background: yellow"></view>
+          <view class="scrollView" style="background: #1AAD19"></view>
+          <view class="scrollView" style="background: blue">312312</view>
+        </scroll-view>
+      </view>
+    </view>
+  </scroll-view>
+  <!-- 底部购物车 -->
+  <view class="bottomShop">
+  
+  </view>
+</view>

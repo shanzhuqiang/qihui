@@ -1,0 +1,100 @@
+/* pages/choosePlace/choosePlace.wxss */
+.choosePlaceWrap{
+  height: 100%;
+  padding: 0 30rpx;
+}
+.choosePlaceWrap .topBox{
+  height: 76rpx;
+  padding-bottom: 10rpx;
+}
+.choosePlaceWrap .topBox .addressBox{
+  height: 76rpx;
+  float: left;
+}
+.choosePlaceWrap .topBox .addressBox .address{
+  float: left;
+  height: 76rpx;
+  line-height: 76rpx;
+	font-family: PingFangSC-Regular;
+	font-size: 26rpx;
+	color: #333;
+  margin: 0 12rpx;
+  max-width: 240rpx;
+}
+.choosePlaceWrap .topBox .addressBox .xiala{
+  width: 15rpx;
+  height: 10rpx;
+  float: left;
+  margin-top: 34rpx;
+}
+.choosePlaceWrap .topBox .searchBox{
+  width: 580rpx;
+  height: 76rpx;
+  line-height: 76rpx;
+	background-color: #f4f4f4;
+	border-radius: 8rpx;
+  float: right;
+}
+.choosePlaceWrap .topBox .searchBox .serch{
+  width: 26rpx;
+  height: 26rpx;
+  float: left;
+  margin: 25rpx 18rpx 0 37rpx;
+}
+.choosePlaceWrap .topBox .searchBox .ipt{
+	font-family: PingFangSC-Regular;
+	font-size: 26rpx;
+	color: #999;
+  float: left;
+  height: 76rpx;
+  line-height: 76rpx;
+}
+/* 第二行 */
+.choosePlaceWrap .secondBox{
+	font-family: PingFangSC-Regular;
+	font-size: 26rpx;
+	color: #333;
+  height: 50rpx;
+  line-height: 50rpx;
+  padding: 30rpx 0 40rpx;
+	border-bottom: solid 1rpx #ededed;
+}
+.choosePlaceWrap .secondBox > text{
+	font-family: PingFangSC-Semibold;
+	font-size: 26rpx;
+	color: #333;
+}
+.choosePlaceWrap .secondBox .localBox{
+	font-family: PingFangSC-Regular;
+	font-size: 26rpx;
+	color: #2c2e81;
+  float: right;
+  margin-right: 10rpx;
+}
+.choosePlaceWrap .secondBox .localBox .local3{
+  width: 31rpx;
+  height: 31rpx;
+  position: relative;
+  top: 6rpx;
+}
+/* 附近地址 */
+.choosePlaceWrap .fujinBox{
+	font-family: PingFangSC-Regular;
+	font-size: 26rpx;
+	color: #8b8b8b;
+  padding: 40rpx 0 10rpx;
+}
+.choosePlaceWrap .fujinBox .local2{
+  width: 22rpx;
+  height: 26rpx;
+  position: relative;
+  top: 6rpx;
+}
+.choosePlaceWrap .item{
+  height: 104rpx;
+  line-height: 104rpx;
+	font-family: PingFangSC-Regular;
+	font-size: 26rpx;
+	color: #333;
+	border-bottom: solid 1rpx #ededed;
+}

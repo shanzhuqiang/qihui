@@ -18,14 +18,19 @@ Page({
   onLoad: function () {
     console.log("onLoad")
   },
+  goShoper() {
+    wx.navigateTo({
+      url: '../shoper/shoper',
+    })
+  },
   goSearch () {
     wx.navigateTo({
       url: '../search/search',
     })
   },
-  goChooseCity () {
+  choosePlace () {
     wx.navigateTo({
-      url: '../chooseCity/chooseCity',
+      url: '../choosePlace/choosePlace',
     })
   },
   goMy () {

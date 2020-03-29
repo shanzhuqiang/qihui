@@ -1,0 +1,142 @@
+<view class="goodsWrap">
+  <scroll-view scroll-y="true" style="height: calc(100% - 100rpx)" scroll-top="{{ scrollTop }}">
+    <view class="bgTopBox">
+      <view class="bgTop">
+        <view class="topBox">
+          <image class="shopImg" src="../../images/img.png"></image>
+          <view class="topRightBox">
+            <view class="name overflow">柳州螺蛳粉（临平尚峰轩店）</view>
+            <view class="gonggao overflow">公告：这里是公告这里是公告这里是公告这里是公告这里是公告这里是公告</view>
+            <view class="three overflow">美团评分：4.2<text>|</text>月售2799</view>
+          </view>
+        </view>
+        <view class="addressWrap">
+          <view class="addressBox">
+            <view class="local2Box">
+              <image class="local2" src="../../images/local2.png"></image>
+            </view>
+            <view class="addressTextBox">
+              <view class="addressText">
+                浙江省杭州市余杭区乔司街道东海水景城XXX街道XXX号
+              </view>
+            </view>
+            <view class="juli">距您1.5km</view>
+            <view class="typeBtn">
+              <view class="active" style="margin-left: 6rpx;">堂食</view>
+              <view style="margin-right: 6rpx;">外带</view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="mainBox">
+      <view class="topNav">
+        <view class="active">点餐</view>
+        <view>商家信息</view>
+      </view>
+      <view class="mainShop">
+        <scroll-view scroll-y="true" class="leftScroll" style="height: 100%;" bindscroll="clickScroll">
+          <view wx:for="{{goods}}" class="menu-item" bindtap="selectMenu" data-item-index="{{ index }}" wx:key="index">
+            {{item.name}}<image class="icon" src="../../images/dangao.png"></image>
+          </view>
+        </scroll-view>
+        <scroll-view scroll-y="true" class="rightScroll"  style="height: 100%;" bindscroll="clickScroll" scroll-into-view="{{ toView }}">
+          <view wx:for="{{ goods }}" class="food-list" wx:for-index="parentIndex" wx:key="parentIndex">
+            <view id="order{{parentIndex}}" class="title">{{item.name}}</view>
+            <view wx:for="{{item.foods}}" class="food-item" wx:for-item="food" data-food="{{ food }}" bindtap="selectFoods" wx:key="index">
+              <view class="icon">
+                <image src="{{food.image}}" style="width: 190rpx;height: 190rpx"></image>
+              </view>
+              <view class="content">
+                <view class="name overflow">{{food.name}}</view>
+                <view class="desc overflow">{{food.description}}</view>
+                <view class="desc overflow">其他平台价格：{{food.other}}</view>
+                <view class="price">￥{{food.price}}</view>
+                <!--cartControl-->
+                <view class="cartControl-wrapper">
+                  <view class="cartControl">
+                    <view name="fade">
+                      <view class="cart-decrease" wx:if="{{food.count > 0}}" data-food="{{ food }}" data-shopcart="2" catchtap="decreaseCart">
+                        <view class="inner iconfont icon-jian" style="font-size:24px;color:#ff855f;"></view>
+                      </view>
+                      <view class="cart-count" wx:if="{{food.count > 0 }}">{{food.count}}</view>
+                      <view class="iconfont icon-jia cart-add " style="color:#ff855f; " data-food="{{ food }}" catchtap="addCart"></view>
+                    </view>
+                  </view>
+                </view>
+              </view>
+            </view>
+          </view>
+        </scroll-view>
+      </view>
+    </view>
+  </scroll-view>
+  <!-- 底部购物车 -->
+  <view class="shopCart">
+    <view class="content">
+      <view class="content-left" bindtap="toggleList">
+        <view class="logo-wrapper">
+          <view class="logo {{ totalCount > 0 ? 'highlight' : ''}}">
+            <view class="iconfont icon-gouwuche"></view>
+          </view>
+          <view class="num" wx:if="{{totalCount > 0}}">{{totalCount}}</view>
+        </view>
+        <view class="noPrice" wx:if="{{totalPrice == 0}}">未选购商品</view>
+        <view class="price highlight" wx:else>￥{{totalPrice}}</view>
+      </view>
+      <view class="content-right" bindtap="pay">
+        <view class="pay {{ totalPrice == 0 ? 'not-enough' : 'enough' }}">
+          去结算
+        </view>
+      </view>
+    </view>
+    <!-- 购物车列表 -->
+    <view class="shopcart-list" wx:if="{{ shopcartListMask }}">
+      <view class="shopcart-box">
+        <view class="list-header">
+          <view class="title">已选商品</view>
+          <text class="empty" bindtap="empty">清空</text>
+        </view>
+        <scroll-view scroll-y="true" class="list-content">
+          <view class="shopcart-food" wx:for="{{carArray}}" wx:key="index">
+            <text class="name">{{item.name}}</text>
+            <text class="des">{{item.des}}</text>
+            <text class="price">￥{{item.nowPrice}}*{{item.count}}</text>
+            <view class="cartControl-wrapper">
+              <view class="cartControl">
+                <view name="fade">
+                  <view class="cart-decrease" wx:if="{{item.count > 0}}" data-food="{{ item }}" catchtap="decreaseCart">
+                    <view class="inner iconfont icon-jian" style="font-size:24px;color:#ff855f;"></view>
+                  </view>
+                  <view class="cart-count" wx:if="{{ item.count > 0 }}">{{ item.count }}</view>
+                  <view class=" iconfont icon-jia cart-add " style="color:#ff855f; " data-food="{{ item }}" data-shopcart="1"  catchtap="addCart"></view>
+                </view>
+              </view>
+            </view>
+          </view>
+        </scroll-view>
+      </view>
+    </view>
+  </view>
+  <!-- 选择规格 -->
+  <view class="chooseRule" wx:if="{{ ruleMask }}">
+    <scroll-view scroll-y="true" class="ruleContent" animation="{{ruleMaskAni}}">
+      <view class="topBox">
+        <image class="icon" src="{{ curAddFood.image }}"></image>
+        <view class="content">
+          <view class="name">{{ curAddFood.name }}</view>
+          <view class="des">已选：{{ curAddFood.des }}</view>
+          <view class="price">{{ curAddFood.nowPrice }}</view>
+        </view>
+        <view bindtap="closeRuleMask" class="cha iconfont icon-cha"></view>
+      </view>
+      <view class="ruleBox" wx:for="{{ curAddFood.rule }}" wx:key="index" wx:for-item="rule">
+        <view class="title">{{ rule.name }}</view>
+        <view class="ruleItemBox">
+          <view class="ruleItem {{ type.chooseClass ? 'active' : '' }}" wx:for="{{ rule.type }}" data-ruleid="{{ rule.id }}" data-typeid="{{ type.id }}" wx:key="index" wx:for-item="type" bindtap="chooseRuleType">{{ type.name }}</view>
+        </view>
+      </view>
+      <view class="chooseBtn" bindtap="chooseRuleOk" data-id="{{ curAddFood.id }}">选好了</view>
+    </scroll-view>
+  </view>
+</view>

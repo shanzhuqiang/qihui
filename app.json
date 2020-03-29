@@ -1,18 +1,55 @@
 {
   "pages": [
     "pages/index/index",
+    "pages/home/home",
     "pages/chooseCity/chooseCity",
     "pages/auth/auth",
     "pages/my/my",
     "pages/getPhone/getPhone",
     "pages/loginPhone/loginPhone",
-    "pages/search/search"
+    "pages/search/search",
+    "pages/choosePlace/choosePlace",
+    "pages/order/order",
+    "pages/shenghuo/shenghuo",
+    "pages/goods/goods"
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "骑惠",
+    "navigationBarTitleText": "骑士汇",
     "navigationBarTextStyle": "black"
+  },
+  "tabBar": {
+    "color": "#7A7E83",
+    "selectedColor": "#333",
+    "borderStyle": "black",
+    "backgroundColor": "#ffffff",
+    "list": [
+      {
+        "pagePath": "pages/home/home",
+        "iconPath": "images/home.png",
+        "selectedIconPath": "images/home1.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/order/order",
+        "iconPath": "images/order.png",
+        "selectedIconPath": "images/order.png",
+        "text": "订单"
+      },
+      {
+        "pagePath": "pages/shenghuo/shenghuo",
+        "iconPath": "images/shenghuo.png",
+        "selectedIconPath": "images/shenghuo.png",
+        "text": "生活平台"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "iconPath": "images/my.png",
+        "selectedIconPath": "images/my.png",
+        "text": "我的"
+      }
+    ]
   },
   "style": "v2",
   "sitemapLocation": "sitemap.json",

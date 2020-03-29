@@ -1,0 +1,197 @@
+/* pages/shoper/shoper.wxss */
+page{
+  height: 100%;
+}
+.shoperWrap{
+  height: 100%;
+}
+.shoperWrap .bgTopBox{
+  height: 340rpx;
+  background: #F5F5F5;
+}
+.shoperWrap .bgTopBox .bgTop {
+	height: 240rpx;
+	background-color: #323999;
+	border-radius: 0 0 60rpx 60rpx;
+  position: relative;
+}
+.shoperWrap .bgTopBox .bgTop .topBox{
+  height: 150rpx;
+  padding: 20rpx 20rpx 0;
+}
+.shoperWrap .bgTopBox .bgTop .topBox .shopImg{
+  height: 150rpx;
+  width: 150rpx;
+  border: 2rpx solid #888edf;
+  box-sizing: border-box;
+  border-radius: 10rpx;
+  float: left;
+}
+.shoperWrap .bgTopBox .bgTop .topBox .topRightBox{
+  margin-left: 165rpx;
+	color: #fff;
+}
+.shoperWrap .bgTopBox .bgTop .topBox .topRightBox .name{
+	font-family: PingFangSC-Semibold;
+	font-size: 30rpx;
+  height: 32rpx;
+  line-height: 32rpx;
+  padding-top: 6rpx;
+}
+.shoperWrap .bgTopBox .bgTop .topBox .topRightBox .gonggao{
+	font-family: PingFangSC-Regular;
+	font-size: 22rpx;
+  height: 24rpx;
+  line-height: 24rpx;
+  padding: 26rpx 0;
+}
+.shoperWrap .bgTopBox .bgTop .topBox .topRightBox .three{
+	font-family: PingFangSC-Regular;
+	font-size: 22rpx;
+}
+.shoperWrap .bgTopBox .bgTop .topBox .topRightBox .three > text {
+  margin: 0 20rpx;
+}
+/* address */
+.shoperWrap .bgTopBox .bgTop .addressWrap{
+  padding: 34rpx 20rpx 0;
+}
+.shoperWrap .bgTopBox .bgTop .addressWrap .addressBox{
+	height: 130rpx;
+	background-color: #fff;
+	border-radius: 14rpx;
+  position: relative;
+}
+.shoperWrap .bgTopBox .bgTop .addressWrap .addressBox .local2Box{
+  width: 62rpx;
+  height: 100%;
+  float: left;
+}
+.shoperWrap .bgTopBox .bgTop .addressWrap .addressBox .local2Box .local2{
+  width: 22rpx;
+  height: 26rpx;
+  padding: 34rpx 0 0 20rpx;
+}
+.shoperWrap .bgTopBox .bgTop .addressWrap .addressBox .addressTextBox{
+  padding-top: 20rpx;
+}
+.shoperWrap .bgTopBox .bgTop .addressWrap .addressBox .addressTextBox .addressText{
+	font-family: PingFangSC-Regular;
+  margin-left: 65rpx;
+	font-size: 22rpx;
+	line-height: 30rpx;
+	color: #333;
+  width: 400rpx;
+  text-overflow: -o-ellipsis-lastline;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+}
+.shoperWrap .bgTopBox .bgTop .addressWrap .addressBox .juli{
+	font-family: PingFangSC-Regular;
+	font-size: 22rpx;
+	color: #999;
+  padding-top: 8rpx;
+}
+.shoperWrap .bgTopBox .bgTop .addressWrap .addressBox  .typeBtn{
+	width: 170rpx;
+	height: 58rpx;
+	background-color: #323999;
+	border-radius: 29rpx;
+  position: absolute;
+  right: 30rpx;
+  top: 40rpx;
+}
+.shoperWrap .bgTopBox .bgTop .addressWrap .addressBox  .typeBtn > view{
+  width: 79rpx;
+  float: left;
+  height: 48rpx;
+  line-height: 48rpx;
+  margin-top: 6rpx;
+	font-family: PingFangSC-Regular;
+	font-size: 22rpx;
+	color: #fff;
+  text-align: center;
+}
+.shoperWrap .bgTopBox .bgTop .addressWrap .addressBox  .typeBtn > view.active{
+  background: #fff;
+	color: #323999;
+	border-radius: 24rpx;
+}
+/* madin */
+.shoperWrap .mainBox{
+  background: #fff;
+  /* background: red; */
+  height: 100%;
+}
+.shoperWrap .mainBox .topNav{
+  height: 90rpx;
+  line-height: 90rpx;
+  border-bottom: 1rpx solid #eeeeee;
+  padding: 0 80rpx;
+}
+.shoperWrap .mainBox .topNav > view{
+  width: 50%;
+  float: left;
+  text-align: center;
+	font-family: PingFangSC-Regular;
+	font-size: 28rpx;
+	color: #666;
+  position: relative;
+}
+.shoperWrap .mainBox .topNav > view.active{
+	font-family: PingFangSC-Semibold;
+	color: #333;
+}
+.shoperWrap .mainBox .topNav > view.active::after{
+  content: "";
+	width: 40rpx;
+	height: 6rpx;
+	background-color: #2c2e81;
+  position: absolute;
+  left: 50%;
+  margin-left: -20rpx;
+  bottom: 0;
+}
+.shoperWrap .mainBox .mainShop{
+  height: calc(100% - 91rpx)
+}
+.shoperWrap .mainBox .mainShop .leftScroll{
+  float: left;
+  width: 168rpx;
+	background-color: #ededed;
+}
+.shoperWrap .mainBox .mainShop .leftScroll .item{
+	font-family: PingFangSC-Regular;
+	font-size: 28rpx;
+  line-height: 30rpx;
+	color: #333;
+  padding: 26rpx 0;
+}
+.shoperWrap .mainBox .mainShop .leftScroll .item .icon{
+  width: 41rpx;
+  height: 39rpx;
+  position: relative;
+  top: 6rpx;
+}
+.shoperWrap .mainBox .mainShop .rightScroll{
+  margin-left: 168rpx;
+}
+.shoperWrap .mainBox .mainShop .scrollView{
+  height: 100rpx;
+}
+
+
+
+/* 底部购物车 */
+.bottomShop{
+  height: 100rpx;
+	background-color: #505052;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+}

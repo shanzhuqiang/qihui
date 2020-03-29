@@ -2,7 +2,7 @@
 <view class="getPhoneWrap">
   <view class="authBox">
     <image class='logo' src='../../images/logo.png'></image>
-    <view class="name">EP武林</view>
+    <view class="name">骑士汇平台</view>
     <view class="text">申请获取你的微信绑定的手机号</view>
     <button class='btnBox bottonClass' open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">获取手机号</button>
     <view class="usePhone" bindtap="goLoginPhone">使用手机号登陆</view>

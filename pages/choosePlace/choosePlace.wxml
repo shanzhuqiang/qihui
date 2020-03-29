@@ -1,0 +1,33 @@
+<!--pages/choosePlace/choosePlace.wxml-->
+<view class="choosePlaceWrap">
+  <view class="topBox">
+    <view class="addressBox" bindtap="goChooseCity">
+      <view class="address overflow">{{ city }}</view>
+      <image class="xiala" src="../../images/xiala.png"></image>
+    </view>
+    <view class="searchBox" bindtap="goSearch">
+      <image class="serch" src="../../images/serch.png"></image>
+      <input class="ipt" placeholder="小区/街道/大厦"></input>
+    </view>
+  </view>
+  <view class="secondBox">
+    当前位置：<text>{{ address }}</text>
+    <view class="localBox">
+      <image class="local3" src="../../images/local3.png"></image>
+      重新定位
+    </view>
+  </view>
+  <view class="fujinBox">
+    <image class="local2" src="../../images/local2.png"></image>
+    附近地址
+  </view>
+  <view class="item">
+    杭州电子科技大学
+  </view>
+  <view class="item">
+    杭州电子科技大学
+  </view>
+  <view class="item">
+    杭州电子科技大学
+  </view>
+</view>

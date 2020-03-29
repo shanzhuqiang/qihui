@@ -1,12 +1,11 @@
-// pages/index/index.js
-const app = getApp()
+// pages/shoper/shoper.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    getLocation: true
+    scrollTop: 0
   },
 
   /**
@@ -15,42 +14,23 @@ Page({
   onLoad: function (options) {
 
   },
+  clickScroll () {
+    this.setData({
+      scrollTop: "340rpx"
+    })
+    console.log(this.data.scrollTop)
+  },
+  /**
+   * 生命周期函数--监听页面初次渲染完成
+   */
+  onReady: function () {
+
+  },
 
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    wx.getLocation({
-      isHighAccuracy: true,
-      success: (res) => {
-        console.log(1, res)
-        app.globalData.locationObj = res
-        // wx.switchTab({
-        //   url: '../home/home',
-        // })
-        wx.redirectTo({
-          url: '../goods/goods',
-        })
-        // wx.redirectTo({
-        //   url: '../loginPhone/loginPhone',
-        // })
-      },
-      fail: (res) => {
-        console.log(2, res)
-        this.setData({
-          getLocation: false
-        })
-      }
-    })
-  },
-  goSetting () {
-    wx.openSetting()
-  },
-  // 经纬度获取位置信息
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function () {
 
   },
 
