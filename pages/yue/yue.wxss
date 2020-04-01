@@ -1,0 +1,84 @@
+/* pages/yue/yue.wxss */
+.yueWrap{
+}
+.yueWrap .topRow{
+  height: 140rpx;
+  line-height: 140rpx;
+  border-bottom: 16rpx solid #f8f8f8;
+  position: relative;
+  padding: 0 30rpx;
+}
+.yueWrap .topRow .price{
+	font-family: PingFangSC-Semibold;
+	font-size: 48rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+	color: #f34848;
+  padding-top: 30rpx;
+}
+.yueWrap .topRow .yue{
+	font-family: PingFangSC-Regular;
+	font-size: 24rpx;
+  height: 30rpx;
+  line-height: 30rpx;
+	color: #333;
+  padding: 10rpx 0 0 10rpx;
+}
+.yueWrap .topRow .btnBox{
+	width: 152rpx;
+	height: 64rpx;
+  line-height: 64rpx;
+  text-align: center;
+	background-color: #f3475f;
+	border-radius: 32rpx;
+	font-family: PingFangSC-Regular;
+	font-size: 28rpx;
+	color: #fff;
+  position: absolute;
+  right: 30rpx;
+  top: 35rpx;
+}
+.yueWrap .historyBox{
+  padding: 0 30rpx;
+}
+.yueWrap .historyBox .item{
+  height: 160rpx;
+  border-bottom: 1rpx solid #f8f8f8;
+  position: relative;
+}
+.yueWrap .historyBox .item .tittleT{
+	font-family: PingFangSC-Regular;
+	font-size: 30rpx;
+  height: 40rpx;
+  line-height: 40rpx;
+	color: #333;
+  padding-top: 42rpx;
+}
+.yueWrap .historyBox .item .timeT{
+	font-family: PingFangSC-Regular;
+	font-size: 24rpx;
+  height: 30rpx;
+  line-height: 30rpx;
+	color: #959595;
+  padding-top: 20rpx;
+}
+.yueWrap .historyBox .item .num{
+	font-family: PingFangSC-Semibold;
+	font-size: 36rpx;
+  height: 40rpx;
+  line-height: 40rpx;
+	color: #f34848;
+  position: absolute;
+  right: 30rpx;
+  top: 44rpx;
+}
+.yueWrap .historyBox .item .num2{
+	font-family: PingFangSC-Semibold;
+	font-size: 36rpx;
+  height: 40rpx;
+  line-height: 40rpx;
+	color: #333;
+  position: absolute;
+  right: 30rpx;
+  top: 44rpx;
+}

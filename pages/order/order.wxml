@@ -1,2 +1,72 @@
 <!--pages/order/order.wxml-->
-<text>pages/order/order.wxml</text>
+<view class="orderWrap">
+  <view class="item">
+    <view class="topBox">
+      <view class="leftBox">
+        <image class="img" src="../../images/img.png"></image>
+      </view>
+      <view class="rightBox">
+        <view class="nameBox">
+          <view class="name overflow">遵义羊粉遵义羊肉粉</view>
+          <van-icon name="arrow" size="30rpx" color="#9d9d9d"/>
+          <view class="status">商家已接单</view>
+        </view>
+        <view class="time">预约时间：2020-02-08（明天） 18：00</view>
+        <view class="shop">
+          蟹粉蟹仔包（半份）等13件商品
+          <view class="price">￥24</view>
+        </view>
+      </view>
+    </view>
+    <view class="bottomBox">
+      <view class="btn fr">取消订单</view>
+      <view class="btn fr colorBtn">查看取餐码</view>
+    </view>
+  </view>
+  <view class="item">
+    <view class="topBox">
+      <view class="leftBox">
+        <image class="img" src="../../images/img.png"></image>
+      </view>
+      <view class="rightBox">
+        <view class="nameBox">
+          <view class="name overflow">遵义羊粉遵义羊肉粉</view>
+          <van-icon name="arrow" size="30rpx" color="#9d9d9d"/>
+          <view class="status">商家已接单</view>
+        </view>
+        <view class="time">预约时间：2020-02-08（明天） 18：00</view>
+        <view class="shop">
+          蟹粉蟹仔包（半份）等13件商品
+          <view class="price">￥24</view>
+        </view>
+      </view>
+    </view>
+    <view class="bottomBox">
+      <view class="btn fr">取消订单</view>
+      <view class="btn fr colorBtn">查看取餐码</view>
+    </view>
+  </view>
+  <view class="item">
+    <view class="topBox">
+      <view class="leftBox">
+        <image class="img" src="../../images/img.png"></image>
+      </view>
+      <view class="rightBox">
+        <view class="nameBox">
+          <view class="name overflow">遵义羊粉遵义羊肉粉</view>
+          <van-icon name="arrow" size="30rpx" color="#9d9d9d"/>
+          <view class="status">商家已接单</view>
+        </view>
+        <view class="time">预约时间：2020-02-08（明天） 18：00</view>
+        <view class="shop">
+          蟹粉蟹仔包（半份）等13件商品
+          <view class="price">￥24</view>
+        </view>
+      </view>
+    </view>
+    <view class="bottomBox">
+      <view class="btn fr">取消订单</view>
+      <view class="btn fr colorBtn">查看取餐码</view>
+    </view>
+  </view>
+</view>

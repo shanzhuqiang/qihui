@@ -6,7 +6,7 @@
           <image class="shopImg" src="../../images/img.png"></image>
           <view class="topRightBox">
             <view class="name overflow">柳州螺蛳粉（临平尚峰轩店）</view>
-            <view class="gonggao overflow">公告：这里是公告这里是公告这里是公告这里是公告这里是公告这里是公告</view>
+            <view class="gonggao overflow" bindtap="toggGonggaoMask">公告：这里是公告这里是公告这里是公告这里是公告这里是公告这里是公告</view>
             <view class="three overflow">美团评分：4.2<text>|</text>月售2799</view>
           </view>
         </view>
@@ -31,10 +31,10 @@
     </view>
     <view class="mainBox">
       <view class="topNav">
-        <view class="active">点餐</view>
-        <view>商家信息</view>
+        <view class="{{ tabClass === 'one' ? 'active' : '' }}" data-id="one" bindtap="chooseTabClass">点餐</view>
+        <view class="{{ tabClass === 'two' ? 'active' : '' }}" data-id="two" bindtap="chooseTabClass">商家信息</view>
       </view>
-      <view class="mainShop">
+      <view class="mainShop" wx:if="{{ tabClass === 'one' }}">
         <scroll-view scroll-y="true" class="leftScroll" style="height: 100%;" bindscroll="clickScroll">
           <view wx:for="{{goods}}" class="menu-item" bindtap="selectMenu" data-item-index="{{ index }}" wx:key="index">
             {{item.name}}<image class="icon" src="../../images/dangao.png"></image>
@@ -69,10 +69,24 @@
           </view>
         </scroll-view>
       </view>
+      <view class="shangjiaBox" wx:if="{{ tabClass === 'two' }}">
+        <view class="title">商家简介</view>
+        <view class="jianjie">这里是商家简介这里是商家简介这里是商家简介这里是商家简介这里是商家简介</view>
+        <view class="line"></view>
+        <view class="title">品类<text class="des fr">烧烤，小龙虾</text></view>
+        <view class="line"></view>
+        <view class="title">商家电话<text class="btnBox fr">一键拨打</text></view>
+        <view class="line"></view>
+        <view class="title">商家地址<text class="btnBox fr">一键复制</text></view>
+        <view class="jianjie">这里是商家简介这里是商家简介这里是商家简介这里是商家简介这里是商家简介</view>
+        <view class="line"></view>
+        <view class="title">营业时间<text class="des fr">16:30-05:00</text></view>
+        <view class="line"></view>
+      </view>
     </view>
   </scroll-view>
   <!-- 底部购物车 -->
-  <view class="shopCart">
+  <view class="shopCart" wx:if="{{ tabClass === 'one' }}">
     <view class="content">
       <view class="content-left" bindtap="toggleList">
         <view class="logo-wrapper">
@@ -139,4 +153,19 @@
       <view class="chooseBtn" bindtap="chooseRuleOk" data-id="{{ curAddFood.id }}">选好了</view>
     </scroll-view>
   </view>
+  <!-- 公告 -->
+  <view class="gonggaoBox" wx:if="{{ gonggaoMask }}">
+    <view class="gonggaoContent" animation="{{ruleMaskAni}}">
+      <view class="title">公告<view bindtap="toggGonggaoMask" class="cha iconfont icon-cha"></view></view>
+      <view class="content">这里是公告这里是公告这里是公告这里是公告这里是公告这里是公告这里是公告这里是公告这里是公告这里是公告这里是公告这里是公告这里是公告这里是公告这里是公告这里是公告这里是公告这里是公告这里是公告这里是公告这里是公告这里是公告这里是公告这里是公告这里是公告这里是公告这里是公告这里是公告这里是公告这里是公告</view>
+    </view>
+  </view>
+  <!-- shop详情 -->
+  <!-- <view class="shopDetailBox" wx:if="{{ shopDetailMask }}">
+    <view bindtap="toggShopDetailMask" class="cha iconfont icon-cha"></view>
+    <image class="img" src="../../images/img.png"></image>
+    <view class="name">肉末豆腐</view>
+    <view class="des">其他平台价格：20</view>
+    <view class="price">￥15</view>
+  </view> -->
 </view>

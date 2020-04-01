@@ -1,0 +1,24 @@
+<!--pages/renzheng/renzheng.wxml-->
+<view class="renzhengWrap">
+  <!-- 登录页面 -->
+  <view class='loginBox'>
+    <form bindsubmit="formLogin">
+      <view class='iptBox'>
+        <input class='input' name="name" bindinput="bindPhone" placeholder='请输入姓名' placeholder-style='color: #b9b9c0'></input>
+      </view>
+      <view class='iptBox' style='margin-top: 30rpx;' bindtap="tiggShow">
+        <!-- <input class='input' name="gongsi" disabled placeholder='请选择所属公司' placeholder-style='color: #b9b9c0'></input> -->
+        <picker class="input" bindchange="bindPickerChange" value="{{ index }}" range="{{ array }}">
+          <view class="picker">
+          {{ gongsi }}
+          </view>
+        </picker>
+        <van-icon class="arrowIcon" name="arrow" size="36rpx" color="#9d9d9d"/>
+      </view>
+      <button class='bottonClass loginBtn' form-type="submit">
+        <view class="login">提交审核</view>
+      </button>
+    </form>
+  </view>
+
+</view>

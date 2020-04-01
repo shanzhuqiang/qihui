@@ -1,0 +1,22 @@
+<!--pages/renzhengResult/renzhengResult.wxml-->
+<view class="renzhengResultWrap">
+  <view class="topBg">
+    <van-icon class="arrowIcon" name="checked" size="62rpx" color="#fff"/>
+    认证成功
+  </view>
+  <view class="formBox">
+    <van-cell-group>
+      <van-field
+        value="{{ name }}"
+        readonly
+        label="姓名"/>
+      <van-field
+        value="{{ gongsi }}"
+        readonly
+        label="所属公司"
+        border="{{ false }}"/>
+    </van-cell-group>
+  </view>
+  <view class="text">请联系您的公司询问具体情况</view>
+  <view class="btnBox">重新认证</view>
+</view>

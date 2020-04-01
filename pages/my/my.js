@@ -14,7 +14,30 @@ Page({
   onLoad: function (options) {
 
   },
-
+  // 骑手认证
+  goRenzheng() {
+    wx.navigateTo({
+      url: '../renzheng/renzheng',
+    })
+  },
+  // 立即充值
+  goChongzhi() {
+    wx.navigateTo({
+      url: '../chongzhi/chongzhi',
+    })
+  },
+  // 余额
+  goYue() {
+    wx.navigateTo({
+      url: '../yue/yue',
+    })
+  },
+  // 添加客服
+  goAddKefu() {
+    wx.navigateTo({
+      url: '../addKefu/addKefu',
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

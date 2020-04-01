@@ -1,0 +1,316 @@
+/* pages/orderConfirm/orderConfirm.wxss */
+page{
+  height: 100%;
+}
+.orderConfirmWrap{
+  height: 100%;
+  padding: 30rpx 20rpx 0;
+  box-sizing: border-box;
+	background-color: #f5f5f5;
+}
+.orderConfirmWrap .rowOne{
+	height: 100rpx;
+  line-height: 100rpx;
+	background-color: #fff;
+	border-radius: 10rpx;
+	font-family: PingFangSC-Regular;
+	font-size: 28rpx;
+	color: #363636;
+  position: relative;
+  padding: 0 20rpx;
+  margin-bottom: 16rpx;
+}
+.orderConfirmWrap .rowOne .next{
+	width: 9rpx;
+	height: 17rpx;
+  position: absolute;
+  right: 20rpx;
+  top: 44rpx;
+}
+.orderConfirmWrap .rowTwo{
+  padding: 20rpx 20rpx 0;
+	background-color: #fff;
+	border-radius: 14rpx;
+  margin-bottom: 16rpx;
+}
+.orderConfirmWrap .rowTwo .first{
+	border-bottom: solid 1rpx #f3f3f3;
+  position: relative;
+}
+.orderConfirmWrap .rowTwo .first .local2{
+  width: 22rpx;
+  height: 26rpx;
+  float: left;
+}
+.orderConfirmWrap .rowTwo .first .content{
+  margin-left: 42rpx;
+  padding-bottom: 20rpx;
+}
+.orderConfirmWrap .rowTwo .first .content .address{
+	font-family: PingFangSC-Regular;
+	font-size: 22rpx;
+	line-height: 30rpx;
+	color: #333;
+  text-overflow: -o-ellipsis-lastline;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  width: 400rpx;
+}
+.orderConfirmWrap .rowTwo .first .content .juli{
+	font-family: PingFangSC-Regular;
+	font-size: 22rpx;
+	color: #999;
+  padding-top: 10rpx;
+}
+.orderConfirmWrap .rowTwo .first .typeBtn{
+	width: 170rpx;
+	height: 58rpx;
+	background-color: #f3475f;
+	border-radius: 29rpx;
+  position: absolute;
+  right: 10rpx;
+  top: 10rpx;
+}
+.orderConfirmWrap .rowTwo .first .typeBtn > view{
+  width: 79rpx;
+  float: left;
+  height: 48rpx;
+  line-height: 48rpx;
+  margin-top: 6rpx;
+	font-family: PingFangSC-Regular;
+	font-size: 22rpx;
+	color: #fff;
+  text-align: center;
+}
+.orderConfirmWrap .rowTwo .first .typeBtn > view.active{
+  background: #fff;
+	color: #f3475f;
+	border-radius: 24rpx;
+}
+.orderConfirmWrap .rowTwo .second{
+  height: 90rpx;
+  line-height: 90rpx;
+}
+.orderConfirmWrap .rowTwo .second > text{
+	font-family: PingFangSC-Regular;
+	font-size: 28rpx;
+	color: #363636;
+}
+.orderConfirmWrap .rowTwo .second .next{
+	width: 9rpx;
+	height: 17rpx;
+  display: inline-block;
+  margin-left: 20rpx;
+}
+.orderConfirmWrap .rowMain{
+	background-color: #fff;
+	border-radius: 14rpx;
+  padding: 0 20rpx;
+  margin-bottom: 16rpx;
+}
+.orderConfirmWrap .rowMain > .title{
+	font-family: PingFangSC-Semibold;
+	font-size: 28rpx;
+	color: #363636;
+  height: 100rpx;
+  line-height: 100rpx;
+	border-bottom: solid 1rpx #f3f3f3;
+  margin-top: 16rpx;
+}
+.orderConfirmWrap .rowMain .rowItem{
+  height: 72rpx;
+  padding: 25rpx 0;
+}
+.orderConfirmWrap .rowMain .rowItem .icon{
+  float: left;
+  width: 72rpx;
+  height: 72rpx;
+}
+.orderConfirmWrap .rowMain .rowItem > view{
+  float: left;
+	font-family: PingFangSC-Regular;
+	font-size: 28rpx;
+	color: #363636;
+  height: 72rpx;
+  line-height: 72rpx;
+}
+.orderConfirmWrap .rowMain .rowItem .name{
+  overflow: hidden;
+  text-overflow:ellipsis;
+  white-space: nowrap;
+  width: 400rpx;
+  margin-left: 16rpx;
+}
+.orderConfirmWrap .rowMain .rowItem .num{
+  width: 100rpx;
+}
+.orderConfirmWrap .rowMain .rowItem .price{
+  float: right;
+}
+.orderConfirmWrap .rowMain .rowItemLast{
+  height: 30rpx;
+  line-height: 30rpx;
+  padding: 44rpx 0;
+}
+.orderConfirmWrap .rowMain .rowItemLast > view {
+	font-family: PingFangSC-Regular;
+	font-size: 28rpx;
+	color: #363636;
+}
+.orderConfirmWrap .rowMain .rowItemLast .baozhuang{
+	width: 58rpx;
+	height: 30rpx;
+  text-align: center;
+  line-height: 30rpx;
+	background-color: #f1f3f2;
+	border: solid 1rpx #e3e1e7;
+	font-family: PingFangSC-Regular;
+	font-size: 18rpx;
+	color: #727b91;
+  margin-right: 24rpx;
+}
+.orderConfirmWrap .rowOne .wechatBox {
+  margin-right: 30rpx;
+}
+.orderConfirmWrap .rowOne .wechatBox .wechat{
+  width: 51rpx;
+  height: 51rpx; 
+  vertical-align: middle;
+  margin-right: 20rpx;
+}
+.orderConfirmWrap .bottomTotal{
+	height: 112rpx;
+  line-height: 112rpx;
+	background-color: #fff;
+  padding: 0 40rpx;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+}
+.orderConfirmWrap .bottomTotal .total{
+	font-family: PingFangSC-Regular;
+	font-size: 32rpx;
+	color: #363636;
+  float: left;
+}
+.orderConfirmWrap .bottomTotal .total > text{
+	font-family: PingFangSC-Semibold;
+	font-size: 32rpx;
+	color: #363636;
+}
+.orderConfirmWrap .bottomTotal .payNow{
+	width: 160rpx;
+	height: 74rpx;
+  line-height: 74rpx;
+  text-align: center;
+	background-color: #3fc976;
+	border-radius: 10rpx;
+	font-family: PingFangSC-Regular;
+	font-size: 30rpx;
+	color: #fff;
+  float: right;
+  margin-top: 18rpx;
+}
+/* 备注 */
+.orderConfirmWrap .beizhuBox{
+  padding: 0 30rpx;
+}
+.orderConfirmWrap .beizhuBox .beizhuContent{
+  height: 260rpx;
+	background-color: #f1f1f1;
+	border-radius: 10rpx;
+  padding: 20rpx;
+}
+.orderConfirmWrap .beizhuBox .beizhuContent .textareaIpt{
+  font-size: 24rpx;
+  width: 100%;
+  height: 220rpx;
+  color: #333;
+}
+.orderConfirmWrap .beizhuBox .confirmBtn{
+	width: 690rpx;
+	height: 80rpx;
+  line-height: 80rpx;
+	background-color: #f3475f;
+	border-radius: 40rpx;
+	font-family: PingFangSC-Semibold;
+	font-size: 30rpx;
+	color: #fff;
+  text-align: center;
+  margin-top: 40rpx;
+}
+/* 支付方式 */
+.orderConfirmWrap .zhifuBox{
+  height: 220rpx;
+  background: #fff;
+}
+.orderConfirmWrap .zhifuBox .itemBox{
+  padding: 10rpx 30rpx 0;
+}
+.orderConfirmWrap .zhifuBox .itemBox .item{
+  height: 100rpx;
+  line-height: 100rpx;
+	border-bottom: solid 1rpx #f3f3f3;
+  position: relative;
+}
+.orderConfirmWrap .zhifuBox .itemBox .item .name{
+	font-family: PingFangSC-Regular;
+	font-size: 30rpx;
+	color: #333;
+  display: inline-block;
+}
+.orderConfirmWrap .zhifuBox .itemBox .item .name > text{
+	font-family: PingFangSC-Regular;
+	font-size: 30rpx;
+	color: #666;
+  margin-left: 20rpx;
+}
+.orderConfirmWrap .zhifuBox .itemBox .item .img{
+  width: 51rpx;
+  height: 51rpx;
+  display: inline-block;
+  vertical-align: middle;
+  margin-right: 30rpx;
+}
+.orderConfirmWrap .zhifuBox .itemBox .item .gou{
+	color: #7ca6d3;
+  position: absolute;
+  right: 0;
+  top: 0;
+}
+/* 到店时间 */
+.orderConfirmWrap .timeBox {
+  height: 600rpx;
+}
+.orderConfirmWrap .timeBox .item{
+  height: 100rpx;
+  line-height: 100rpx;
+  background: #fff;
+	font-family: PingFangSC-Regular;
+	font-size: 24rpx;
+	color: #333;
+}
+.orderConfirmWrap .timeBox .leftBox{
+  float: left;
+  height: 100%;
+  width: 210rpx;
+	background-color: #eee;
+  text-align: center;
+}
+.orderConfirmWrap .timeBox .rightBox{
+  margin-left: 240rpx;
+}
+.orderConfirmWrap .timeBox .rightBox .item {
+	border-bottom: solid 1rpx #f3f3f3;
+  position: relative;
+}
+.orderConfirmWrap .timeBox .rightBox .item .okIcon{
+  position: absolute;
+  top: 12rpx;
+  right: 30rpx;
+}

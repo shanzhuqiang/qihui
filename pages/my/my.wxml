@@ -1,2 +1,64 @@
 <!--pages/my/my.wxml-->
-<text>pages/my/my.wxml</text>
+<view class="myWrap">
+  <view class="bgBox">
+    <view class="bgTop">
+      <view class="touxiangBox">
+        <image class="touxiang" src="../../images/touxiang.png"></image>
+      </view>
+      <view class="loginText">点击此处进行登录</view>
+    </view>
+    <view class="itemBlock">
+      <view class="itemBox fl">
+        <view class="fl">
+          <view class="price">￥90.38</view>
+          <view class="yue" bindtap="goYue">账户余额</view>
+        </view>
+        <view class="fr">
+          <view class="chongzhi" bindtap="goChongzhi">立即充值</view>
+          <image class="priceIcon" src="../../images/price.png"></image>
+        </view>
+      </view>
+      <view class="itemBox fr">
+        <view class="fl">
+          <view class="price">20</view>
+          <view class="yue">积分</view>
+        </view>
+        <view class="fr">
+          <view class="chongzhi chongzhi2">敬请期待</view>
+          <image class="priceIcon zuanshi" src="../../images/zuanshi.png"></image>
+        </view>
+      </view>
+    </view>
+  </view>
+  <view class="rowItem" bindtap="goRenzheng">
+    <view class="iconBox">
+      <image class="icon qishou" src="../../images/qishou.png"></image>
+    </view>
+    <view class="text">骑手认证</view>
+    <van-icon class="arrowIcon" name="arrow" size="36rpx" color="#9d9d9d"/>
+  </view>
+  <view class="rowItem" bindtap="goAddKefu">
+    <view class="iconBox">
+      <image class="icon wechat2" src="../../images/wechat2.png"></image>
+    </view>
+    <view class="text">添加客服微信</view>
+    <van-icon class="arrowIcon" name="arrow" size="36rpx" color="#9d9d9d"/>
+  </view>
+  <view class="rowItem">
+    <view class="iconBox">
+      <image class="icon jifen" src="../../images/jifen.png"></image>
+    </view>
+    <view class="text">积分兑换平台</view>
+    <van-icon class="arrowIcon" name="arrow" size="36rpx" color="#9d9d9d"/>
+    <view class="des">敬请期待</view>
+  </view>
+  <view class="rowItem">
+    <view class="iconBox">
+      <image class="icon xianjin" src="../../images/xianjin.png"></image>
+    </view>
+    <view class="text">邀请朋友下单得现金</view>
+    <van-icon class="arrowIcon" name="arrow" size="36rpx" color="#9d9d9d"/>
+    <view class="des">敬请期待</view>
+  </view>
+  <view class="bottomText">-传乐科技提供技术支持-</view>
+</view>

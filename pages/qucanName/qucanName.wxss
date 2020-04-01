@@ -1,0 +1,40 @@
+/* pages/qucanName/qucanName.wxss */
+.qucanNameWrap{
+  padding: 20rpx 30rpx 0;
+}
+.qucanNameWrap .iptRow{
+  height: 100rpx;
+  line-height: 100rpx;
+  border-bottom: 1rpx solid #eee;
+}
+.qucanNameWrap .iptRow .label{
+  float: left;
+  height: 100rpx;
+  width: 150rpx;
+	font-family: PingFangSC-Semibold;
+	font-size: 24rpx;
+	color: #333;
+}
+.qucanNameWrap .iptRow .iptBox{
+  margin-left: 160rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+}
+.qucanNameWrap .iptRow .iptBox .ipt{
+  height: 100rpx;
+  line-height: 100rpx;
+	font-family: PingFangSC-Regular;
+	font-size: 24rpx;
+}
+.qucanNameWrap .saveBtn{
+	width: 690rpx;
+	height: 80rpx;
+  line-height: 80rpx;
+  text-align: center;
+	background-color: #f3475f;
+	border-radius: 40rpx;
+	font-family: PingFangSC-Semibold;
+	font-size: 30rpx;
+	color: #fff;
+  margin-top: 80rpx;
+}

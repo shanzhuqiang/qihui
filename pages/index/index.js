@@ -28,8 +28,8 @@ Page({
         // wx.switchTab({
         //   url: '../home/home',
         // })
-        wx.redirectTo({
-          url: '../goods/goods',
+        wx.switchTab({
+          url: '../my/my',
         })
         // wx.redirectTo({
         //   url: '../loginPhone/loginPhone',

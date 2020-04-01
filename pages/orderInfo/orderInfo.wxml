@@ -1,0 +1,56 @@
+<!--pages/orderInfo/orderInfo.wxml-->
+<view class="orderInfoWrap">
+  <view class="firstRow">
+    商家已接单
+    <view class="shopName overflow">XXXXXXXXXXXXX的店铺</view>
+  </view>
+  <view class="weCodeRow">
+    <image class="weCode" src="../../images/weCode.png"></image>
+    <view class="codeText">您的取餐号是#04</view>
+    <image class="orderStatus" src="../../images/orderBack.png"></image>
+  </view>
+  <view class="itemRow">
+    <view class="itemOne">订单编号：12312312312</view>
+    <view class="itemOne">
+      <view class="itemLeft">
+        <view class="one">蟹粉小笼包</view>
+        <view class="two">冰的，加奶盖</view>
+      </view>
+      <view class="num">x1</view>
+      <view class="price">￥18</view>
+    </view>
+    <view class="itemOne">
+      <view class="itemLeft">
+        <view class="one">蟹粉小笼包</view>
+        <view class="two">冰的，加奶盖冰的，加奶盖冰的，加奶盖冰的，加奶盖冰的，加奶盖冰的，加奶盖冰的，加奶盖</view>
+      </view>
+      <view class="num">x1</view>
+      <view class="price">￥18</view>
+    </view>
+    <view class="itemOne">
+      <view class="itemLeft">
+        <view class="one">蟹粉小笼包蟹粉小笼包蟹粉小笼包蟹粉小笼包蟹粉小笼包蟹粉小笼包蟹粉小笼包蟹粉小笼包</view>
+        <view class="two">冰的，加奶盖</view>
+      </view>
+      <view class="num">x1</view>
+      <view class="price">￥18</view>
+    </view>
+  </view>
+  <view class="secondRow">
+    下单时间
+    <view class="rightVal">2020-02-08 18:00</view>
+  </view>
+  <view class="secondRow">
+    预计到达时间
+    <view class="rightVal">2020-02-08 18:00</view>
+  </view>
+  <view class="lastRow clearfix">
+    备注
+    <view class="rightVal">这里是备是这里是备注这里是备注</view>
+  </view>
+  <view style="height:120rpx;background: #f2f2f2;"></view>
+  <view class="bottomBox">
+    <view class="btnBox">取消订单</view>
+    <view class="btnBox colorBtn">撤回</view>
+  </view>
+</view>

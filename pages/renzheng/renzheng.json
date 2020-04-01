@@ -1,0 +1,7 @@
+{
+  "usingComponents": {
+    "van-icon": "../../miniprogram_npm/vant-weapp/icon/index"
+  },
+  "navigationBarTitleText": "骑手认证",
+  "navigationBarBackgroundColor": "#fff"
+}

@@ -1,0 +1,44 @@
+/* pages/renzhengResult/renzhengResult.wxss */
+page{
+  height: 100%;
+}
+.renzhengResultWrap{
+  height: 100%;
+  background: #f8f8f8;
+}
+.renzhengResultWrap .topBg{
+	height: 200rpx;
+  line-height: 200rpx;
+  text-align: center;
+  vertical-align: middle;
+	background-color: #f3475f;
+	font-family: PingFangSC-Regular;
+	font-size: 40rpx;
+	color: #f8f8f8;
+}
+.renzhengResultWrap .topBg .arrowIcon{
+  position: relative;
+  top: 16rpx;
+}
+.renzhengResultWrap .formBox{
+  padding: 0 30rpx;
+  background: #fff;
+}
+.renzhengResultWrap .text{
+	font-family: PingFangSC-Regular;
+	font-size: 22rpx;
+	color: #999;
+  padding: 26rpx 50rpx 40rpx;
+}
+.renzhengResultWrap .btnBox{
+	width: 650rpx;
+	height: 88rpx;
+  line-height: 88rpx;
+  text-align: center;
+	background-color: #f3475f;
+	border-radius: 5rpx;
+	font-family: PingFangSC-Regular;
+	font-size: 32rpx;
+	color: #fff;
+  margin: 0 auto;
+}

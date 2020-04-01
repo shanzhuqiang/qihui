@@ -1,4 +1,10 @@
 /**app.wxss**/
+.fr{
+  float: right;
+}
+.fl{
+  float: left;
+}
 .overflow{
   overflow: hidden;
   text-overflow:ellipsis;

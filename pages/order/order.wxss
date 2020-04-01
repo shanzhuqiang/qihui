@@ -1,1 +1,93 @@
 /* pages/order/order.wxss */
+.orderWrap{
+  padding-top: 30rpx;
+}
+.orderWrap .item{
+  /* height: 320rpx; */
+  border-bottom: 20rpx solid #f8f8f8;
+  padding: 24rpx 30rpx 0;
+  background: #fff;
+}
+.orderWrap .item .topBox{
+  /* height: 220rpx; */
+}
+.orderWrap .item .topBox .leftBox{
+  height: 220rpx;
+  width: 85rpx;
+  float: left;
+}
+.orderWrap .item .topBox .leftBox .img{
+	width: 66rpx;
+	height: 66rpx;
+	border-radius: 10rpx;
+}
+.orderWrap .item .topBox .rightBox{
+  margin-left: 85rpx;
+}
+.orderWrap .item .topBox .rightBox .nameBox{
+  height: 30rpx;
+  line-height: 30rpx;
+}
+.orderWrap .item .topBox .rightBox .nameBox .status{
+	font-family: PingFangSC-Regular;
+	font-size: 24rpx;
+  height: 30rpx;
+  line-height: 30rpx;
+	color: #000;
+  float: right;
+}
+.orderWrap .item .topBox .rightBox .nameBox .name{
+	font-family: PingFangSC-Medium;
+	font-size: 30rpx;
+  height: 30rpx;
+  line-height: 30rpx;
+	color: #000;
+  max-width: 400rpx;
+  display: inline-block;
+}
+.orderWrap .item .topBox .rightBox .time{
+	font-family: PingFangSC-Regular;
+	font-size: 22rpx;
+  height: 30rpx;
+  line-height: 30rpx;
+	color: #999;
+  padding: 14rpx 0 26rpx;
+	border-bottom: solid 1rpx #f5f5f5;
+}
+.orderWrap .item .topBox .rightBox .shop{
+	font-family: PingFangSC-Regular;
+	font-size: 24rpx;
+	color: #999;
+  height: 30rpx;
+  line-height: 30rpx;
+  padding: 40rpx 0;
+}
+.orderWrap .item .topBox .rightBox .shop .price{
+	font-family: PingFangSC-Medium;
+	font-size: 24rpx;
+	color: #000;
+  height: 30rpx;
+  line-height: 30rpx;
+  float: right;
+}
+.orderWrap .item .bottomBox{
+  height: 100rpx;
+  line-height: 100rpx;
+	border-top: solid 1rpx #f5f5f5;
+}
+.orderWrap .item .bottomBox .btn{
+	border-radius: 10rpx;
+	border: solid 1rpx #999;
+  padding: 0 20rpx;
+	height: 64rpx;
+  line-height: 64rpx;
+  text-align: center;
+	font-family: PingFangSC-Regular;
+	font-size: 28rpx;
+	color: #363636;
+  margin: 18rpx 0 0 20rpx;
+}
+.orderWrap .item .bottomBox .btn.colorBtn{
+	border: solid 1rpx #ff603e;
+	color: #ff855f;
+}

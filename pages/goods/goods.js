@@ -392,7 +392,47 @@ Page({
     shopcartListMask: false,
     ruleMask: false,
     curAddFood: null,
-    ruleChoose: {}
+    ruleChoose: {},
+    tabClass: "one",
+    gonggaoMask: false,
+    ruleMaskAni: ""
+    // shopDetailMask: true
+  },
+  // 打开/关闭公告
+  toggGonggaoMask () {
+    if (!this.data.gonggaoMask) {
+      this.setData({
+        gonggaoMask: true
+      })
+      let animation = wx.createAnimation({
+        duration: 500,
+        timingFunction: 'ease'
+      });
+      animation.translateY(0).step()
+      this.setData({
+        ruleMaskAni: animation.export()
+      })
+    } else {
+      let animation = wx.createAnimation({
+        duration: 500,
+        timingFunction: 'ease'
+      });
+      animation.translateY("100%").step()
+      this.setData({
+        ruleMaskAni: animation.export()
+      })
+      setTimeout(() => {
+        this.setData({
+          gonggaoMask: false
+        })
+      }, 500)  
+    }
+  },
+  // 选择点餐/商家信息
+  chooseTabClass(e) {
+    this.setData({
+      tabClass: e.currentTarget.dataset.id
+    })
   },
   // 选择商品规格
   chooseRuleType(e) {
@@ -632,9 +672,8 @@ Page({
   //結算
   pay() {
     if (this.data.totalCount) {
-      let resultType = "success";
       wx.redirectTo({
-        url: '../goods/pay/pay?resultType=' + resultType
+        url: '../orderInfo/orderInfo/'
       })
     }
   },

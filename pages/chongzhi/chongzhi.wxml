@@ -1,0 +1,48 @@
+<!--pages/chongzhi/chongzhi.wxml-->
+<view class="chongzhiWrap">
+  <van-row class="chongzhiBox" gutter="10">
+    <van-col span="8">
+      <view class="itemBox {{ type === 'one' ? 'active' : '' }}" bindtap="chooseType" data-id="one">
+        <view class="oneText">充100元</view>
+        <view class="twoText">送20元</view>
+      </view>
+    </van-col>
+    <van-col span="8">
+      <view class="itemBox {{ type === 'two' ? 'active' : '' }}" bindtap="chooseType" data-id="two">
+        <view class="oneText">充300元</view>
+        <view class="twoText">送80元</view>
+      </view>
+    </van-col>
+    <van-col span="8">
+      <view class="itemBox">
+        <view class="oneText">充500元</view>
+        <view class="twoText">送150元</view>
+      </view>
+    </van-col>
+  </van-row>
+  <van-row class="chongzhiBox" gutter="10">
+    <van-col span="8">
+      <view class="itemBox">
+        <view class="oneText">充800元</view>
+        <view class="twoText">送180元</view>
+      </view>
+    </van-col>
+    <van-col span="8">
+      <view class="itemBox">
+        <view class="oneText">充1000元</view>
+        <view class="twoText">送240元</view>
+      </view>
+    </van-col>
+    <van-col span="8">
+      <view class="itemBox">
+        <view class="oneText">充2000元</view>
+        <view class="twoText">送700元</view>
+      </view>
+    </van-col>
+  </van-row>
+  <view class="addKefuBOx">
+    <image class="weCode" src="../../images/weCode.png"></image>
+    <view class="text">扫码添加客服微信，进行充值~</view>
+    <view class="copyBtn">一键复制微信号</view>
+  </view>
+</view>
