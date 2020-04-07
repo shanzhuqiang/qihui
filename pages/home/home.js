@@ -8,6 +8,8 @@ Page({
    */
   data: {
     userInfo: null,
+    listData: [],
+    sortType: "distance",
     address:'东海水晶城蓝钻东海水晶城蓝钻',
     bannerImg: ["../../images/banner.png", "../../images/banner.png"]
   },
@@ -16,7 +18,40 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function () {
-    console.log("onLoad")
+    this.getList()
+  },
+  getList() {
+    // 筛选类型 ‘distance’.距离最近 ‘price’: 价格优先 ‘sale’: 销量最高
+    wx.request({
+      url: app.globalData.baseUrl + `/Store/storeList.html`,
+      header: {
+        Authorization: app.globalData.auth_code
+      },
+      data: {
+        lat: app.globalData.locationObj.latitude,
+        lng: app.globalData.locationObj.longitude,
+        type: this.data.sortType
+      },
+      method: 'POST',
+      success: (res) => {
+        this.setData({
+          listData: res.data.bizobj.data
+        })
+      },
+      fail: (res) => {
+        wx.showToast({
+          icon: 'none',
+          title: '网络请求失败',
+        })
+      }
+    })
+  },
+  // 选择排序类型
+  chooseType(e) {
+    this.setData({
+      sortType: e.currentTarget.dataset.type
+    })
+    this.getList()
   },
   goShoper() {
     wx.navigateTo({
@@ -55,7 +90,6 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-    console.log("onReady")
   },
 
   /**
@@ -87,17 +121,15 @@ Page({
         })
       }
     }
-    console.log("onShow")
+    console.log(1233123, this.data.userInfo)
   },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
   onHide: function () {
-    console.log("onHide")
 
   },
-
   /**
    * 生命周期函数--监听页面卸载
    */

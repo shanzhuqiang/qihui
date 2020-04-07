@@ -26,13 +26,13 @@
   </view>
   <!-- main -->
   <view class="sortBox">
-    <view class="sortText active">距离最近</view>
-    <view class="sortText">价格优先</view>
-    <view class="sortText">销量最高</view>
+    <view class="sortText {{ sortType === 'distance' ? 'active' : '' }}" bindtap="chooseType" data-type="distance">距离最近</view>
+    <view class="sortText {{ sortType === 'price' ? 'active' : '' }}" bindtap="chooseType" data-type="price">价格优先</view>
+    <view class="sortText {{ sortType === 'sale' ? 'active' : '' }}" bindtap="chooseType" data-type="sale">销量最高</view>
   </view>
   <view class="mainBox">
-    <view class="mainBlock" bindtap="goShoper">
-      <image class="img" src="../../images/img.png"></image>
+    <view class="mainBlock" bindtap="goShoper" wx:for="{{ listData }}">
+      <image class="img" src="{{ item.logo }}"></image>
       <view class="rightBox">
         <view class="name">衢州土菜馆</view>
         <view class="second">

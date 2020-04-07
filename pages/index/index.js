@@ -25,12 +25,12 @@ Page({
       success: (res) => {
         console.log(1, res)
         app.globalData.locationObj = res
-        // wx.switchTab({
-        //   url: '../home/home',
-        // })
         wx.switchTab({
-          url: '../my/my',
+          url: '../home/home',
         })
+        // wx.switchTab({
+        //   url: '../my/my',
+        // })
         // wx.redirectTo({
         //   url: '../loginPhone/loginPhone',
         // })
