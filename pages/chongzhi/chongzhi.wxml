@@ -1,42 +1,10 @@
 <!--pages/chongzhi/chongzhi.wxml-->
 <view class="chongzhiWrap">
-  <van-row class="chongzhiBox" gutter="10">
-    <van-col span="8">
-      <view class="itemBox {{ type === 'one' ? 'active' : '' }}" bindtap="chooseType" data-id="one">
-        <view class="oneText">充100元</view>
-        <view class="twoText">送20元</view>
-      </view>
-    </van-col>
-    <van-col span="8">
-      <view class="itemBox {{ type === 'two' ? 'active' : '' }}" bindtap="chooseType" data-id="two">
-        <view class="oneText">充300元</view>
-        <view class="twoText">送80元</view>
-      </view>
-    </van-col>
-    <van-col span="8">
-      <view class="itemBox">
-        <view class="oneText">充500元</view>
-        <view class="twoText">送150元</view>
-      </view>
-    </van-col>
-  </van-row>
-  <van-row class="chongzhiBox" gutter="10">
-    <van-col span="8">
-      <view class="itemBox">
-        <view class="oneText">充800元</view>
-        <view class="twoText">送180元</view>
-      </view>
-    </van-col>
-    <van-col span="8">
-      <view class="itemBox">
-        <view class="oneText">充1000元</view>
-        <view class="twoText">送240元</view>
-      </view>
-    </van-col>
-    <van-col span="8">
-      <view class="itemBox">
-        <view class="oneText">充2000元</view>
-        <view class="twoText">送700元</view>
+  <van-row class="chongzhiBox" gutter="10" wx:for="{{ chargeList }}" wx:key="index">
+    <van-col span="8" wx:for="{{ item }}" wx:key="index">
+      <view class="itemBox {{ type === item.id ? 'active' : '' }}" bindtap="chooseType" data-id="{{ item.id }}">
+        <view class="oneText">充{{ item.pay_num }}元</view>
+        <view class="twoText">送{{ item.bonus_num }}元</view>
       </view>
     </van-col>
   </van-row>

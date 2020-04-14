@@ -31,7 +31,7 @@ Page({
           codeBtn: false,
           codeNum: 60
         })
-        // this.getCodeRequest(this.data.phone)
+        this.getCodeRequest(this.data.phone)
         let timer = setInterval(() => {
           if (this.data.codeNum === 0) {
             clearInterval(timer)
@@ -52,16 +52,42 @@ Page({
         content: "请输入正确的手机号"
       });
     }
-
   },
   // 获取验证码请求
   getCodeRequest(phone) {
-
+    wx.request({
+      url: app.globalData.baseUrl + `/Sms/sendProfileSms.html`,
+      header: {
+        Authorization: app.globalData.auth_code
+      },
+      data: {
+        mobile: phone
+      },
+      method: 'POST',
+      success: (res) => {
+        if (res.data.error_code === 0) {
+          wx.showToast({
+            icon: "none",
+            title: "验证码已发送"
+          });
+        } else {
+          wx.showModal({
+            title: '提示',
+            showCancel: false,
+            content: res.data.msg
+          })
+        }
+      },
+      fail: (res) => {
+        wx.showToast({
+          icon: 'none',
+          title: '网络请求失败',
+        })
+      }
+    })
   },
   // 登录校验
   formLogin(e) {
-    this.loginNow(data);
-    return false
     let data = e.detail.value;
     if (!(/^1[3|4|5|6|7|8|9]\d{9}$/.test(data.phone))) {
       wx.showModal({
@@ -83,10 +109,48 @@ Page({
       this.loginNow(data);
     }
   },
-  // 注册
+  // 登录
   loginNow(data) {
-    wx.navigateTo({
-      url: '../home/home',
+    wx.request({
+      url: app.globalData.baseUrl + `/Login/mobileLogin.html`,
+      header: {
+        Authorization: app.globalData.auth_code
+      },
+      data: {
+        mobile: data.phone,
+        sms_code: data.code
+      },
+      method: 'POST',
+      success: (res) => {
+        wx.hideLoading();
+        if (res.data.error_code === 0) {
+          app.globalData.bind_mobile = 1
+          wx.showToast({
+            title: "登录成功",
+            mask: true,
+            icon: "success",
+            success: () => {
+              setTimeout(() => {
+                wx.switchTab({
+                  url: '../home/home',
+                })
+              }, 1500);
+            }
+          });
+        } else {
+          wx.showModal({
+            title: '提示',
+            showCancel: false,
+            content: res.data.msg
+          })
+        }
+      },
+      fail: (res) => {
+        wx.showToast({
+          icon: 'none',
+          title: '网络请求失败',
+        })
+      }
     })
   },
   /**

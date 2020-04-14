@@ -15,8 +15,29 @@ page{
 	border-radius: 0 0 60rpx 60rpx;
   position: relative;
 }
+.myWrap .bgBox .bgTop .qishouBox{
+	height: 34rpx;
+  padding: 0 14rpx;
+  line-height: 34rpx;
+	background-image: linear-gradient(77deg, 
+		#8f65ff 0%, 
+		#657eff 100%), 
+	linear-gradient(
+		#ffc600, 
+		#ffc600);
+	background-blend-mode: normal, 
+		normal;
+	border-radius: 4rpx;
+	font-family: PingFangSC-Regular;
+	font-size: 20rpx;
+	color: #fff;
+  position: absolute;
+  left: 180rpx;
+  top: 116rpx;
+}
 .myWrap .bgBox .bgTop .touxiangBox{
   width: 110rpx;
+  height: 110rpx;
   line-height: 110rpx;
 	background-color: #cecece;
   border: 4rpx solid #fff;

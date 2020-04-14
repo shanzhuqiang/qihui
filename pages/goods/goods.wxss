@@ -555,39 +555,24 @@ page{
   line-height: 32rpx;
 }
 /* 选择规格 */
-.goodsWrap .chooseRule{
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  top: 0;
-  background: rgba(0, 0, 0, 0.5);
-  z-index: 51
-}
-.goodsWrap .chooseRule .ruleContent{
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  transform: translateY(100%);
-  background: #fff;
+.goodsWrap .ruleContent{
   max-height: 900rpx;
   padding-bottom: 50rpx;
 }
-.goodsWrap .chooseRule .ruleContent .topBox{
+.goodsWrap .ruleContent .topBox{
   padding: 30rpx;
   height: 190rpx;
 }
-.goodsWrap .chooseRule .ruleContent .topBox .icon{
+.goodsWrap .ruleContent .topBox .icon{
   width: 190rpx;
   height: 190rpx;
   float: left;
   display: block;
 }
-.goodsWrap .chooseRule .ruleContent .topBox .content{
+.goodsWrap .ruleContent .topBox .content{
   margin-left: 210rpx;
 }
-.goodsWrap .chooseRule .ruleContent .topBox .cha{
+.goodsWrap .ruleContent .topBox .cha{
   font-size: 20rpx;
   padding: 10rpx;
   border: 1rpx solid #969696;
@@ -597,7 +582,7 @@ page{
   right: 20rpx;
   top: 30rpx;
 }
-.goodsWrap .chooseRule .ruleContent .topBox .content .name{
+.goodsWrap .ruleContent .topBox .content .name{
 	font-family: PingFangSC-Semibold;
 	font-size: 30rpx;
 	color: #333;
@@ -606,7 +591,7 @@ page{
   white-space: nowrap;
   padding-right: 30rpx;
 }
-.goodsWrap .chooseRule .ruleContent .topBox .content .des{
+.goodsWrap .ruleContent .topBox .content .des{
 	font-family: PingFangSC-Regular;
 	font-size: 22rpx;
 	color: #5d5d5d;
@@ -615,19 +600,19 @@ page{
   white-space: nowrap;
   padding-top: 20rpx;
 }
-.goodsWrap .chooseRule .ruleContent .topBox .content .price{
+.goodsWrap .ruleContent .topBox .content .price{
 	font-family: PingFangSC-Semibold;
 	font-size: 36rpx;
 	color: #ff4240;
   padding-top: 50rpx;
 }
-.goodsWrap .chooseRule .ruleContent .ruleBox .title{
+.goodsWrap .ruleContent .ruleBox .title{
 	font-family: PingFangSC-Regular;
 	font-size: 26rpx;
 	color: #333;
   padding: 15rpx 0 30rpx 30rpx
 }
-.goodsWrap .chooseRule .ruleContent .ruleBox  .ruleItemBox .ruleItem{
+.goodsWrap .ruleContent .ruleBox  .ruleItemBox .ruleItem{
 	height: 66rpx;
   line-height: 66rpx;
 	background-color: #fff;
@@ -640,11 +625,11 @@ page{
   padding: 0 40rpx;
   margin: 0 0 20rpx 30rpx;
 }
-.goodsWrap .chooseRule .ruleContent .ruleBox  .ruleItemBox .ruleItem.active{
+.goodsWrap .ruleContent .ruleBox  .ruleItemBox .ruleItem.active{
 	background-color: #fff9fc;
 	border: solid 2rpx #f3475f;
 }
-.goodsWrap .chooseRule .ruleContent .chooseBtn{
+.goodsWrap .ruleContent .chooseBtn{
 	width: 670rpx;
 	height: 80rpx;
   line-height: 80rpx;
@@ -658,43 +643,10 @@ page{
   margin-top: 30rpx;
 }
 /* 公告 */
-.goodsWrap .gonggaoBox{
-  position: fixed;
-  left: 0;
-  bottom: 0;
-  right: 0;
-  top: 0;
-  background: rgba(0, 0, 0, 0.5);
-  z-index: 51
+.goodsWrap .gonggaoContent{
+  padding: 0 30rpx;
 }
-.goodsWrap .gonggaoBox .gonggaoContent{
-  position: absolute;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  transform: translateY(100%);
-  background: #fff;
-  height: 300rpx;
-  padding: 40rpx 0 50rpx;
-}
-.goodsWrap .gonggaoBox .gonggaoContent .title{
-	font-family: PingFangSC-Semibold;
-	font-size: 30rpx;
-	color: #333;
-  text-align: center;
-  position: relative;
-}
-.goodsWrap .gonggaoBox .gonggaoContent .title .cha{
-  font-size: 20rpx;
-  padding: 10rpx;
-  border: 1rpx solid #969696;
-  color: #969696;
-  border-radius: 50%;
-  position: absolute;
-  right: 20rpx;
-  top: -6rpx;
-}
-.goodsWrap .gonggaoBox .gonggaoContent .content{
+.goodsWrap .gonggaoContent .content{
 	font-family: PingFangSC-Regular;
 	font-size: 24rpx;
 	color: #444;

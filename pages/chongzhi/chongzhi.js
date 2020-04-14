@@ -1,11 +1,13 @@
 // pages/chongzhi/chongzhi.js
+const app = getApp()
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    type: "one"
+    type: "",
+    chargeList: []
   },
   // 选择金额
   chooseType(e) {
@@ -17,9 +19,46 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.getChargeList()
   },
-
+  // 获取充值列表
+  getChargeList (){
+    wx.request({
+      url: app.globalData.baseUrl + `/Cash/chargeList.html`,
+      header: {
+        Authorization: app.globalData.auth_code
+      },
+      method: 'POST',
+      success: (res) => {
+        if (res.data.error_code === 0) {
+          let chargeList = res.data.bizobj.charge_list
+          this.setData({
+            type: chargeList[0].id
+          })
+          let result = [];
+          for (let i = 0; i < chargeList.length; i += 3) {
+            result.push(chargeList.slice(i, i + 3));
+          }
+          console.log(111, result)
+          this.setData({
+            chargeList: result
+          })
+        } else {
+          wx.showModal({
+            title: '提示',
+            showCancel: false,
+            content: res.data.msg
+          })
+        }
+      },
+      fail: (res) => {
+        wx.showToast({
+          icon: 'none',
+          title: '网络请求失败',
+        })
+      }
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

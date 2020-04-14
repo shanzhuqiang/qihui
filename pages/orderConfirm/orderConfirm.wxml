@@ -1,48 +1,44 @@
 <!--pages/orderConfirm/orderConfirm.wxml-->
 <view class="orderConfirmWrap">
   <view class="rowOne" bindtap="goQucanName">
-    <text>请输入取餐人信息</text>
+    <text wx:if="{{ qucanData }}">{{ qucanData.name }}</text>
+    <text wx:if="{{ qucanData }}" style="margin-left: 20rpx;">{{ qucanData.phone }}</text>
+    <text wx:if="{{ !qucanData }}">请输入取餐人信息</text>
     <image class="next" src="../../images/next.png"></image>
   </view>
   <view class="rowTwo">
     <view class="first">
       <image class="local2" src="../../images/local2.png"></image>
       <view class="content">
-        <view class="address">浙江省杭州市余杭区乔司街道东海水景城XXX街道XXX号</view> 
-        <view class="juli">距您1.5km</view>
+        <view class="address">{{ shopInfo.address }}</view> 
+        <view class="juli">距您{{ shopInfo.distance }}km</view>
       </view>
       <view class="typeBtn">
-        <view class="active" style="margin-left: 6rpx;">堂食</view>
-        <view style="margin-right: 6rpx;">外带</view>
+        <view class="{{ eatType === 1 ? 'active' : '' }}" style="margin-left: 6rpx;">堂食</view>
+        <view class="{{ eatType === 2 ? 'active' : '' }}" style="margin-right: 6rpx;">外带</view>
       </view>
     </view>
-    <view class="second"bindtap="timeTigger">
+    <view class="second" bindtap="timeTigger">
       <text>到店时间</text>
       <view class="fr">
-        <text>立即到店</text>
+        <text>{{ arriveShow }}</text>
         <image class="next" src="../../images/next.png"></image>
       </view>
     </view>
   </view>
   <view class="rowMain" >
-    <view class="title">XXXX菜馆名称</view>
-    <view class="rowItem">
+    <view class="title">{{ shopInfo.name }}</view>
+    <view class="rowItem" wx:for="{{ goods.goodList }}" wx:key="index">
       <image class="icon" src="../../images/img.png"></image>
-      <view class="name">肉末豆腐</view>
-      <view class="num">x1</view>
-      <view class="price">￥9.9</view>
+      <view class="name">{{ item.name }}</view>
+      <view class="num">x{{ item.num }}</view>
+      <view class="price">￥{{ item.total_price }}</view>
     </view>
-    <view class="rowItem">
-      <image class="icon" src="../../images/img.png"></image>
-      <view class="name">肉末豆腐肉末豆腐肉末豆腐肉末豆腐肉末豆腐肉末豆腐</view>
-      <view class="num">x1</view>
-      <view class="price">￥9.9</view>
-    </view>
-    <view class="rowItemLast">
+    <!-- <view class="rowItemLast">
       <view class="baozhuang fl">包装</view>
       <view class="fl">包装费</view>
       <view class="fr">￥4</view>
-    </view>
+    </view> -->
   </view>
   <view class="rowOne" bindtap="zhifuTigger">
     <text>支付方式</text>
@@ -63,16 +59,16 @@
   <view style="height: 120rpx;"></view>
   <!-- bottom Total -->
   <view class="bottomTotal">
-    <view class="total">合计：<text>￥27.04</text></view>
-    <view class="payNow">去支付</view>
+    <view class="total">合计：<text>￥{{ goods.price }}</text></view>
+    <view class="payNow" bindtap="goToPay">去支付</view>
   </view>
   <!-- 备注 -->
   <van-action-sheet show="{{ beizhuMaxk }}" title="订单备注" bind:close="beizhuTigger">
     <view class="beizhuBox">
       <view class="beizhuContent">
-        <textarea class="textareaIpt" placeholder-style="font-size:24rpx;color: #999" maxlength="50" placeholder="请输入备注内容" />
+        <textarea class="textareaIpt" placeholder-style="font-size:24rpx;color: #999" maxlength="50" bindinput="tipsChange" placeholder="请输入备注内容" />
       </view>
-      <view class="confirmBtn">确定</view>
+      <view class="confirmBtn" bindtap="beizhuTigger">确定</view>
     </view>
   </van-action-sheet>
   <!-- 支付方式 -->
@@ -81,7 +77,7 @@
       <view class="itemBox">
         <view class="item" bindtap="payTypeChoose" data-id="yue">
           <image class="img" src="../../images/yue.png"></image>
-          <view class="name">余额支付<text>(剩余：20.38)</text></view>
+          <view class="name">余额支付<text>(剩余：{{ user_money }})</text></view>
           <view wx:if="{{ payType === 'yue' }}" class="gou iconfont icon-gou"></view>
         </view>
         <view class="item" bindtap="payTypeChoose" data-id="wechat">
@@ -96,11 +92,13 @@
   <van-action-sheet show="{{ timeMaxk }}" title="请选择到店时间" bind:close="timeTigger" safe-area-inset-bottom="{{false}}">
     <view class="timeBox">
       <view class="leftBox">
-        <view class="item">今日（周三）</view>
+        <view class="item {{ weekStr === index ? 'active' : '' }}" wx:for="{{ weekShow }}" wx:key="index" bindtap="chooseDay" data-id="{{ index }}">{{ item }}</view>
       </view>
       <view class="rightBox">
-        <view class="item" bindtap="chooseTime" data-id="0">立即到店<van-icon wx:if="{{ arriveTime == 0 }}" class="okIcon" name="checked" size="40rpx" color="#52d669"/></view>
-        <view class="item" bindtap="chooseTime" data-id="1">16:30<van-icon wx:if="{{ arriveTime == 1 }}" class="okIcon" name="checked" size="40rpx" color="#52d669"/></view>
+        <scroll-view scroll-y="true" style="height: 100%">
+          <view class="item" bindtap="chooseTime" data-id="0" wx:if="{{ weekStr === 0 }}">立即到店<van-icon wx:if="{{ arriveTime == 0 }}" class="okIcon" name="checked" size="40rpx" color="#52d669"/></view>
+          <view class="item" bindtap="chooseTime" data-id="{{ item }}" wx:for="{{ arriveTimeArrayShow }}" wx:key="index">{{ item }}<van-icon wx:if="{{ arriveTime == item }}" class="okIcon" name="checked" size="40rpx" color="#52d669"/></view>
+        </scroll-view>
       </view>
     </view>
   </van-action-sheet>

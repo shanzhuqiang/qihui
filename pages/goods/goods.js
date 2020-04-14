@@ -1,390 +1,11 @@
 // pages/goods/goods.js
+const app = getApp()
 Page({
   data: {
+    store_id: "",
     scrollTop: 0,
-    goods: [
-      {
-        "name": "热销榜",
-        "id": 1,
-          "foods": [
-            {
-              "id": 11,
-              "name": "皮蛋瘦肉粥",
-              "description": "咸粥咸粥咸粥咸粥咸粥咸粥咸粥咸粥咸粥咸粥咸粥咸粥咸粥咸粥咸粥咸粥咸粥咸粥咸粥咸粥咸粥咸粥咸粥咸粥咸粥咸粥咸粥咸粥咸粥咸粥咸粥咸粥咸粥咸粥咸粥咸粥咸粥咸粥",
-              "other": 20,
-              "price": 15,
-              "count": 0,
-              "image": "http://fuss10.elemecdn.com/c/cd/c12745ed8a5171e13b427dbc39401jpeg.jpeg?imageView2/1/w/114/h/114",
-              "rule": [
-                {
-                  "id": 111,
-                  "name": "规格",
-                  "type": [{ "id": 1111, "price": 1, "name": "粗" }, { "id": 1112, "price": 2, "name": "细" }, { "id": 1113, "price": 3, "name": "宽" }, { "id": 1114, "price": 4, "name": "长" }]
-                },
-                {
-                  "id": 112,
-                  "name": "尺码",
-                  "type": [{ "id": 1121, "price": 1, "name": "原汤" }, { "id": 1122, "price": 2, "name": "微辣" }, { "id": 1123, "price": 3, "name": "中辣" }, { "id": 1124, "price": 4, "name": "重辣" }]
-                }
-              ]
-            },
-            {
-              "id": 12,
-              "name": "扁豆焖面",
-              "description": "扁豆焖面",
-              "other": 14,
-              "price": 15,
-              "count": 0,
-              "image": "http://fuss10.elemecdn.com/c/6b/29e3d29b0db63d36f7c500bca31d8jpeg.jpeg?imageView2/1/w/114/h/114",
-              "rule": [
-                {
-                  "id": 121,
-                  "name": "规格2",
-                  "type": [{ "id": 1211, "price": 21, "name": "粗2" }, { "id": 1212, "price": 22, "name": "细2" }, { "id": 1213, "price": 23, "name": "宽2" }, { "id": 1214, "price": 24, "name": "长2" }]
-                },
-                {
-                  "id": 122,
-                  "name": "尺码",
-                  "type": [{ "id": 1221, "price": 11, "name": "原汤2" }, { "id": 1222, "price": 12, "name": "微辣2" }, { "id": 1223, "price": 13, "name": "中辣2" }, { "id": 1224, "price": 14, "name": "重辣2" }]
-                }
-              ]
-            },
-            {
-              "id": 13,
-              "name": "皮蛋瘦肉粥",
-              "description": "咸粥",
-              "other": 20,
-              "price": 15,
-              "count": 0,
-              "image": "http://fuss10.elemecdn.com/c/cd/c12745ed8a5171e13b427dbc39401jpeg.jpeg?imageView2/1/w/114/h/114",
-              "rule": []
-            },
-            {
-              "id": 14,
-              "name": "扁豆焖面",
-              "description": "扁豆焖面",
-              "other": 14,
-              "price": 15,
-              "count": 0,
-              "image": "http://fuss10.elemecdn.com/c/6b/29e3d29b0db63d36f7c500bca31d8jpeg.jpeg?imageView2/1/w/114/h/114",
-              "rule": []
-            },
-            {
-              "id": 15,
-              "name": "皮蛋瘦肉粥",
-              "description": "咸粥",
-              "other": 20,
-              "price": 15,
-              "count": 0,
-              "image": "http://fuss10.elemecdn.com/c/cd/c12745ed8a5171e13b427dbc39401jpeg.jpeg?imageView2/1/w/114/h/114",
-              "rule": []
-            },
-            {
-              "id": 16,
-              "name": "扁豆焖面",
-              "description": "扁豆焖面",
-              "other": 14,
-              "price": 15,
-              "count": 0,
-              "image": "http://fuss10.elemecdn.com/c/6b/29e3d29b0db63d36f7c500bca31d8jpeg.jpeg?imageView2/1/w/114/h/114",
-              "rule": []
-            },
-            {
-              "id": 17,
-              "name": "皮蛋瘦肉粥",
-              "description": "咸粥",
-              "other": 20,
-              "price": 15,
-              "count": 0,
-              "image": "http://fuss10.elemecdn.com/c/cd/c12745ed8a5171e13b427dbc39401jpeg.jpeg?imageView2/1/w/114/h/114",
-              "rule": []
-            },
-            {
-              "id": 18,
-              "name": "扁豆焖面",
-              "description": "扁豆焖面",
-              "other": 14,
-              "price": 15,
-              "count": 0,
-              "image": "http://fuss10.elemecdn.com/c/6b/29e3d29b0db63d36f7c500bca31d8jpeg.jpeg?imageView2/1/w/114/h/114",
-              "rule": []
-            }
-        ]
-      },
-      {
-        "name": "单人精彩套餐",
-        "id": 2,
-        "foods": [
-          {
-            "id": 21,
-            "name": "红枣山药粥套餐",
-            "description": "红枣山药糙米粥,素材包,爽口莴笋丝,四川泡菜或八宝酱菜,配菜可备注",
-            "other": 36,
-            "price": 29,
-            "count": 0,
-            "image": "http://fuss10.elemecdn.com/6/72/cb844f0bb60c502c6d5c05e0bddf5jpeg.jpeg?imageView2/1/w/114/h/114"
-          }
-        ]
-      },
-      {
-        "name": "冰爽饮品限时特惠",
-        "id": 3,
-        "foods": [
-          {
-            "id": 31,
-            "name": "VC无限橙果汁",
-            "description": "VC无限橙果汁VC无限橙果汁VC无限橙果汁",
-            "other": 10,
-            "price": 8,
-            "count": 0,
-            "image": "http://fuss10.elemecdn.com/e/c6/f348e811772016ae24e968238bcbfjpeg.jpeg?imageView2/1/w/114/h/114"
-          }
-        ]
-      },
-      {
-        "name": "精选热菜",
-        "id": 4,
-        "foods": [
-          {
-            "id": 41,
-            "name": "娃娃菜炖豆腐",
-            "price": 17,
-            "other": 20,
-            "description": "",
-            "count": 0,
-            "image": "http://fuss10.elemecdn.com/d/2d/b1eb45b305635d9dd04ddf157165fjpeg.jpeg?imageView2/1/w/114/h/114"
-          },
-          {
-            "id": 42,
-            "name": "手撕包菜",
-            "price": 16,
-            "oldPrice": 19,
-            "description": "",
-            "count": 0,
-            "image": "http://fuss10.elemecdn.com/9/c6/f3bc84468820121112e79583c24efjpeg.jpeg?imageView2/1/w/114/h/114"
-          },
-          {
-            "id": 43,
-            "name": "娃娃菜炖豆腐",
-            "price": 17,
-            "other": 20,
-            "description": "",
-            "count": 0,
-            "image": "http://fuss10.elemecdn.com/d/2d/b1eb45b305635d9dd04ddf157165fjpeg.jpeg?imageView2/1/w/114/h/114"
-          },
-          {
-            "id": 44,
-            "name": "手撕包菜",
-            "price": 16,
-            "oldPrice": 19,
-            "description": "",
-            "count": 0,
-            "image": "http://fuss10.elemecdn.com/9/c6/f3bc84468820121112e79583c24efjpeg.jpeg?imageView2/1/w/114/h/114"
-          }
-        ]
-      },
-      {
-        "name": "爽口凉菜",
-        "id": 5,
-        "foods": [
-          {
-            "id": 51,
-            "name": "八宝酱菜",
-            "price": 4,
-            "other": 9,
-            "description": "",
-            "count": 0,
-            "image": "http://fuss10.elemecdn.com/9/b5/469d8854f9a3a03797933fd01398bjpeg.jpeg?imageView2/1/w/114/h/114"
-          },
-          {
-            "id": 52,
-            "name": "拍黄瓜",
-            "price": 9,
-            "other": 12,
-            "description": "",
-            "count": 0,
-            "image": "http://fuss10.elemecdn.com/6/54/f654985b4e185f06eb07f8fa2b2e8jpeg.jpeg?imageView2/1/w/114/h/114"
-          }
-        ]
-      },
-      {
-        "name": "精选套餐",
-        "id": 6,
-        "foods": [
-          {
-            "id": 61,
-            "name": "红豆薏米粥套餐",
-            "price": 37,
-            "other": 40,
-            "description": "红豆薏米粥,三鲜干蒸烧卖,拍黄瓜",
-            "count": 0,
-            "image": "http://fuss10.elemecdn.com/f/49/27f26ed00c025b2200a9ccbb7e67ejpeg.jpeg?imageView2/1/w/114/h/114"
-          },
-          {
-            "id": 62,
-            "name": "皮蛋瘦肉粥套餐",
-            "price": 37,
-            "other": 40,
-            "description": "红豆薏米粥,三鲜干蒸烧卖,拍黄瓜",
-            "count": 0,
-            "image": "http://fuss10.elemecdn.com/8/96/f444a8087f0e940ef264617f9d98ajpeg.jpeg?imageView2/1/w/114/h/114"
-          },
-          {
-            "id": 63,
-            "name": "红豆薏米粥套餐",
-            "price": 37,
-            "other": 40,
-            "description": "红豆薏米粥,三鲜干蒸烧卖,拍黄瓜",
-            "count": 0,
-            "image": "http://fuss10.elemecdn.com/f/49/27f26ed00c025b2200a9ccbb7e67ejpeg.jpeg?imageView2/1/w/114/h/114"
-          }
-        ]
-      },
-      {
-        "name": "果拼果汁",
-        "id": 7,
-        "foods": [
-          {
-            "id": 71,
-            "name": "蜜瓜圣女萝莉杯",
-            "price": 6,
-            "other": 10,
-            "description": "",
-            "count": 0,
-            "image": "http://fuss10.elemecdn.com/b/5f/b3b04c259d5ec9fa52e1856ee50dajpeg.jpeg?imageView2/1/w/114/h/114"
-          },
-          {
-            "id": 72,
-            "name": "蜜瓜圣女萝莉杯",
-            "price": 6,
-            "other": 10,
-            "description": "",
-            "count": 0,
-            "image": "http://fuss10.elemecdn.com/b/5f/b3b04c259d5ec9fa52e1856ee50dajpeg.jpeg?imageView2/1/w/114/h/114"
-          },
-          {
-            "id": 73,
-            "name": "蜜瓜圣女萝莉杯",
-            "price": 6,
-            "other": 10,
-            "description": "",
-            "count": 0,
-            "image": "http://fuss10.elemecdn.com/b/5f/b3b04c259d5ec9fa52e1856ee50dajpeg.jpeg?imageView2/1/w/114/h/114"
-          }
-        ]
-      },
-      {
-        "name": "小吃主食",
-        "id": 8,
-        "foods": [
-          {
-            "id": 81,
-            "name": "扁豆焖面",
-            "price": 14,
-            "other": 16,
-            "description": "",
-            "count": 0,
-            "image": "http://fuss10.elemecdn.com/c/6b/29e3d29b0db63d36f7c500bca31d8jpeg.jpeg?imageView2/1/w/114/h/114"
-          },
-          {
-            "id": 82,
-            "name": "扁豆焖面",
-            "price": 14,
-            "other": 16,
-            "description": "",
-            "count": 0,
-            "image": "http://fuss10.elemecdn.com/c/6b/29e3d29b0db63d36f7c500bca31d8jpeg.jpeg?imageView2/1/w/114/h/114"
-          },
-          {
-            "id": 83,
-            "name": "扁豆焖面",
-            "price": 14,
-            "other": 16,
-            "description": "",
-            "count": 0,
-            "image": "http://fuss10.elemecdn.com/c/6b/29e3d29b0db63d36f7c500bca31d8jpeg.jpeg?imageView2/1/w/114/h/114"
-          },
-          {
-            "id": 84,
-            "name": "扁豆焖面",
-            "price": 14,
-            "other": 16,
-            "description": "",
-            "count": 0,
-            "image": "http://fuss10.elemecdn.com/c/6b/29e3d29b0db63d36f7c500bca31d8jpeg.jpeg?imageView2/1/w/114/h/114"
-          },
-          {
-            "id": 85,
-            "name": "扁豆焖面",
-            "price": 14,
-            "other": 16,
-            "description": "",
-            "count": 0,
-            "image": "http://fuss10.elemecdn.com/c/6b/29e3d29b0db63d36f7c500bca31d8jpeg.jpeg?imageView2/1/w/114/h/114"
-          }
-        ]
-      },
-      {
-        "name": "特色粥品",
-        "id": 9,
-        "foods": [
-          {
-            "id": 91,
-            "name": "皮蛋瘦肉粥",
-            "price": 10,
-            "other": 15,
-            "description": "咸粥",
-            "count": 0,
-            "image": "http://fuss10.elemecdn.com/c/cd/c12745ed8a5171e13b427dbc39401jpeg.jpeg?imageView2/1/w/114/h/114"
-          },
-          {
-            "id": 92,
-            "name": "皮蛋瘦肉粥",
-            "price": 10,
-            "other": 15,
-            "description": "咸粥",
-            "count": 0,
-            "image": "http://fuss10.elemecdn.com/c/cd/c12745ed8a5171e13b427dbc39401jpeg.jpeg?imageView2/1/w/114/h/114"
-          },
-          {
-            "id": 93,
-            "name": "皮蛋瘦肉粥",
-            "price": 10,
-            "other": 15,
-            "description": "咸粥",
-            "count": 0,
-            "image": "http://fuss10.elemecdn.com/c/cd/c12745ed8a5171e13b427dbc39401jpeg.jpeg?imageView2/1/w/114/h/114"
-          },
-          {
-            "id": 94,
-            "name": "皮蛋瘦肉粥",
-            "price": 10,
-            "other": 15,
-            "description": "咸粥",
-            "count": 0,
-            "image": "http://fuss10.elemecdn.com/c/cd/c12745ed8a5171e13b427dbc39401jpeg.jpeg?imageView2/1/w/114/h/114"
-          },
-          {
-            "id": 95,
-            "name": "皮蛋瘦肉粥",
-            "price": 10,
-            "other": 15,
-            "description": "咸粥",
-            "count": 0,
-            "image": "http://fuss10.elemecdn.com/c/cd/c12745ed8a5171e13b427dbc39401jpeg.jpeg?imageView2/1/w/114/h/114"
-          },
-          {
-            "id": 96,
-            "name": "皮蛋瘦肉粥",
-            "price": 10,
-            "other": 15,
-            "description": "咸粥",
-            "count": 0,
-            "image": "http://fuss10.elemecdn.com/c/cd/c12745ed8a5171e13b427dbc39401jpeg.jpeg?imageView2/1/w/114/h/114"
-          }
-        ]
-      }
-    ],
+    shopInfo: {},
+    goods: [],
     toView: 'order0',
     totalPrice: 0,// 总价格
     totalCount: 0, // 总商品数
@@ -392,41 +13,166 @@ Page({
     shopcartListMask: false,
     ruleMask: false,
     curAddFood: null,
+    priceList: {},
     ruleChoose: {},
     tabClass: "one",
     gonggaoMask: false,
-    ruleMaskAni: ""
-    // shopDetailMask: true
+    eatType: 1
   },
-  // 打开/关闭公告
-  toggGonggaoMask () {
-    if (!this.data.gonggaoMask) {
-      this.setData({
-        gonggaoMask: true
-      })
-      let animation = wx.createAnimation({
-        duration: 500,
-        timingFunction: 'ease'
-      });
-      animation.translateY(0).step()
-      this.setData({
-        ruleMaskAni: animation.export()
-      })
-    } else {
-      let animation = wx.createAnimation({
-        duration: 500,
-        timingFunction: 'ease'
-      });
-      animation.translateY("100%").step()
-      this.setData({
-        ruleMaskAni: animation.export()
-      })
-      setTimeout(() => {
-        this.setData({
-          gonggaoMask: false
+  onLoad: function (options) {
+    this.setData({
+      store_id: options.store_id
+    })
+    this.getShopInfo()
+    this.getGoodList()
+  },
+  // 获取商家详情
+  getShopInfo() {
+    wx.request({
+      url: app.globalData.baseUrl + `/Store/storeInfo.html`,
+      header: {
+        Authorization: app.globalData.auth_code
+      },
+      data: {
+        lat: app.globalData.locationObj.latitude,
+        lng: app.globalData.locationObj.longitude,
+        store_id: this.data.store_id
+      },
+      method: 'POST',
+      success: (res) => {
+        if (res.data.error_code === 0) {
+          this.setData({
+            shopInfo: res.data.bizobj.data
+          })
+        } else {
+          wx.showModal({
+            title: '提示',
+            showCancel: false,
+            content: res.data.msg
+          })
+        }
+      },
+      fail: (res) => {
+        wx.showToast({
+          icon: 'none',
+          title: '网络请求失败',
         })
-      }, 500)  
-    }
+      }
+    })
+  },
+  // 获取商品列表
+  getGoodList() {
+    wx.request({
+      url: app.globalData.baseUrl + `/Goods/allGoodsList.html`,
+      header: {
+        Authorization: app.globalData.auth_code
+      },
+      data: {
+        store_id: this.data.store_id
+      },
+      method: 'POST',
+      success: (res) => {
+        if (res.data.error_code === 0) {
+          let data = res.data.bizobj.data
+          data.forEach(el => {
+            el.goods_list.forEach(el2 => {
+              el2["num"] = 0
+            })
+          })
+          this.getCartList(data)
+        } else {
+          wx.showModal({
+            title: '提示',
+            showCancel: false,
+            content: res.data.msg
+          })
+        }
+      },
+      fail: (res) => {
+        wx.showToast({
+          icon: 'none',
+          title: '网络请求失败',
+        })
+      }
+    })
+  },
+  // 获取购物车列表
+  getCartList (data) {
+    wx.request({
+      url: app.globalData.baseUrl + `/Goods/cartList.html`,
+      header: {
+        Authorization: app.globalData.auth_code
+      },
+      data: {
+        store_id: this.data.store_id
+      },
+      method: 'POST',
+      success: (res) => {
+        if (res.data.error_code === 0) {
+          let cartData = res.data.bizobj.data.goodList
+          data.forEach(el => {
+            el.goods_list.forEach(el2 => {
+              cartData.forEach(el3 =>{
+                if (el3.goods_id === el2.id) {
+                  el2["num"] += el3.num
+                }
+              })
+            })
+          })
+          this.setData({
+            carArray: cartData,
+            goods: data
+          })
+          this.calTotalPrice()
+        } else {
+          wx.showModal({
+            title: '提示',
+            showCancel: false,
+            content: res.data.msg
+          })
+        }
+      },
+      fail: (res) => {
+        wx.showToast({
+          icon: 'none',
+          title: '网络请求失败',
+        })
+      }
+    })
+  },
+  // 修改购物车数量后,获取购物车列表
+  editGetCartList () {
+    wx.request({
+      url: app.globalData.baseUrl + `/Goods/cartList.html`,
+      header: {
+        Authorization: app.globalData.auth_code
+      },
+      data: {
+        store_id: this.data.store_id
+      },
+      method: 'POST',
+      success: (res) => {
+        if (res.data.error_code === 0) {
+          let cartData = res.data.bizobj.data.goodList
+          this.setData({
+            carArray: cartData
+          })
+          this.calTotalPrice()
+        } else {
+          wx.showModal({
+            title: '提示',
+            showCancel: false,
+            content: res.data.msg
+          })
+        }
+      },
+      fail: (res) => {
+        wx.showToast({
+          icon: 'none',
+          title: '网络请求失败',
+        })
+      }
+    })
   },
   // 选择点餐/商家信息
   chooseTabClass(e) {
@@ -439,9 +185,9 @@ Page({
     let ruleId = e.currentTarget.dataset.ruleid;
     let typeId = e.currentTarget.dataset.typeid;
     let curAddFood = this.data.curAddFood
-    curAddFood.rule.forEach(el => {
+    curAddFood.specItemList.forEach(el => {
       if (el.id === ruleId) {
-        el.type.forEach(el2 => {
+        el.itemList.forEach(el2 => {
           el2["chooseClass"] = false
           if (el2.id === typeId) {
             el2["chooseClass"] = true
@@ -449,74 +195,51 @@ Page({
         })
       }
     })
-    curAddFood["nowPrice"] = curAddFood["price"]
-    curAddFood["des"] = ""
-    curAddFood.rule.forEach(el => {
-      el.type.forEach(el2 => {
+    let priceListArray = []
+    let priceListStr = ""
+    let des = ""
+    curAddFood.specItemList.forEach(el => {
+      el.itemList.forEach(el2 => {
         if (el2["chooseClass"]) {
-          curAddFood["nowPrice"] += el2.price
-          curAddFood["des"] += (el2.name + "/")
+          priceListArray.push(el2.id)
+          des += `${el2.name}/`
         }
       })
     })
-    curAddFood["des"] = curAddFood["des"].substr(0, curAddFood["des"].length - 1);
+    priceListArray.sort((a, b) => {
+      return a - b
+    })
+    priceListArray.forEach(el => {
+      priceListStr += `${el}_`
+    })
+    des = des.substr(0, des.length - 1);
+    curAddFood["priceListStr"] = priceListStr.substr(0, priceListStr.length - 1);
+    curAddFood["des"] = des
     this.setData({
       curAddFood: curAddFood
     })
   },
   // 商品规格选择好了
   chooseRuleOk(e) {
-    let id = e.currentTarget.dataset.id;
-    this.data.goods.forEach(el => {
-      el.foods.forEach(el2 => {
-        if (el2.id == id) {
-          el2.count++
-        }
-      })
-    })
     let curAddFood = this.data.curAddFood
-    curAddFood.rule.forEach(el => {
-      curAddFood["nowId"] += String(el.id)
-      el.type.forEach(el2 => {
-        if (el2["chooseClass"]) {
-          curAddFood["nowId"] += String(el2.id)
-        }
-      })
-    })
-    let carIdArray = []
-    this.data.carArray.forEach(el => {
-      carIdArray.push(el.nowId)
-      if (el.nowId == curAddFood.nowId) {
-        el.count++
-      }
-    })
-    if (!carIdArray.includes(curAddFood.nowId)) {
-      curAddFood["count"] = 1
-      this.data.carArray.push(curAddFood)
+    let data = {
+      num: 1,
+      good_id: curAddFood.id,
+      spec_key: curAddFood.priceListStr
     }
-    this.setData({
-      goods: this.data.goods,
-      carArray: this.data.carArray
-    })
-    this.calTotalPrice();
-    this.closeRuleMask()
+    this.addToCart(data)
   },
   // 关闭选择规格
   closeRuleMask () {
-    let animation = wx.createAnimation({
-      duration: 500,
-      timingFunction: 'ease'
-    });
-    animation.translateY("100%").step()
     this.setData({
-      ruleMaskAni: animation.export()
+      ruleMask: false
     })
     setTimeout(() => {
       this.setData({
-        curAddFood: null,
-        ruleMask: false
+        priceList: {},
+        curAddFood: null
       })
-    }, 500)
+    }, 1000)
   },
   // 滑动固定tab
   clickScroll() {
@@ -531,111 +254,201 @@ Page({
       toView: 'order' + index.toString()
     })
   },
+  //添加到购物车接口
+  addToCart(data) {
+    wx.showLoading({
+      mask: true,
+      title: "加载中..."
+    });
+    wx.request({
+      url: app.globalData.baseUrl + `/Goods/addToCart.html`,
+      header: {
+        Authorization: app.globalData.auth_code
+      },
+      data: data,
+      method: 'POST',
+      success: (res) => {
+        wx.hideLoading();
+        if (res.data.error_code === 0) {
+          this.data.goods.forEach(el =>{
+            el.goods_list.forEach(el2 => {
+              if (el2.id === data.good_id) {
+                el2.num += 1
+              }
+            })
+          })
+          this.setData({
+            goods: this.data.goods
+          })
+          this.editGetCartList()
+          if (this.data.ruleMask) {
+            this.closeRuleMask()
+          }
+          wx.showToast({
+            title: "添加成功",
+            mask: true,
+            icon: "success"
+          });
+        } else {
+          wx.showModal({
+            title: '提示',
+            showCancel: false,
+            content: res.data.msg
+          })
+        }
+      },
+      fail: (res) => {
+        wx.showToast({
+          icon: 'none',
+          title: '网络请求失败',
+        })
+      }
+    })
+  },
   //添加到购物车
   addCart(e) {
     let food = e.currentTarget.dataset.food;
-    let shopcart = e.currentTarget.dataset.shopcart;
-    let nowId = food.nowId;
-    if (shopcart == 1) {
-      let id = food.nowId;
-      this.data.goods.forEach(el => {
-        el.foods.forEach(el2 => {
-          if (el2.id == id) {
-            el2.count++
+    // 1:有 2:无
+    if (food.has_spec === 1) {
+      wx.showLoading({
+        mask: true,
+        title: "加载中..."
+      });
+      wx.request({
+        url: app.globalData.baseUrl + `/Goods/specItemPrice.html`,
+        header: {
+          Authorization: app.globalData.auth_code
+        },
+        data: {
+          good_id: food.id
+          // good_id: 3281
+        },
+        method: 'POST',
+        success: (res) => {
+          wx.hideLoading();
+          if (res.data.error_code === 0) {
+            let specItemList = res.data.bizobj.data.specItemList
+            let priceList = {}
+            res.data.bizobj.data.priceList.forEach(el =>{
+              priceList[el.item_spec] = el.price
+            })
+            let priceListArray = []
+            let des = ""
+            specItemList.forEach(el => {
+              el.itemList[0]["chooseClass"] = true
+              priceListArray.push(el.itemList[0].id)
+              des += `${el.itemList[0].name}/`
+            })
+            priceListArray.sort((a, b) => {
+              return a - b
+            })
+            let priceListStr = ""
+            priceListArray.forEach(el => {
+              priceListStr += `${el}_`
+            })
+            des = des.substr(0, des.length - 1);
+            food["priceListStr"] = priceListStr.substr(0, priceListStr.length - 1);
+            food["specItemList"] = specItemList
+            food["des"] = des
+            this.setData({
+              priceList: priceList,
+              curAddFood: food,
+              ruleMask: true
+            })
+          } else {
+            wx.showModal({
+              title: '提示',
+              showCancel: false,
+              content: res.data.msg
+            })
           }
-        })
-      })
-      let carIdArray = []
-      this.data.carArray.forEach(el => {
-        carIdArray.push(el.nowId)
-        if (el.nowId == nowId) {
-          el.count++
-        }
-      })
-      this.setData({
-        goods: this.data.goods,
-        carArray: this.data.carArray
-      })
-      this.calTotalPrice();
-    } else {
-      food["des"] = ""
-      if (food.rule.length == 0) {
-        this.data.goods.forEach(el => {
-          el.foods.forEach(el2 => {
-            if (el2.nowId == nowId) {
-              el2.count++
-              food = el2
-            }
+        },
+        fail: (res) => {
+          wx.showToast({
+            icon: 'none',
+            title: '网络请求失败',
           })
-        })
-        let carIdArray = []
-        this.data.carArray.forEach(el => {
-          carIdArray.push(el.nowId)
-          if (el.nowId == nowId) {
-            el = food
-          }
-        })
-        if (!carIdArray.includes(nowId)) {
-          this.data.carArray.push(food)
         }
-        this.setData({
-          goods: this.data.goods,
-          carArray: this.data.carArray
-        })
-        this.calTotalPrice();
-      } else {
-        food["des"] = "无"
-        food.rule.forEach(el => {
-          el.type[0]["chooseClass"] = true
-          food["nowPrice"] += el.type[0].price
-        })
-        this.setData({
-          curAddFood: food,
-          ruleMask: true
-        })
-        let animation = wx.createAnimation({
-          duration: 500,
-          timingFunction: 'ease'
-        });
-        animation.translateY(0).step()
-        this.setData({
-          ruleMaskAni: animation.export()
-        })
+      })
+    } else {
+      let data = {
+        num: 1,
+        good_id: food.id || food.goods_id
       }
+      this.addToCart(data)
     }
   },
   //移除商品
   decreaseCart(e) {
     let food = e.currentTarget.dataset.food;
     let shopcart = e.currentTarget.dataset.shopcart;
-    if (shopcart == 2) {
+    if (shopcart == 1) {
       wx.showToast({
         title: '多规格以及带属性商品只能去购物车删除哦',
         icon: 'none',
         duration: 2000
       })
     } else {
-      let nowId = food.nowId;
-      let id = food.id;
-      this.data.goods.forEach((el) => {
-        el.foods.forEach((el2) => {
-          if (el2.id == id && el2.count > 0) {
-            el2.count--
-          }
-        })
-      })
-      this.data.carArray.forEach((el) => {
-        if (el.nowId == nowId) {
-          el.count--
+      let cart_id
+      this.data.carArray.forEach(el => {
+        if (el.goods_id === (food.id || food.goods_id)) {
+          cart_id = el.cart_id
         }
       })
-      let carArrayNew = this.data.carArray.filter(item => item.count > 0);
-      this.setData({
-        carArray: carArrayNew,
-        goods: this.data.goods
-      })
-      this.calTotalPrice()
+      let data = {
+        cart_id: cart_id,
+        num: food.num - 1
+      }
+      this.editCart(data, food.id)
     }
+  },
+  // 修改购物车数量
+  editCart(data, foodId) {
+    wx.showLoading({
+      mask: true,
+      title: "加载中..."
+    });
+    wx.request({
+      url: app.globalData.baseUrl + `/Goods/editCart.html`,
+      header: {
+        Authorization: app.globalData.auth_code
+      },
+      data: data,
+      method: 'POST',
+      success: (res) => {
+        wx.hideLoading();
+        if (res.data.error_code === 0) {
+          this.data.goods.forEach(el => {
+            el.goods_list.forEach(el2 => {
+              if (el2.id === foodId) {
+                el2.num -= 1
+              }
+            })
+          })
+          this.editGetCartList()
+          this.setData({
+            goods: this.data.goods
+          })
+          wx.showToast({
+            title: "修改成功",
+            mask: true,
+            icon: "success"
+          });
+        } else {
+          wx.showModal({
+            title: '提示',
+            showCancel: false,
+            content: res.data.msg
+          })
+        }
+      },
+      fail: (res) => {
+        wx.showToast({
+          icon: 'none',
+          title: '网络请求失败',
+        })
+      }
+    })
   },
   //计算总价
   calTotalPrice: function () {
@@ -643,8 +456,8 @@ Page({
     let totalPrice = 0;
     let totalCount = 0;
     for (let i = 0; i < carArray.length; i++) {
-      totalPrice += carArray[i].nowPrice * carArray[i].count;
-      totalCount += carArray[i].count
+      totalPrice += Number(carArray[i].price) * Number(carArray[i].num);
+      totalCount += Number(carArray[i].num)
     }
     this.setData({
       totalPrice: totalPrice,
@@ -658,22 +471,70 @@ Page({
   },
   // 清空购物车
   empty () {
-    this.data.goods.forEach((el) => {
-      el.foods.forEach((el2) => {
-        el2.count = 0
-      })
+    wx.showModal({
+      title: '提示',
+      content: '确认清空购物车吗？',
+      success: (res) => {
+        if (res.confirm) {
+          wx.showLoading({
+            mask: true,
+            title: "加载中..."
+          });
+          wx.request({
+            url: app.globalData.baseUrl + `/Goods/emptyCart.html`,
+            header: {
+              Authorization: app.globalData.auth_code
+            },
+            data: {
+              store_id: this.data.store_id
+            },
+            method: 'POST',
+            success: (res) => {
+              wx.hideLoading();
+              if (res.data.error_code === 0) {
+                this.data.goods.forEach((el) => {
+                  el.goods_list.forEach((el2) => {
+                    el2.num = 0
+                  })
+                })
+                this.setData({
+                  carArray: [],
+                  goods: this.data.goods
+                })
+                this.toggleList()
+                this.calTotalPrice()
+                wx.showToast({
+                  title: "清空成功",
+                  mask: true,
+                  icon: "success"
+                });
+              } else {
+                wx.showModal({
+                  title: '提示',
+                  showCancel: false,
+                  content: res.data.msg
+                })
+              }
+            },
+            fail: (res) => {
+              wx.showToast({
+                icon: 'none',
+                title: '网络请求失败',
+              })
+            }
+          })
+        } else if (res.cancel) {
+          console.log('用户点击取消')
+        }
+      }
     })
-    this.setData({
-      carArray: [],
-      goods: this.data.goods
-    })
-    this.calTotalPrice()
   },
   //結算
   pay() {
+    console.log(this.data.totalCount)
     if (this.data.totalCount) {
-      wx.redirectTo({
-        url: '../orderInfo/orderInfo/'
+      wx.navigateTo({
+        url: `../orderConfirm/orderConfirm?store_id=${this.data.store_id}&eatType=${this.data.eatType}`,
       })
     }
   },
@@ -685,15 +546,22 @@ Page({
       })
     }
   },
-  onLoad: function (options) {
-    this.data.goods.forEach(el => {
-      el.foods.forEach(el2 => {
-        el2["nowId"] = el2.id
-        el2["nowPrice"] = el2.price
+  // 堂食/外带
+  eatTypeBtn() {
+    if (this.data.eatType === 1) {
+      this.setData({
+        eatType: 2
       })
-    })
+    } else if (this.data.eatType === 2) {
+      this.setData({
+        eatType: 1
+      })
+    }
+  },
+  // 打开/关闭公告
+  toggGonggaoMask() {
     this.setData({
-      goods: this.data.goods
+      gonggaoMask: !this.data.gonggaoMask
     })
   },
   onReady: function () {

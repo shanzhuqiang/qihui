@@ -1,42 +1,185 @@
 // pages/my/my.js
+const app = getApp()
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    userInfo: null,
+    bind_mobile: "",
+    rider_auth: "",
+    user_money:''
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.getYuE()
+  },
+  // 获取余额
+  getYuE () {
+    wx.request({
+      url: app.globalData.baseUrl + `/User/getUserInfo.html`,
+      header: {
+        Authorization: app.globalData.auth_code
+      },
+      method: 'POST',
+      success: (res) => {
+        if (res.data.error_code === 0) {
+          this.setData({
+            user_money: res.data.bizobj.data.user_money
+          })
+        } else {
+          wx.showModal({
+            title: '提示',
+            showCancel: false,
+            content: res.data.msg
+          })
+        }
+      },
+      fail: (res) => {
+        wx.showToast({
+          icon: 'none',
+          title: '网络请求失败',
+        })
+      }
+    })
+  },
+  tuichu () {
+    wx.request({
+      url: app.globalData.baseUrl + `/Login/loginOut.html`,
+      header: {
+        Authorization: app.globalData.auth_code
+      },
+      method: 'POST',
+      success: (res) => {
+        if (res.data.error_code === 0) {
+          console.log(res.data)
+        } else {
+          wx.showModal({
+            title: '提示',
+            showCancel: false,
+            content: res.data.msg
+          })
+        }
+      },
+      fail: (res) => {
+        wx.showToast({
+          icon: 'none',
+          title: '网络请求失败',
+        })
+      }
+    })
+  },
+  // 授权/认证手机
+  goAuth () {
+    if (!this.data.userInfo) {
+      wx.navigateTo({
+        url: '../auth/auth',
+      })
+    } else if (this.data.bind_mobile === 2) {
+      wx.navigateTo({
+        url: '../getPhone/getPhone',
+      })
+    }
   },
   // 骑手认证
   goRenzheng() {
-    wx.navigateTo({
-      url: '../renzheng/renzheng',
-    })
+    if (!this.data.userInfo) {
+      wx.navigateTo({
+        url: '../auth/auth',
+      })
+    } else if (this.data.bind_mobile === 2) {
+      wx.navigateTo({
+        url: '../getPhone/getPhone',
+      })
+    } else {
+      wx.request({
+        url: app.globalData.baseUrl + `/User/validRider.html`,
+        header: {
+          Authorization: app.globalData.auth_code
+        },
+        method: 'POST',
+        success: (res) => {
+          if (res.data.error_code === 0) {
+            app.globalData.rider_auth = 1
+            this.setData({
+              rider_auth: 1
+            })
+            wx.showToast({
+              title: "认证成功",
+              mask: true,
+              icon: "success"
+            });
+          } else {
+            wx.showModal({
+              title: '提示',
+              showCancel: false,
+              content: res.data.msg
+            })
+          }
+        },
+        fail: (res) => {
+          wx.showToast({
+            icon: 'none',
+            title: '网络请求失败',
+          })
+        }
+      })
+      // wx.navigateTo({
+      //   url: '../renzheng/renzheng',
+      // })
+    }
   },
   // 立即充值
   goChongzhi() {
-    wx.navigateTo({
-      url: '../chongzhi/chongzhi',
-    })
+    if (!this.data.userInfo) {
+      wx.navigateTo({
+        url: '../auth/auth',
+      })
+    } else if (this.data.bind_mobile === 2) {
+      wx.navigateTo({
+        url: '../getPhone/getPhone',
+      })
+    } else {
+      wx.navigateTo({
+        url: '../chongzhi/chongzhi',
+      })
+    }
   },
   // 余额
   goYue() {
-    wx.navigateTo({
-      url: '../yue/yue',
-    })
+    if (!this.data.userInfo) {
+      wx.navigateTo({
+        url: '../auth/auth',
+      })
+    } else if (this.data.bind_mobile === 2) {
+      wx.navigateTo({
+        url: '../getPhone/getPhone',
+      })
+    } else {
+      wx.navigateTo({
+        url: '../yue/yue',
+      })
+    }
   },
   // 添加客服
   goAddKefu() {
-    wx.navigateTo({
-      url: '../addKefu/addKefu',
-    })
+    if (!this.data.userInfo) {
+      wx.navigateTo({
+        url: '../auth/auth',
+      })
+    } else if (this.data.bind_mobile === 2) {
+      wx.navigateTo({
+        url: '../getPhone/getPhone',
+      })
+    } else {
+      wx.navigateTo({
+        url: '../addKefu/addKefu',
+      })
+    }
   },
   /**
    * 生命周期函数--监听页面初次渲染完成
@@ -49,7 +192,11 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    this.setData({
+      userInfo: app.globalData.userInfo,
+      bind_mobile: app.globalData.bind_mobile,
+      rider_auth: app.globalData.rider_auth
+    })
   },
 
   /**

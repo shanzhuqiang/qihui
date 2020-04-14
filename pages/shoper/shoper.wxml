@@ -6,7 +6,7 @@
         <view class="topBox">
           <image class="shopImg" src="../../images/img.png"></image>
           <view class="topRightBox">
-            <view class="name overflow">柳州螺蛳粉（临平尚峰轩店）</view>
+            <view class="name overflow">{{ shopInfo.name }}（临平尚峰轩店）</view>
             <view class="gonggao overflow">公告：这里是公告这里是公告这里是公告这里是公告这里是公告这里是公告</view>
             <view class="three overflow">美团评分：4.2<text>|</text>月售2799</view>
           </view>

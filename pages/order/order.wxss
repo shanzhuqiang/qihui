@@ -1,6 +1,11 @@
 /* pages/order/order.wxss */
+page{
+  background: #f8f8f8;
+  height: 100%;
+}
 .orderWrap{
   padding-top: 30rpx;
+  background: #fff;
 }
 .orderWrap .item{
   /* height: 320rpx; */

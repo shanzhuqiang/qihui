@@ -290,7 +290,6 @@ page{
 .orderConfirmWrap .timeBox .item{
   height: 100rpx;
   line-height: 100rpx;
-  background: #fff;
 	font-family: PingFangSC-Regular;
 	font-size: 24rpx;
 	color: #333;
@@ -302,12 +301,17 @@ page{
 	background-color: #eee;
   text-align: center;
 }
+.orderConfirmWrap .timeBox .leftBox .item.active{
+  background: #fff;
+}
 .orderConfirmWrap .timeBox .rightBox{
   margin-left: 240rpx;
+  height: 100%;
 }
 .orderConfirmWrap .timeBox .rightBox .item {
 	border-bottom: solid 1rpx #f3f3f3;
   position: relative;
+  background: #fff;
 }
 .orderConfirmWrap .timeBox .rightBox .item .okIcon{
   position: absolute;
