@@ -18,6 +18,63 @@ Page({
   onLoad: function (options) {
     this.getOrder()
   },
+  // 订单详情
+  goOrderInfo (e) {
+    wx.navigateTo({
+      url: `../orderInfo/orderInfo?order_id=${e.currentTarget.dataset.id}`,
+    })
+  },
+  // 取消订单
+  cancalOrder(e) {
+    wx.showModal({
+      title: '提示',
+      content: '确认取消订单吗？',
+      success: (res) => {
+        if (res.confirm) {
+          wx.showLoading({
+            mask: true,
+            title: "提交中..."
+          });
+          let data = {
+            order_id: e.currentTarget.dataset.id,
+            status: 6
+          }
+          wx.request({
+            url: app.globalData.baseUrl + `/Order/changeOrderStatus.html`,
+            header: {
+              Authorization: app.globalData.auth_code
+            },
+            data: data,
+            method: 'POST',
+            success: (res) => {
+              wx.hideLoading();
+              if (res.data.error_code === 0) {
+                this.getOrder()
+                wx.showToast({
+                  title: "申请成功",
+                  mask: true,
+                  icon: "success"
+                });
+              } else {
+                wx.showModal({
+                  title: '提示',
+                  showCancel: false,
+                  content: res.data.msg
+                })
+              }
+            },
+            fail: (res) => {
+              wx.showToast({
+                icon: 'none',
+                title: '网络请求失败',
+              })
+            }
+          })
+        } else if (res.cancel) {
+        }
+      }
+    })
+  },
   // 获取商家详情
   getOrder() {
     wx.request({

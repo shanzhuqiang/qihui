@@ -1,56 +1,47 @@
 <!--pages/orderInfo/orderInfo.wxml-->
 <view class="orderInfoWrap">
   <view class="firstRow">
-    商家已接单
-    <view class="shopName overflow">XXXXXXXXXXXXX的店铺</view>
+    商家{{ orderInfo.order_info.order_status_tip }}
+    <view class="shopName overflow">{{ orderInfo.store_info.store_name }}</view>
   </view>
   <view class="weCodeRow">
-    <image class="weCode" src="../../images/weCode.png"></image>
-    <view class="codeText">您的取餐号是#04</view>
-    <image class="orderStatus" src="../../images/orderBack.png"></image>
+    <image class="weCode" src="{{ codeImage }}"></image>
+    <view class="codeText">您的取餐号是{{ orderInfo.order_info.order_num }}</view>
+    <image class="orderStatus" wx:if="{{ orderInfo.order_info.order_status == 5 }}" src="../../images/orderFinish.png"></image>
+    <image class="orderStatus" wx:if="{{ orderInfo.order_info.order_status == 6 }}" src="../../images/orderWait.png"></image>
+    <image class="orderStatus" wx:if="{{ orderInfo.order_info.order_status == 7 }}" src="../../images/orderBack.png"></image>
   </view>
   <view class="itemRow">
-    <view class="itemOne">订单编号：12312312312</view>
-    <view class="itemOne">
+    <view class="itemOne">订单编号：{{ orderInfo.order_info.order_sn }}</view>
+    <view class="itemOne" wx:for="{{ orderInfo.goods_info }}" wx:key="index">
       <view class="itemLeft">
-        <view class="one">蟹粉小笼包</view>
-        <view class="two">冰的，加奶盖</view>
+        <view class="one">{{ item.goods_name }}</view>
+        <view class="two">{{ item.key_name }}</view>
       </view>
-      <view class="num">x1</view>
-      <view class="price">￥18</view>
+      <view class="num">x{{ item.goods_num }}</view>
+      <view class="price">￥{{ item.item_price }}</view>
     </view>
     <view class="itemOne">
-      <view class="itemLeft">
-        <view class="one">蟹粉小笼包</view>
-        <view class="two">冰的，加奶盖冰的，加奶盖冰的，加奶盖冰的，加奶盖冰的，加奶盖冰的，加奶盖冰的，加奶盖</view>
-      </view>
-      <view class="num">x1</view>
-      <view class="price">￥18</view>
-    </view>
-    <view class="itemOne">
-      <view class="itemLeft">
-        <view class="one">蟹粉小笼包蟹粉小笼包蟹粉小笼包蟹粉小笼包蟹粉小笼包蟹粉小笼包蟹粉小笼包蟹粉小笼包</view>
-        <view class="two">冰的，加奶盖</view>
-      </view>
-      <view class="num">x1</view>
-      <view class="price">￥18</view>
+      共计{{ orderInfo.order_info.total_goods_num }}件商品
+      <view class="price">实付：<text style="color:#f73003;font-size: 30rpx;">￥{{ orderInfo.order_info.total_price }}</text></view>
     </view>
   </view>
   <view class="secondRow">
     下单时间
-    <view class="rightVal">2020-02-08 18:00</view>
+    <view class="rightVal">{{ orderInfo.order_info.add_time }}</view>
   </view>
   <view class="secondRow">
     预计到达时间
-    <view class="rightVal">2020-02-08 18:00</view>
+    <view class="rightVal">{{ orderInfo.order_info.app_time }}</view>
   </view>
   <view class="lastRow clearfix">
     备注
-    <view class="rightVal">这里是备是这里是备注这里是备注</view>
+    <view class="rightVal">{{ orderInfo.order_info.tips }}</view>
   </view>
-  <view style="height:120rpx;background: #f2f2f2;"></view>
+  <view style="height:120rpx;background: #f2f2f2;" wx:if="{{ orderInfo.order_info.order_status != 8 }}"></view>
   <view class="bottomBox">
-    <view class="btnBox">取消订单</view>
-    <view class="btnBox colorBtn">撤回</view>
+    <view class="btnBox" wx:if="{{ orderInfo.order_info.order_status == 2 }}" data-id="6" bindtap="changeStatus">取消订单</view>
+    <view class="btnBox colorBtn" wx:if="{{ orderInfo.order_info.order_status == 6 }}" data-id="2" bindtap="changeStatus">撤回</view>
+    <view class="btnBox colorBtn" wx:if="{{ orderInfo.order_info.order_status == 7 ||  orderInfo.order_info.order_status == 5 }}" bindtap="goShoper">再来一单</view>
   </view>
 </view>

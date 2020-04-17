@@ -34,11 +34,11 @@
       <view class="num">x{{ item.num }}</view>
       <view class="price">￥{{ item.total_price }}</view>
     </view>
-    <!-- <view class="rowItemLast">
+    <view class="rowItemLast" wx:if="{{ goods.order_info && goods.order_info.package_fee }}">
       <view class="baozhuang fl">包装</view>
       <view class="fl">包装费</view>
-      <view class="fr">￥4</view>
-    </view> -->
+      <view class="fr">￥{{ goods.order_info.package_fee }}</view>
+    </view>
   </view>
   <view class="rowOne" bindtap="zhifuTigger">
     <text>支付方式</text>
@@ -59,7 +59,7 @@
   <view style="height: 120rpx;"></view>
   <!-- bottom Total -->
   <view class="bottomTotal">
-    <view class="total">合计：<text>￥{{ goods.price }}</text></view>
+    <view class="total">合计：<text>￥{{ goods.order_info.total_price }}</text></view>
     <view class="payNow" bindtap="goToPay">去支付</view>
   </view>
   <!-- 备注 -->

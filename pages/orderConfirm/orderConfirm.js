@@ -90,12 +90,13 @@ Page({
   // 获取购物车列表
   getCartList(data) {
     wx.request({
-      url: app.globalData.baseUrl + `/Goods/cartList.html`,
+      url: app.globalData.baseUrl + `/Order/orderShow.html`,
       header: {
         Authorization: app.globalData.auth_code
       },
       data: {
-        store_id: this.data.store_id
+        store_id: this.data.store_id,
+        type: this.data.eatType
       },
       method: 'POST',
       success: (res) => {
@@ -134,8 +135,8 @@ Page({
         },
         method: 'POST',
         success: (res) => {
-          if (res.data.error_code === 0) {
-            let data = res.data.bizobj.data.wxconfig
+          if (res.data.appId) {
+            let data = res.data
             wx.requestPayment({
               timeStamp: data.timeStamp,
               nonceStr: data.nonceStr,
