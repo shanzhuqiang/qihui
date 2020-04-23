@@ -1,0 +1,17 @@
+<!--pages/zhizhao/zhizhao.wxml-->
+<view class="zhizhaoWrap">
+  <view class="zhizhaoBox">
+    <view class="title">商家从业资质</view>
+    <view wx:for="{{ imgArray }}" wx:key="index">
+      <van-row class="rowBox" gutter="10">
+        <van-col span="12" wx:for="{{ item }}" wx:key="index">
+          <view class="imgBox">
+            <image class="img" src="{{ item }}"></image>
+            <!-- <image class="img" src="../../images/img.png"></image> -->
+          </view>
+        </van-col>
+      </van-row>
+      <view style="height: 20rpx;"></view>
+    </view>
+  </view>
+</view>

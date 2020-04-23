@@ -35,13 +35,13 @@
       </view>
     </view>
   </view>
-  <view class="rowItem" bindtap="tuichu">
+  <!-- <view class="rowItem" bindtap="tuichu">
     <view class="iconBox">
       <image class="icon qishou" src="../../images/qishou.png"></image>
     </view>
     <view class="text">骑手认证2</view>
     <van-icon class="arrowIcon" name="arrow" size="36rpx" color="#9d9d9d"/>
-  </view>
+  </view> -->
   <view class="rowItem" bindtap="goRenzheng">
     <view class="iconBox">
       <image class="icon qishou" src="../../images/qishou.png"></image>

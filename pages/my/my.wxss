@@ -117,7 +117,7 @@ page{
 .myWrap .rowItem .iconBox{
   height: 100rpx;
   line-height: 100rpx;
-  width: 100rpx;
+  width: 56rpx;
   display: inline-block;
 }
 .myWrap .rowItem .iconBox .icon{

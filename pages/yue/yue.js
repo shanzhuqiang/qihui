@@ -1,11 +1,19 @@
 // pages/yue/yue.js
+const app = getApp()
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    user_money: "",
+    cashList: []
+  },
+  /**
+   * 生命周期函数--监听页面加载
+   */
+  onLoad: function (options) {
+    this.getCashList()
   },
   // 立即充值
   goCongzhi () {
@@ -13,11 +21,35 @@ Page({
       url: '../chongzhi/chongzhi',
     })
   },
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
-
+  // 获取余额
+  getCashList () {
+    wx.request({
+      url: app.globalData.baseUrl + `/Cash/cashList.html`,
+      header: {
+        Authorization: app.globalData.auth_code
+      },
+      method: 'POST',
+      success: (res) => {
+        if (res.data.error_code === 0) {
+          this.setData({
+            user_money: res.data.bizobj.user_data.user_money,
+            cashList: res.data.bizobj.cash_log
+          })
+        } else {
+          wx.showModal({
+            title: '提示',
+            showCancel: false,
+            content: res.data.msg
+          })
+        }
+      },
+      fail: (res) => {
+        wx.showToast({
+          icon: 'none',
+          title: '网络请求失败',
+        })
+      }
+    })
   },
 
   /**

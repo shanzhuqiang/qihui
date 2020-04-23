@@ -16,7 +16,7 @@
     <view class="itemOne" wx:for="{{ orderInfo.goods_info }}" wx:key="index">
       <view class="itemLeft">
         <view class="one">{{ item.goods_name }}</view>
-        <view class="two">{{ item.key_name }}</view>
+        <view class="two" wx:if="{{ item.key_name }}">{{ item.key_name }}</view>
       </view>
       <view class="num">x{{ item.goods_num }}</view>
       <view class="price">￥{{ item.item_price }}</view>
@@ -36,7 +36,7 @@
   </view>
   <view class="lastRow clearfix">
     备注
-    <view class="rightVal">{{ orderInfo.order_info.tips }}</view>
+    <view class="rightVal" wx:if="{{ orderInfo.order_info.tips }}">{{ orderInfo.order_info.tips }}</view>
   </view>
   <view style="height:120rpx;background: #f2f2f2;" wx:if="{{ orderInfo.order_info.order_status != 8 }}"></view>
   <view class="bottomBox">

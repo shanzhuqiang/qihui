@@ -19,7 +19,8 @@
     "pages/renzhengResult/renzhengResult",
     "pages/chongzhi/chongzhi",
     "pages/addKefu/addKefu",
-    "pages/yue/yue"
+    "pages/yue/yue",
+    "pages/zhizhao/zhizhao"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -48,7 +49,7 @@
       {
         "pagePath": "pages/shenghuo/shenghuo",
         "iconPath": "images/shenghuo.png",
-        "selectedIconPath": "images/shenghuo.png",
+        "selectedIconPath": "images/shenghuo1.png",
         "text": "生活平台"
       },
       {

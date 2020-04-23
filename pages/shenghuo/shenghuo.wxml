@@ -1,2 +1,5 @@
 <!--pages/shenghuo/shenghuo.wxml-->
-<text>pages/shenghuo/shenghuo.wxml</text>
+<view class="shenghuoWrap">
+  <image class="noData" src="../../images/noData.png"></image>
+  <view class="text">该功能正在开发，敬请期待～</view>
+</view>

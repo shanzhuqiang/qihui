@@ -1,0 +1,31 @@
+/* pages/zhizhao/zhizhao.wxss */
+page{
+  height: 100%
+}
+.zhizhaoWrap{
+  height: 100%;
+  background: #f8f8f8;
+  padding: 20rpx;
+}
+.zhizhaoWrap .zhizhaoBox{
+  background: #fff;
+  padding: 0 30rpx;
+}
+.zhizhaoWrap .zhizhaoBox .title{
+  font-size: 30rpx;
+  color: #333;
+	font-family: PingFangSC-Semibold;
+  border-bottom: 1rpx solid #f8f8f8;
+  height: 70rpx;
+  line-height: 70rpx;
+}
+.zhizhaoWrap .zhizhaoBox .rowBox .imgBox{
+  border: 1rpx solid #f8f8f8;
+  height: 250rpx;
+  padding: 50rpx;
+  box-sizing: border-box;
+}
+.zhizhaoWrap .zhizhaoBox .rowBox .imgBox .img{
+  width: 100%;
+  height: 100%;
+}

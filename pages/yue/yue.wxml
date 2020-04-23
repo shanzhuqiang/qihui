@@ -1,15 +1,15 @@
 <!--pages/yue/yue.wxml-->
 <view class="yueWrap">
   <view class="topRow">
-    <view class="price">￥38.00</view>
+    <view class="price">￥{{ user_money }}</view>
     <view class="yue">当前余额</view>
     <view class="btnBox" bindtap="goCongzhi">立即充值</view>
   </view>
   <view class="historyBox">
-    <view class="item">
-      <view class="tittleT">现金充值</view>
-      <view class="timeT">2019-10-15 18:00</view>
-      <view class="num">+5.00</view>
+    <view class="item" wx:for="{{ cashList }}" wx:key="index">
+      <view class="tittleT">{{ item.tip }}</view>
+      <view class="timeT">{{ item.time }}</view>
+      <view class="{{ item.cash.indexOf('-') === 0 ? 'num' : 'num2' }}">{{ item.cash }}</view>
     </view>
     <view class="item">
       <view class="tittleT">公司扣款</view>

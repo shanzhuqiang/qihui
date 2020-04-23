@@ -19,8 +19,8 @@
 	font-family: PingFangSC-Semibold;
 	font-size: 36rpx;
   height: 40rpx;
-	line-height: 40rpx;
-  padding-top: 20rpx
+	line-height: 118rpx;
+  /* padding-top: 20rpx */
 }
 .chongzhiWrap .chongzhiBox .itemBox .twoText{
 	font-family: PingFangSC-Regular;

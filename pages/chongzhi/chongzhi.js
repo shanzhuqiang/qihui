@@ -21,6 +21,73 @@ Page({
   onLoad: function (options) {
     this.getChargeList()
   },
+  // 确认充值
+  confirm () {
+    wx.showModal({
+      title: '提示',
+      content: '确认充值吗？',
+      success: (res) => {
+        if (res.confirm) {
+          wx.showLoading({
+            mask: true,
+            title: "加载中..."
+          });
+          wx.request({
+            url: app.globalData.baseUrl + `/Cash/addCash.html`,
+            header: {
+              Authorization: app.globalData.auth_code
+            },
+            data: {
+              charge_id: this.data.type
+            },
+            method: 'POST',
+            success: (res) => {
+              if (res.data.appId) {
+                let data = res.data
+                wx.hideLoading();
+                wx.requestPayment({
+                  timeStamp: data.timeStamp,
+                  nonceStr: data.nonceStr,
+                  package: data.package,
+                  signType: 'MD5',
+                  paySign: data.paySign,
+                  success: (res) => {
+                    wx.showToast({
+                      title: '充值成功',
+                      mask: true,
+                      icon: 'success',
+                      success() {
+                        setTimeout(() => {
+                          wx.switchTab({
+                            url: '../my/my',
+                          })
+                        }, 1500)
+                      }
+                    })
+                  },
+                  fail(res) { }
+                })
+              } else {
+                wx.hideLoading();
+                wx.showModal({
+                  title: '提示',
+                  showCancel: false,
+                  content: res.data.msg
+                })
+              }
+            },
+            fail: (res) => {
+              wx.showToast({
+                icon: 'none',
+                title: '网络请求失败',
+              })
+            }
+          })
+        } else if (res.cancel) {
+        }
+      }
+    })
+  },
   // 获取充值列表
   getChargeList (){
     wx.request({
@@ -39,7 +106,6 @@ Page({
           for (let i = 0; i < chargeList.length; i += 3) {
             result.push(chargeList.slice(i, i + 3));
           }
-          console.log(111, result)
           this.setData({
             chargeList: result
           })

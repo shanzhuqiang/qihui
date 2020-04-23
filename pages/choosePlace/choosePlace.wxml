@@ -12,7 +12,7 @@
   </view>
   <view class="secondBox">
     当前位置：<text>{{ address }}</text>
-    <view class="localBox">
+    <view class="localBox" bindtap="getAddressAgain">
       <image class="local3" src="../../images/local3.png"></image>
       重新定位
     </view>

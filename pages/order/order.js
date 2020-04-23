@@ -16,7 +16,6 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.getOrder()
   },
   // 订单详情
   goOrderInfo (e) {
@@ -75,7 +74,7 @@ Page({
       }
     })
   },
-  // 获取商家详情
+  // 获取订单列表
   getOrder() {
     wx.request({
       url: app.globalData.baseUrl + `/Order/orderList.html`,
@@ -110,7 +109,7 @@ Page({
     let wxSys = wx.getSystemInfoSync()
     let codeWidth = wxSys.screenWidth / 750 * 260
     this.setData({
-      codeImage: QRCode.createQrCodeImg(id, codeWidth),
+      codeImage: QRCode.createQrCodeImg(String(id), codeWidth),
       codeShow: true
     })
   },
@@ -131,7 +130,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    this.getOrder()
   },
 
   /**

@@ -34,7 +34,7 @@ Page({
             title: "提交中..."
           });
           let data = {
-            order_id: e.currentTarget.dataset.id,
+            order_id: this.data.order_id,
             status: id
           }
           wx.request({
@@ -47,7 +47,7 @@ Page({
             success: (res) => {
               wx.hideLoading();
               if (res.data.error_code === 0) {
-                this.getOrder()
+                this.getOrderInfo()
                 wx.showToast({
                   title: "申请成功",
                   mask: true,
@@ -95,9 +95,10 @@ Page({
           let data = res.data.bizobj.data
           let wxSys = wx.getSystemInfoSync()
           let codeWidth = wxSys.screenWidth / 750 * 260
+          console.log(data.order_info.order_num)
           this.setData({
             orderInfo: data,
-            codeImage: QRCode.createQrCodeImg(data.order_info.order_num, codeWidth)
+            codeImage: QRCode.createQrCodeImg(String(data.order_info.order_num), codeWidth)
           })
         } else {
           wx.showModal({

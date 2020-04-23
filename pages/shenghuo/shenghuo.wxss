@@ -1,1 +1,24 @@
 /* pages/shenghuo/shenghuo.wxss */
+page{
+  height: 100%;
+}
+.shenghuoWrap{
+  height: 100%;
+  background: #f8f8f8;
+  padding-top: 200rpx;
+  box-sizing: border-box;
+}
+.shenghuoWrap .noData{
+  width: 561rpx;
+  height: 420rpx;
+  margin: 0 auto ;
+  display: block;
+  transform: translateX(-50rpx);
+}
+.shenghuoWrap .text{
+	font-family: PingFangSC-Regular;
+	font-size: 30rpx;
+	color: #999;
+  margin-top: -100rpx;
+  text-align: center;
+}

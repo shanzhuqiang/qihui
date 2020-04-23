@@ -17,7 +17,8 @@ Page({
     ruleChoose: {},
     tabClass: "one",
     gonggaoMask: false,
-    eatType: 1
+    eatType: 1,
+    menuActive: 0
   },
   onLoad: function (options) {
     this.setData({
@@ -41,8 +42,12 @@ Page({
       method: 'POST',
       success: (res) => {
         if (res.data.error_code === 0) {
+          let data = res.data.bizobj.data
+          wx.setNavigationBarTitle({
+            title: data.name
+          })
           this.setData({
-            shopInfo: res.data.bizobj.data
+            shopInfo: data
           })
         } else {
           wx.showModal({
@@ -229,6 +234,20 @@ Page({
     }
     this.addToCart(data)
   },
+  // 打电话
+  call () {
+    wx.makePhoneCall({
+      phoneNumber: this.data.shopInfo.mobile //仅为示例，并非真实的电话号码
+    })
+  },
+  // 一键复制
+  copy () {
+    wx.setClipboardData({
+      data: this.data.shopInfo.address,
+      success(res) {
+      }
+    })
+  },
   // 关闭选择规格
   closeRuleMask () {
     this.setData({
@@ -242,16 +261,20 @@ Page({
     }, 1000)
   },
   // 滑动固定tab
-  clickScroll() {
-    this.setData({
-      scrollTop: "340rpx"
-    })
+  clickScroll(e) {
+    console.log(this.data.toView)
+    if (this.data.scrollTop !== '340rpx') {
+      this.setData({
+        scrollTop: "340rpx"
+      })
+    }
   },
   // 选择菜单
   selectMenu: function (e) {
     let index = e.currentTarget.dataset.itemIndex;
     this.setData({
-      toView: 'order' + index.toString()
+      toView: 'order' + index.toString(),
+      menuActive: index
     })
   },
   //添加到购物车接口
@@ -555,6 +578,20 @@ Page({
     } else if (this.data.eatType === 2) {
       this.setData({
         eatType: 1
+      })
+    }
+  },
+  // 营业执照
+  goZhizhao () {
+    let image_zhizhao = this.data.shopInfo.image_zhizhao
+    if (image_zhizhao && image_zhizhao.length > 0) {
+      wx.navigateTo({
+        url: '../zhizhao/zhizhao?data=' + image_zhizhao.join(","),
+      })
+    } else {
+      wx.showToast({
+        icon: 'none',
+        title: '未上传执照',
       })
     }
   },

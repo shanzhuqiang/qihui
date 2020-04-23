@@ -36,7 +36,7 @@
       </view>
       <view class="mainShop" wx:if="{{ tabClass === 'one' }}">
         <scroll-view scroll-y="true" class="leftScroll" style="height: 100%;" bindscroll="clickScroll">
-          <view wx:for="{{goods}}" class="menu-item" bindtap="selectMenu" data-item-index="{{ index }}" wx:key="index">
+          <view wx:for="{{goods}}" class="{{ menuActive === index ? 'active' : '' }} menu-item" bindtap="selectMenu" data-item-index="{{ index }}" wx:key="index">
             {{item.cat_name}}
             <!-- <image class="icon" src="../../images/dangao.png"></image> -->
           </view>
@@ -76,9 +76,11 @@
         <view class="line"></view>
         <view class="title">品类<text class="des fr">{{ shopInfo.type_name }}</text></view>
         <view class="line"></view>
-        <view class="title">商家电话<text class="btnBox fr">一键拨打</text></view>
+        <view class="title">商家电话<text class="btnBox fr" bindtap="call">一键拨打</text></view>
         <view class="line"></view>
-        <view class="title">商家地址<text class="btnBox fr">一键复制</text></view>
+        <view class="title">营业执照<text class="btnBox fr" bindtap="goZhizhao">查看</text></view>
+        <view class="line"></view>
+        <view class="title">商家地址<text class="btnBox fr" bindtap="copy">一键复制</text></view>
         <view class="jianjie">{{ shopInfo.address }}</view>
         <view class="line"></view>
         <view class="title">营业时间<text class="des fr">{{ shopInfo.store_time }}-{{ shopInfo.store_end_time }}</text></view>

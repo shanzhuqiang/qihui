@@ -12,7 +12,8 @@ Page({
     listData: [],
     bannerData: [],
     sortType: "distance",
-    address:'东海水晶城蓝钻东海水晶城蓝钻'
+    address:'',
+    swiperCurrent: 0
   },
 
   /**
@@ -22,6 +23,25 @@ Page({
     this.getList()
     this.getBanner()
     this.getAddress()
+  },
+  /**
+   * 轮播自动滑动时，获取当前的轮播id
+   */
+  swiperChange(e) {
+    const that = this;
+    that.setData({
+      swiperCurrent: e.detail.current
+    })
+  },
+
+  /**
+   * 图片手动滑动时，获取当前的轮播id
+   */
+  imageChange(e) {
+    const that = this;
+    that.setData({
+      swiperCurrent: e.currentTarget.id
+    })
   },
   // 获取首页banner
   getBanner () {

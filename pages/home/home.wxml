@@ -8,21 +8,27 @@
     </view>
     <view class="searchBox" bindtap="goSearch">
       <image class="serch" src="../../images/serch.png"></image>
-      <input class="ipt" placeholder="请输入商家名称" disabled></input>
+      <input class="ipt" placeholder="请输入商家名称" placeholder-style="color: #666" disabled></input>
     </view>
   </view>
   <view class='bannerBox'>
-    <swiper autoplay indicator-dots>
+    <swiper autoplay bindchange='swiperChange' style="height: 100%;width: 100%">
       <block wx:for="{{bannerData}}" wx:key="index">
         <swiper-item>
-          <image src="{{item.url}}" class="bannerImg" />
+          <image bindchange='imageChange' src="{{item.url}}" class="bannerImg" />
         </swiper-item>
       </block>
     </swiper>
+    <!-- 自定义指示点dot -->
+    <view class="dots">
+      <block wx:for="{{bannerData}}" wx:key="index">
+        <view class='dot {{swiperCurrent == index ? "active" : ""}}'></view>
+      </block>
+    </view>
   </view>
-  <view class="guanggaoBox">
+  <!-- <view class="guanggaoBox">
     <image class="guanggao" src="../../images/guanggao.png"></image>
-  </view>
+  </view> -->
   <!-- main -->
   <view class="sortBox">
     <view class="sortText {{ sortType === 'distance' ? 'active' : '' }}" bindtap="chooseType" data-type="distance">距离最近</view>
@@ -39,7 +45,7 @@
           <text class="two">|</text>
           <text class="three">月售卖{{ item.month_sale }}</text>
         </view>
-        <view class="third">人均{{ item.consumption }}</view>
+        <view class="third">人均{{ item.average_consume }}</view>
       </view>
       <view class="juli">距您{{ item.distance }}km</view>
     </view>

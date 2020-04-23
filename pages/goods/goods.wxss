@@ -207,6 +207,9 @@ page{
 	color: #333;
   padding: 26rpx  15rpx;
 }
+.goodsWrap .mainBox .mainShop .menu-item.active{
+  background: #fff;
+}
 .goodsWrap .mainBox .mainShop .menu-item .icon{
   width: 41rpx;
   height: 39rpx;
@@ -226,8 +229,8 @@ page{
 }
 .goodsWrap .rightScroll .food-list .title {
   padding-left: 14rpx;
-  border-left: 2rpx solid #d9dde1;
-  background: #f3f5f7;
+  /* border-left: 2rpx solid #d9dde1; */
+  /* background: #f3f5f7; */
 	font-family: PingFangSC-Semibold;
 	font-size: 28rpx;
 	color: #333;

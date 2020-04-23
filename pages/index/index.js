@@ -23,13 +23,12 @@ Page({
     wx.getLocation({
       isHighAccuracy: true,
       success: (res) => {
-        console.log(1, res)
         app.globalData.locationObj = res
         wx.switchTab({
           url: '../home/home',
         })
-        // wx.switchTab({
-        //   url: '../my/my',
+        // wx.navigateTo({
+        //   url: '../zhizhao/zhizhao?data=sss,fff,fff,fff,fff',
         // })
         // wx.redirectTo({
         //   url: '../loginPhone/loginPhone',

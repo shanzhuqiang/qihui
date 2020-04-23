@@ -4,13 +4,14 @@
     <van-col span="8" wx:for="{{ item }}" wx:key="index">
       <view class="itemBox {{ type === item.id ? 'active' : '' }}" bindtap="chooseType" data-id="{{ item.id }}">
         <view class="oneText">充{{ item.pay_num }}元</view>
-        <view class="twoText">送{{ item.bonus_num }}元</view>
+        <!-- <view class="twoText">送{{ item.bonus_num }}元</view> -->
       </view>
     </van-col>
   </van-row>
   <view class="addKefuBOx">
-    <image class="weCode" src="../../images/weCode.png"></image>
-    <view class="text">扫码添加客服微信，进行充值~</view>
-    <view class="copyBtn">一键复制微信号</view>
+    <!-- <image class="weCode" src="../../images/weCode.png"></image> -->
+    <!-- <view class="text">扫码添加客服微信，进行充值~</view> -->
+    <!-- <view class="copyBtn">一键复制微信号</view> -->
+    <view class="copyBtn" bindtap="confirm">确认充值</view>
   </view>
 </view>

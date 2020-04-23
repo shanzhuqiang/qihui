@@ -13,7 +13,7 @@
         <view class="address">{{ shopInfo.address }}</view> 
         <view class="juli">距您{{ shopInfo.distance }}km</view>
       </view>
-      <view class="typeBtn">
+      <view class="typeBtn" bindtap="eatTypeBtn">
         <view class="{{ eatType === 1 ? 'active' : '' }}" style="margin-left: 6rpx;">堂食</view>
         <view class="{{ eatType === 2 ? 'active' : '' }}" style="margin-right: 6rpx;">外带</view>
       </view>

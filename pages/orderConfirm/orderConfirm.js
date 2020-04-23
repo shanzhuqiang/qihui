@@ -35,7 +35,20 @@ Page({
       eatType: Number(options.eatType)
     })
     this.getShopInfo()
-    this.getCartList()
+    this.getOrderShow()
+  },
+  // 堂食/外带
+  eatTypeBtn() {
+    if (this.data.eatType === 1) {
+      this.setData({
+        eatType: 2
+      })
+    } else if (this.data.eatType === 2) {
+      this.setData({
+        eatType: 1
+      })
+    }
+    this.getOrderShow()
   },
 
   /**
@@ -88,7 +101,7 @@ Page({
     })
   },
   // 获取购物车列表
-  getCartList(data) {
+  getOrderShow(data) {
     wx.request({
       url: app.globalData.baseUrl + `/Order/orderShow.html`,
       header: {
@@ -158,7 +171,12 @@ Page({
                   }
                 })
               },
-              fail(res) { }
+              fail(res) {
+                wx.hideLoading();
+                wx.switchTab({
+                  url: '../order/order',
+                })
+              }
             })
           } else {
             wx.hideLoading();
@@ -177,7 +195,6 @@ Page({
         }
       })
     } else if (this.data.payType === 'yue') {
-      console.log(order_id)
       // 余额支付
       wx.request({
         url: app.globalData.baseUrl + `/Order/payWithMoney.html`,
@@ -222,57 +239,66 @@ Page({
   },
   // 去支付(下单)
   goToPay() {
-    if (!this.data.qucanData) {
-      wx.showModal({
-        showCancel: false,
-        title: "提示",
-        content: "请输入取餐人信息"
-      });
-    } else {
-      let data = {
-        type: this.data.eatType,
-        store_id: this.data.store_id,
-        member_name: this.data.qucanData.name,
-        mobile: this.data.qucanData.mobile,
-        tips: this.data.tips,
-      }
-      if (this.data.arriveShow === '立即到店') {
-        data["way"] = 1
-      } else {
-        data["way"] = 2
-        data["app_time"] = this.data.arriveShow
-      }
-      wx.showLoading({
-        mask: true,
-        title: "付款中..."
-      });
-      wx.request({
-        url: app.globalData.baseUrl + `/Order/order.html`,
-        header: {
-          Authorization: app.globalData.auth_code
-        },
-        data: data,
-        method: 'POST',
-        success: (res) => {
-          if (res.data.error_code === 0) {
-            this.pay(res.data.bizobj.order_id)
-          } else {
-            wx.hideLoading();
+    wx.showModal({
+      title: '提示',
+      content: '确认支付吗？',
+      success: (res) => {
+        if (res.confirm) {
+          if (!this.data.qucanData) {
             wx.showModal({
-              title: '提示',
               showCancel: false,
-              content: res.data.msg
+              title: "提示",
+              content: "请输入取餐人信息"
+            });
+          } else {
+            let data = {
+              type: this.data.eatType,
+              store_id: this.data.store_id,
+              member_name: this.data.qucanData.name,
+              mobile: this.data.qucanData.mobile,
+              tips: this.data.tips,
+            }
+            if (this.data.arriveShow === '立即到店') {
+              data["way"] = 1
+            } else {
+              data["way"] = 2
+              data["app_time"] = this.data.arriveShow
+            }
+            wx.showLoading({
+              mask: true,
+              title: "付款中..."
+            });
+            wx.request({
+              url: app.globalData.baseUrl + `/Order/order.html`,
+              header: {
+                Authorization: app.globalData.auth_code
+              },
+              data: data,
+              method: 'POST',
+              success: (res) => {
+                if (res.data.error_code === 0) {
+                  this.pay(res.data.bizobj.order_id)
+                } else {
+                  wx.hideLoading();
+                  wx.showModal({
+                    title: '提示',
+                    showCancel: false,
+                    content: res.data.msg
+                  })
+                }
+              },
+              fail: (res) => {
+                wx.showToast({
+                  icon: 'none',
+                  title: '网络请求失败',
+                })
+              }
             })
           }
-        },
-        fail: (res) => {
-          wx.showToast({
-            icon: 'none',
-            title: '网络请求失败',
-          })
+        } else if (res.cancel) {
         }
-      })
-    }
+      }
+    })
   },
   // 输入备注
   tipsChange (e) {

@@ -56,9 +56,10 @@
   width: 160rpx;
   height: 160rpx;
   float: left;
+  border-radius: 10rpx;
 }
 .searchWrap .mainBox .mainBlock .rightBox{
-  margin-left: 170rpx;
+  margin-left: 175rpx;
 }
 .searchWrap .mainBox .mainBlock .rightBox .name{
 	font-family: PingFangSC-Semibold;
