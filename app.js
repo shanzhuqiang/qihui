@@ -61,6 +61,7 @@ App({
     })
   },
   globalData: {
+    city: "",
     auth_code: "",
     bind_mobile: "",
     rider_auth: "",

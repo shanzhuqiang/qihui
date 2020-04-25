@@ -18,7 +18,7 @@
 .searchWrap .searchBox .ipt{
 	font-family: PingFangSC-Regular;
 	font-size: 26rpx;
-	color: #999;
+	color: #333;
   height: 76rpx;
   line-height: 76rpx;
   margin-left: 85rpx;

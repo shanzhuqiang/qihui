@@ -7,7 +7,7 @@
     </view>
     <view class="searchBox" bindtap="goSearch">
       <image class="serch" src="../../images/serch.png"></image>
-      <input class="ipt" placeholder="小区/街道/大厦"></input>
+      <input class="ipt" bindinput="search_nameChange" placeholder="小区/街道/大厦"></input>
     </view>
   </view>
   <view class="secondBox">
@@ -19,15 +19,12 @@
   </view>
   <view class="fujinBox">
     <image class="local2" src="../../images/local2.png"></image>
-    附近地址
+    {{ search_name === "" ? "附近地址" : "搜索地址" }}
   </view>
-  <view class="item">
-    杭州电子科技大学
+  <view class="item" wx:if="{{ search_name === '' }}" wx:for="{{ relative_pois }}" bindtap="choosePlace" data-item="{{ item }}" wx:key="index">
+    {{ item.title }}
   </view>
-  <view class="item">
-    杭州电子科技大学
-  </view>
-  <view class="item">
-    杭州电子科技大学
+  <view class="item" wx:if="{{ search_name !== '' }}" wx:for="{{ searchList }}" bindtap="choosePlace" data-item="{{ item }}" wx:key="index">
+    {{ item.title }}
   </view>
 </view>

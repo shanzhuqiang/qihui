@@ -44,7 +44,7 @@
 .choosePlaceWrap .topBox .searchBox .ipt{
 	font-family: PingFangSC-Regular;
 	font-size: 26rpx;
-	color: #999;
+	color: #333;
   float: left;
   height: 76rpx;
   line-height: 76rpx;

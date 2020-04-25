@@ -20,9 +20,6 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function () {
-    this.getList()
-    this.getBanner()
-    this.getAddress()
   },
   /**
    * 轮播自动滑动时，获取当前的轮播id
@@ -205,6 +202,15 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+    this.getList()
+    this.getBanner()
+    if (app.globalData.city) {
+      this.setData({
+        address: app.globalData.city
+      })
+    } else {
+      this.getAddress()
+    }
     this.setData({
       bind_mobile: app.globalData.bind_mobile
     })
@@ -233,7 +239,6 @@ Page({
         })
       }
     }
-    console.log(1233123, this.data.userInfo)
   },
 
   /**
@@ -253,7 +258,8 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-
+    this.getList()
+    this.getBanner()
   },
 
   /**

@@ -1,5 +1,6 @@
 // pages/choosePlace/choosePlace.js
 const app = getApp()
+let timer = null
 Page({
 
   /**
@@ -7,14 +8,70 @@ Page({
    */
   data: {
     city: "杭州",
-    address:""
+    address:"",
+    relative_pois: [],
+    search_name: "",
+    searchList: []
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    console.log(app.globalData.locationObj)
     this.getAddress()
+  },
+  // 搜索输入
+  search_nameChange (e) {
+    if (timer) {
+      clearTimeout(timer)
+    }
+    timer = setTimeout(() => {
+      this.setData({
+        search_name: e.detail.value
+      })
+      this.getSerachPlace()
+    }, 300)
+  },
+  // 搜索地址
+  getSerachPlace() {
+    wx.request({
+      url: app.globalData.baseUrl + `/Address/searchPosition.html`,
+      header: {
+        Authorization: app.globalData.auth_code
+      },
+      data: {
+        search_name: this.data.search_name
+      },
+      method: 'POST',
+      success: (res) => {
+        if (res.data.error_code === 0) {
+          this.setData({
+            searchList: [res.data.bizobj.data]
+          })
+        } else {
+          wx.showModal({
+            title: '提示',
+            showCancel: false,
+            content: res.data.msg
+          })
+        }
+      },
+      fail: (res) => {
+        wx.showToast({
+          icon: 'none',
+          title: '网络请求失败',
+        })
+      }
+    })
+  },
+  // 选择位置
+  choosePlace (e) {
+    let item = e.currentTarget.dataset.item
+    app.globalData.locationObj.latitude = item.location.lat
+    app.globalData.locationObj.longitude = item.location.lng
+    app.globalData.city = item.title
+    wx.navigateBack()
   },
   // 获取用户定位
   getAddress() {
@@ -31,7 +88,8 @@ Page({
       success: (res) => {
         if (res.data.error_code === 0) {
           this.setData({
-            address: res.data.bizobj.data.my_village
+            address: res.data.bizobj.data.my_village,
+            relative_pois: res.data.bizobj.data.relative_pois
             // city: res.data.bizobj.data.location_district_name
           })
         } else {
