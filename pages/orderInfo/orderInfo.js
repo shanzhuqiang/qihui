@@ -103,10 +103,9 @@ Page({
           let data = res.data.bizobj.data
           let wxSys = wx.getSystemInfoSync()
           let codeWidth = wxSys.screenWidth / 750 * 260
-          console.log(data.order_info.order_num)
           this.setData({
             orderInfo: data,
-            codeImage: QRCode.createQrCodeImg(String(data.order_info.order_num), codeWidth)
+            codeImage: QRCode.createQrCodeImg(String(data.order_info.order_id), codeWidth)
           })
         } else {
           wx.showModal({
