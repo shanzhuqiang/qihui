@@ -1,5 +1,5 @@
 <view class="goodsWrap">
-  <scroll-view scroll-y="true" style="height: calc(100% - 100rpx)" scroll-top="{{ scrollTop }}">
+  <scroll-view scroll-y="true" style="height: calc(100% - 100rpx)" scroll-top="{{ scrollTop }}" refresher-triggered="{{ refresherTriggered }}" refresher-enabled bindrefresherrefresh="refresh">
     <view class="bgTopBox">
       <view class="bgTop">
         <view class="topBox">
@@ -51,7 +51,7 @@
               <view class="content">
                 <view class="name overflow">{{food.name}}</view>
                 <view class="desc overflow">{{food.description}}</view>
-                <view class="desc overflow">其他平台价格：{{food.other}}</view>
+                <view class="desc overflow" style="text-decoration:line-through">原价：{{food.other}}</view>
                 <view class="price">￥{{food.price}}</view>
                 <!--cartControl-->
                 <view class="cartControl-wrapper">

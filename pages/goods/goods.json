@@ -3,5 +3,7 @@
     "van-action-sheet": "../../miniprogram_npm/vant-weapp/action-sheet/index"
   },
   "navigationBarTitleText": "",
-  "navigationBarBackgroundColor": "#fff"
+  "navigationBarBackgroundColor": "#fff",
+  "backgroundTextStyle": "dark",
+  "enablePullDownRefresh": true
 }

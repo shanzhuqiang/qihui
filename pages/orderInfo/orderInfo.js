@@ -21,6 +21,14 @@ Page({
     })
     this.getOrderInfo()
   },
+  // 一键复制
+  copy() {
+    wx.setClipboardData({
+      data: this.data.orderInfo.store_info.store_address,
+      success(res) {
+      }
+    })
+  },
   // 去掉订单/撤回
   changeStatus (e) {
     let id = e.currentTarget.dataset.id

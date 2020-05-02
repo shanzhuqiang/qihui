@@ -18,7 +18,8 @@ Page({
     tabClass: "one",
     gonggaoMask: false,
     eatType: 1,
-    menuActive: 0
+    menuActive: 0,
+    refresherTriggered: false
   },
   onLoad: function (options) {
     this.setData({
@@ -129,6 +130,9 @@ Page({
             goods: data
           })
           this.calTotalPrice()
+          this.setData({
+            refresherTriggered: false
+          })
         } else {
           wx.showModal({
             title: '提示',
@@ -600,6 +604,15 @@ Page({
     this.setData({
       gonggaoMask: !this.data.gonggaoMask
     })
+  },
+  refresh() {
+    this.getShopInfo()
+    this.getGoodList()
+  },
+  /**
+   * 页面相关事件处理函数--监听用户下拉动作
+   */
+  onPullDownRefresh: function () {
   },
   onReady: function () {
       // 页面渲染完成

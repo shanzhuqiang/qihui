@@ -449,8 +449,8 @@ Page({
       this.setData({
         weekShow: weekShow
       })
-      // let nowTime = [date.getHours(), date.getMinutes()]
-      let nowTime = ["16", "24"]
+      let nowTime = [date.getHours(), date.getMinutes()]
+      // let nowTime = ["16", "24"]
       let startTime = this.data.shopInfo.store_time.split(":")
       let endTime = this.data.shopInfo.store_end_time.split(":")
       startTime.pop()

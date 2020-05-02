@@ -4,5 +4,7 @@
     "van-popup": "../../miniprogram_npm/vant-weapp/popup/index"
   },
   "navigationBarTitleText": "订单",
-  "navigationBarBackgroundColor": "#fff"
+  "navigationBarBackgroundColor": "#fff",
+  "backgroundTextStyle": "dark",
+  "enablePullDownRefresh": true
 }

@@ -117,6 +117,7 @@ Page({
       },
       method: 'POST',
       success: (res) => {
+        wx.stopPullDownRefresh()
         if (res.data.error_code === 0) {
           this.setData({
             listData: res.data.bizobj.data
@@ -202,18 +203,13 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    this.getList()
-    this.getBanner()
-    if (app.globalData.city) {
-      this.setData({
-        address: app.globalData.city
-      })
+    if (app.globalData.auth_code) {
+      this.init()
     } else {
-      this.getAddress()
+      app.auth_codeCallBack = res => {
+        this.init()
+      }
     }
-    this.setData({
-      bind_mobile: app.globalData.bind_mobile
-    })
     if (!this.data.userInfo) {
       if (app.globalData.userInfo) {
         this.setData({
@@ -240,7 +236,20 @@ Page({
       }
     }
   },
-
+  init() {
+    this.getList()
+    this.getBanner()
+    if (app.globalData.city) {
+      this.setData({
+        address: app.globalData.city
+      })
+    } else {
+      this.getAddress()
+    }
+    this.setData({
+      bind_mobile: app.globalData.bind_mobile
+    })
+  },
   /**
    * 生命周期函数--监听页面隐藏
    */

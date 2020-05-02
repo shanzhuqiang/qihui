@@ -83,6 +83,7 @@ Page({
       },
       method: 'POST',
       success: (res) => {
+        wx.stopPullDownRefresh()
         if (res.data.error_code === 0) {
           this.setData({
             orderList: res.data.bizobj.data
@@ -151,7 +152,7 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-
+    this.getOrder()
   },
 
   /**

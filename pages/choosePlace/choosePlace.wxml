@@ -24,7 +24,7 @@
   <view class="item" wx:if="{{ search_name === '' }}" wx:for="{{ relative_pois }}" bindtap="choosePlace" data-item="{{ item }}" wx:key="index">
     {{ item.title }}
   </view>
-  <view class="item" wx:if="{{ search_name !== '' }}" wx:for="{{ searchList }}" bindtap="choosePlace" data-item="{{ item }}" wx:key="index">
-    {{ item.title }}
+  <view class="item" wx:if="{{ search_name !== '' }}" wx:for="{{ searchList }}" bindtap="choosePlace2" data-item="{{ item }}" wx:key="index">
+    {{ item.name }}
   </view>
 </view>

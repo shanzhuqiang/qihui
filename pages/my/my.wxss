@@ -86,7 +86,7 @@ page{
 .myWrap .bgBox .itemBlock .itemBox .yue{
 	font-family: PingFangSC-Regular;
 	font-size: 24rpx;
-  padding-top: 20rpx;
+  padding: 20rpx 0;
 }
 .myWrap .bgBox .itemBlock .itemBox .chongzhi{
 	font-family: PingFangSC-Regular;

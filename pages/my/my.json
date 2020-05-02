@@ -3,5 +3,7 @@
     "van-icon": "../../miniprogram_npm/vant-weapp/icon/index"
   },
   "navigationBarTitleText": "我的",
-  "navigationBarBackgroundColor": "#fff"
+  "navigationBarBackgroundColor": "#fff",
+  "backgroundTextStyle": "dark",
+  "enablePullDownRefresh": true
 }

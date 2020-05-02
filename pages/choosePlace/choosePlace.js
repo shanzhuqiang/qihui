@@ -36,18 +36,25 @@ Page({
   // 搜索地址
   getSerachPlace() {
     wx.request({
-      url: app.globalData.baseUrl + `/Address/searchPosition.html`,
+      url: app.globalData.baseUrl + `/Address/searchGdPosition.html`,
       header: {
         Authorization: app.globalData.auth_code
       },
       data: {
+        lat: app.globalData.locationObj.latitude,
+        lng: app.globalData.locationObj.longitude,
         search_name: this.data.search_name
       },
       method: 'POST',
       success: (res) => {
         if (res.data.error_code === 0) {
+          let position = res.data.bizobj.data.position
+          let positionArray = []
+          for (let key in position) {
+            positionArray.push(position[key])
+          }
           this.setData({
-            searchList: [res.data.bizobj.data]
+            searchList: positionArray
           })
         } else {
           wx.showModal({
@@ -66,11 +73,19 @@ Page({
     })
   },
   // 选择位置
-  choosePlace (e) {
+  choosePlace(e) {
     let item = e.currentTarget.dataset.item
     app.globalData.locationObj.latitude = item.location.lat
     app.globalData.locationObj.longitude = item.location.lng
     app.globalData.city = item.title
+    wx.navigateBack()
+  },
+  // 搜索后选择位置
+  choosePlace2(e) {
+    let item = e.currentTarget.dataset.item
+    app.globalData.locationObj.latitude = item.latitude
+    app.globalData.locationObj.longitude = item.longitude
+    app.globalData.city = item.name
     wx.navigateBack()
   },
   // 获取用户定位

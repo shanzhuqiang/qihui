@@ -14,9 +14,9 @@
     </view>
     <view class="itemBlock">
       <view class="itemBox fl">
-        <view class="fl">
+        <view class="fl" bindtap="goYue">
           <view class="price">￥{{ user_money }}</view>
-          <view class="yue" bindtap="goYue">账户余额</view>
+          <view class="yue">账户余额</view>
         </view>
         <view class="fr">
           <view class="chongzhi" bindtap="goChongzhi">立即充值</view>

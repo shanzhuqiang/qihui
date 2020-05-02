@@ -18,9 +18,10 @@
         </view>
       </view>
     </view>
-    <view class="bottomBox">
+    <view class="bottomBox" wx:if="{{ item.order_info.order_status === 2 || item.order_info.order_status === 3 || item.order_info.order_status === 4 }}">
       <view class="btn fr" wx:if="{{ item.order_info.order_status === 2 }}" catchtap="cancalOrder" data-id="{{ item.order_info.order_id }}">取消订单</view>
-      <view class="btn fr colorBtn" catchtap="showCode" data-id="{{ item.order_info.order_num }}">查看取餐码</view>
+      <view class="btn fr colorBtn" wx:if="{{ item.order_info.order_status === 2 || item.order_info.order_status === 3 || item.order_info.order_status === 4 }}" data-id="{{ item.order_info.order_num }}">查看取餐码</view>
+      <!-- catchtap="showCode" -->
     </view>
   </view>
   <van-popup show="{{ codeShow }}" bind:close="closeCodeShow">

@@ -1,6 +1,7 @@
 //app.js
 App({
   onLaunch: function () {
+    console.log("app.js")
     // 登录
     wx.login({
       success: res => {
@@ -20,7 +21,9 @@ App({
               // 1:绑定mobile 2:未绑定mobile
               this.globalData.rider_auth = data.rider_auth
               // 1: 骑手已认证 2: 未认证骑手
-              console.log(res)
+              if (this.auth_codeCallBack) {
+                this.auth_codeCallBack()
+              }
             } else {
               wx.showModal({
                 title: '提示',

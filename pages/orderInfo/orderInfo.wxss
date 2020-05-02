@@ -27,6 +27,17 @@
 .orderInfoWrap .weCodeRow .weCode{
   width: 300rpx;
   height: 300rpx;
+  position: relative;
+  margin: 0 auto;
+}
+.orderInfoWrap .weCodeRow .weCode .weCodeMask{
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 99;
 }
 .orderInfoWrap .weCodeRow .codeText{
 	font-family: PingFangSC-Regular;
@@ -39,6 +50,7 @@
   top: 35rpx;
   width: 136rpx;
   height: 102rpx;
+  z-index: 100;
 }
 .orderInfoWrap .itemRow{
   padding: 0 30rpx;
@@ -100,6 +112,24 @@
 	font-size: 26rpx;
 	color: #333333;
 	border-bottom: solid 20rpx #f2f2f2;
+}
+.orderInfoWrap .secondRow2{
+  padding: 26rpx 30rpx 0 30rpx;
+	font-family: PingFangSC-Regular;
+	font-size: 26rpx;
+	color: #333333;
+	border-bottom: solid 20rpx #f2f2f2;
+}
+.orderInfoWrap .secondRow2 .rightVal{
+	color: #f3475f;
+}
+.orderInfoWrap .secondRow2 .jianjie{
+	font-family: PingFangSC-Regular;
+	font-size: 24rpx;
+	line-height: 40rpx;
+	color: #666;
+  width: 500rpx;
+  padding: 10rpx 0 26rpx 0;
 }
 .orderInfoWrap .secondRow .rightVal{
   float: right;

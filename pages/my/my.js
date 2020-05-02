@@ -16,7 +16,6 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.getYuE()
   },
   // 获取余额
   getYuE () {
@@ -27,6 +26,7 @@ Page({
       },
       method: 'POST',
       success: (res) => {
+        wx.stopPullDownRefresh()
         if (res.data.error_code === 0) {
           this.setData({
             user_money: res.data.bizobj.data.user_money
@@ -192,6 +192,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+    this.getYuE()
     this.setData({
       userInfo: app.globalData.userInfo,
       bind_mobile: app.globalData.bind_mobile,
@@ -217,7 +218,7 @@ Page({
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-
+    this.getYuE()
   },
 
   /**
