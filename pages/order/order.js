@@ -17,6 +17,12 @@ Page({
    */
   onLoad: function (options) {
   },
+  // 再来一单
+  comeAgain (e) {
+    // wx.navigateTo({
+    //   url: `../orderConfirm/orderConfirm?store_id=${this.data.store_id}&eatType=1`,
+    // })
+  },
   // 订单详情
   goOrderInfo (e) {
     wx.navigateTo({

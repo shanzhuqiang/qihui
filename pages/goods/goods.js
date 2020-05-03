@@ -79,11 +79,14 @@ Page({
       method: 'POST',
       success: (res) => {
         if (res.data.error_code === 0) {
-          let data = res.data.bizobj.data
-          data.forEach(el => {
-            el.goods_list.forEach(el2 => {
-              el2["num"] = 0
-            })
+          let data = []
+          res.data.bizobj.data.forEach(el => {
+            if (el.goods_list.length > 0) {
+              el.goods_list.forEach(el2 => {
+                el2["num"] = 0
+              })
+              data.push(el)
+            }
           })
           this.getCartList(data)
         } else {
@@ -558,7 +561,6 @@ Page({
   },
   //結算
   pay() {
-    console.log(this.data.totalCount)
     if (this.data.totalCount) {
       wx.navigateTo({
         url: `../orderConfirm/orderConfirm?store_id=${this.data.store_id}&eatType=${this.data.eatType}`,

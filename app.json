@@ -47,12 +47,6 @@
         "text": "订单"
       },
       {
-        "pagePath": "pages/shenghuo/shenghuo",
-        "iconPath": "images/shenghuo.png",
-        "selectedIconPath": "images/shenghuo1.png",
-        "text": "生活平台"
-      },
-      {
         "pagePath": "pages/my/my",
         "iconPath": "images/my.png",
         "selectedIconPath": "images/my1.png",

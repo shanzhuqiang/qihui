@@ -5,7 +5,7 @@
         <view class="topBox">
           <image class="shopImg" src="../../images/img.png"></image>
           <view class="topRightBox">
-            <view class="name overflow">{{ shopInfo.name }}（临平尚峰轩店）</view>
+            <view class="name overflow">{{ shopInfo.name }}</view>
             <view class="gonggao overflow" bindtap="toggGonggaoMask">公告：{{ shopInfo.notice }}</view>
             <view class="three overflow">美团评分：{{ shopInfo.meituan_grade }}<text>|</text>月售{{ shopInfo.month_sale }}</view>
           </view>
@@ -51,8 +51,7 @@
               <view class="content">
                 <view class="name overflow">{{food.name}}</view>
                 <view class="desc overflow">{{food.description}}</view>
-                <view class="desc overflow" style="text-decoration:line-through">原价：{{food.other}}</view>
-                <view class="price">￥{{food.price}}</view>
+                <view class="price">￥{{food.price}}<text>{{food.other}}</text></view>
                 <!--cartControl-->
                 <view class="cartControl-wrapper">
                   <view class="cartControl">
@@ -118,7 +117,8 @@
           <view class="shopcart-food" wx:for="{{carArray}}" wx:key="index">
             <text class="name">{{item.name}}</text>
             <text class="des" wx:if="{{ item.spec_item }}">{{ item.spec_item}}</text>
-            <text class="price">￥{{ item.price }}*{{ item.num }}</text>
+            <!-- <text class="price">￥{{ item.price }}*{{ item.num }}</text> -->
+            <text class="price">￥{{ item.price }}</text>
             <view class="cartControl-wrapper">
               <view class="cartControl">
                 <view name="fade">
