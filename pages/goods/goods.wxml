@@ -42,6 +42,7 @@
           </view>
         </scroll-view>
         <scroll-view scroll-y="true" class="rightScroll"  style="height: 100%;" bindscroll="clickScroll" scroll-into-view="{{ toView }}">
+          <view style="height: 30rpx;"></view>
           <view wx:for="{{ goods }}" class="food-list" wx:for-index="parentIndex" wx:key="parentIndex">
             <view id="order{{parentIndex}}" class="title">{{item.cat_name}}</view>
             <view wx:for="{{item.goods_list}}" wx:if="{{ food.sold_out === 2 }}" class="food-item" wx:for-item="food" data-food="{{ food }}" bindtap="selectFoods" wx:key="index">
@@ -107,11 +108,11 @@
       </view>
     </view>
     <!-- 购物车列表 -->
-    <view class="shopcart-list" wx:if="{{ shopcartListMask }}">
-      <view class="shopcart-box">
+    <view class="shopcart-list" wx:if="{{ shopcartListMask }}" bindtap="closeShopMask">
+      <view class="shopcart-box" catchtap="blockCloseShopMask">
         <view class="list-header">
           <view class="title">已选商品</view>
-          <text class="empty" bindtap="empty">清空</text>
+          <text class="empty" catchtap="empty">清空</text>
         </view>
         <scroll-view scroll-y="true" class="list-content">
           <view class="shopcart-food" wx:for="{{carArray}}" wx:key="index">

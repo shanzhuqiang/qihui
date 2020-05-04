@@ -146,7 +146,7 @@ page{
   margin-left: 16rpx;
 }
 .orderConfirmWrap .rowMain .rowItem .num{
-  width: 100rpx;
+  width: 80rpx;
 }
 .orderConfirmWrap .rowMain .rowItem .price{
   float: right;

@@ -28,6 +28,16 @@ Page({
     this.getShopInfo()
     this.getGoodList()
   },
+  // 点击空白，收起购物车,点击有的地方阻止
+  blockCloseShopMask () {
+    return false
+  },
+  // 点击空白，收起购物车
+  closeShopMask () {
+    this.setData({
+      shopcartListMask: false,
+    })
+  },
   // 获取商家详情
   getShopInfo() {
     wx.request({
@@ -429,7 +439,7 @@ Page({
         cart_id: cart_id,
         num: food.num - 1
       }
-      this.editCart(data, food.id)
+      this.editCart(data, food.id || food.goods_id)
     }
   },
   // 修改购物车数量
