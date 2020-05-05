@@ -255,7 +255,7 @@ Page({
               type: this.data.eatType,
               store_id: this.data.store_id,
               member_name: this.data.qucanData.name,
-              mobile: this.data.qucanData.mobile,
+              mobile: this.data.qucanData.phone,
               tips: this.data.tips,
             }
             if (this.data.arriveShow === '立即到店') {

@@ -3,7 +3,7 @@
     <view class="bgTopBox">
       <view class="bgTop">
         <view class="topBox">
-          <image class="shopImg" src="../../images/img.png"></image>
+          <image class="shopImg" src="{{ shopInfo.logo }}"></image>
           <view class="topRightBox">
             <view class="name overflow">{{ shopInfo.name }}</view>
             <view class="gonggao overflow" bindtap="toggGonggaoMask">公告：{{ shopInfo.notice }}</view>
