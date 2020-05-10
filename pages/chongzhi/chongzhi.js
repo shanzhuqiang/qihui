@@ -42,8 +42,8 @@ Page({
             },
             method: 'POST',
             success: (res) => {
-              if (res.data.appId) {
-                let data = res.data
+              if (res.data.bizobj.appId) {
+                let data = res.data.bizobj
                 wx.hideLoading();
                 wx.requestPayment({
                   timeStamp: data.timeStamp,

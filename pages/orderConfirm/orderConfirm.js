@@ -136,7 +136,6 @@ Page({
   // 付款
   pay(order_id) {
     // 微信支付
-    console.log(this.data.payType)
     if (this.data.payType === 'wechat') {
       wx.request({
         url: app.globalData.baseUrl + `/Weixinpay/miniPay.html`,
@@ -148,8 +147,8 @@ Page({
         },
         method: 'POST',
         success: (res) => {
-          if (res.data.appId) {
-            let data = res.data
+          if (res.data.bizobj.appId) {
+            let data = res.data.bizobj
             wx.requestPayment({
               timeStamp: data.timeStamp,
               nonceStr: data.nonceStr,

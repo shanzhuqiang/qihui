@@ -19,9 +19,53 @@ Page({
   },
   // 再来一单
   comeAgain (e) {
-    // wx.navigateTo({
-    //   url: `../orderConfirm/orderConfirm?store_id=${this.data.store_id}&eatType=1`,
-    // })
+    wx.showModal({
+      title: '提示',
+      content: '确认再来一单吗？',
+      success: (res) => {
+        if (res.confirm) {
+          wx.showLoading({
+            mask: true,
+            title: "加载中..."
+          });
+          let order_id = e.currentTarget.dataset.order_id
+          let store_id = e.currentTarget.dataset.store_id
+          let way = e.currentTarget.dataset.way
+          wx.request({
+            url: app.globalData.baseUrl + `/Goods/orderAgain.html`,
+            header: {
+              Authorization: app.globalData.auth_code
+            },
+            data: {
+              order_id: order_id
+            },
+            method: 'POST',
+            success: (res) => {
+              wx.hideLoading();
+              if (res.data.error_code === 0) {
+                wx.navigateTo({
+                  url: `../orderConfirm/orderConfirm?store_id=${store_id}&eatType=${way}`
+                })
+              } else {
+                wx.showModal({
+                  title: '提示',
+                  showCancel: false,
+                  content: res.data.msg
+                })
+              }
+            },
+            fail: (res) => {
+              wx.showToast({
+                icon: 'none',
+                title: '网络请求失败',
+              })
+            }
+          })
+        } else if (res.cancel) {
+          console.log('用户点击取消')
+        }
+      }
+    })
   },
   // 订单详情
   goOrderInfo (e) {

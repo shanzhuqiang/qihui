@@ -164,6 +164,12 @@ Page({
       }
     })
   },
+  // 打电话
+  call() {
+    wx.makePhoneCall({
+      phoneNumber: this.data.orderInfo.store_info.store_phone
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

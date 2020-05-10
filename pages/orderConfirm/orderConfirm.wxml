@@ -29,7 +29,7 @@
   <view class="rowMain" >
     <view class="title">{{ shopInfo.name }}</view>
     <view class="rowItem" wx:for="{{ goods.goodList }}" wx:key="index">
-      <image class="icon" src="../../images/img.png"></image>
+      <image class="icon" src="{{ item.goods_image }}"></image>
       <view class="name">{{ item.name }}</view>
       <view class="num">x{{ item.num }}</view>
       <view class="price">￥{{ item.total_price }}</view>

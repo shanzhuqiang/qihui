@@ -254,7 +254,7 @@ Page({
   // 打电话
   call () {
     wx.makePhoneCall({
-      phoneNumber: this.data.shopInfo.mobile //仅为示例，并非真实的电话号码
+      phoneNumber: this.data.shopInfo.mobile
     })
   },
   // 一键复制
@@ -279,7 +279,6 @@ Page({
   },
   // 滑动固定tab
   clickScroll(e) {
-    console.log(this.data.toView)
     if (this.data.scrollTop !== '340rpx') {
       this.setData({
         scrollTop: "340rpx"
@@ -290,6 +289,7 @@ Page({
   selectMenu: function (e) {
     let index = e.currentTarget.dataset.itemIndex;
     this.setData({
+      scrollTop: "340rpx",
       toView: 'order' + index.toString(),
       menuActive: index
     })
