@@ -6,7 +6,7 @@
       <view class="loginText" style="top: 66rpx;">{{ userInfo.nickName }}</view>
       <view class="qishouBox" bindtap="goRenzheng">{{ rider_auth === 1 ? '认证骑手' : "进行骑手认证" }}</view>
     </view>
-    <view class="bgTop" wx:if="{{ bind_mobile !== 1 }}" bindtap="goAuth">
+    <view class="bgTop" wx:if="{{ !userInfo }}" bindtap="goAuth">
       <view class="touxiangBox">
         <image class="touxiang" src="../../images/touxiang.png"></image>
       </view>
