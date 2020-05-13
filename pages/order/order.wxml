@@ -18,9 +18,9 @@
         </view>
       </view>
     </view>
-    <view class="bottomBox" wx:if="{{ item.order_info.order_status === 2 || item.order_info.order_status === 3 || item.order_info.order_status === 4 || item.order_info.order_status === 5 || item.order_info.order_status === 7 }}">
+    <view class="bottomBox" wx:if="{{ item.order_info.order_status === 2 || item.order_info.order_status === 3 || item.order_info.order_status === 4 || item.order_info.order_status === 5 || item.order_info.order_status === 7 || item.order_info.order_status === 8 }}">
       <view class="btn fr" wx:if="{{ item.order_info.order_status === 2 }}" catchtap="cancalOrder" data-id="{{ item.order_info.order_id }}">取消订单</view>
-      <view class="btn fr colorBtn" wx:if="{{ item.order_info.order_status === 2 || item.order_info.order_status === 3 || item.order_info.order_status === 4 }}" >查看取餐码</view>
+      <view class="btn fr colorBtn" wx:if="{{ item.order_info.order_status === 2 || item.order_info.order_status === 3 || item.order_info.order_status === 4 || item.order_info.order_status === 8 }}" >查看取餐码</view>
       <view class="btn fr colorBtn" data-order_id="{{ item.order_info.order_id }}" data-way="{{ item.order_info.type }}" data-store_id="{{ item.store_info.store_id }}" wx:if="{{ item.order_info.order_status === 5 || item.order_info.order_status === 7 }}" catchtap="comeAgain">再来一单</view>
       <!-- catchtap="showCode" data-id="{{ item.order_info.order_id }}" -->
     </view>
