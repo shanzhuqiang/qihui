@@ -275,7 +275,7 @@ Page({
         priceList: {},
         curAddFood: null
       })
-    }, 1000)
+    }, 100)
   },
   // 滑动固定tab
   clickScroll(e) {
@@ -499,8 +499,14 @@ Page({
       totalPrice += Number(carArray[i].price) * Number(carArray[i].num);
       totalCount += Number(carArray[i].num)
     }
+    function toFixed(num, s) {
+      var times = Math.pow(10, s)
+      var des = num * times + 0.5
+      des = parseInt(des, 10) / times
+      return des + ''
+    }
     this.setData({
-      totalPrice: totalPrice,
+      totalPrice: toFixed(totalPrice, 2),
       totalCount: totalCount,
     });
     if (this.data.totalCount == 0) {
