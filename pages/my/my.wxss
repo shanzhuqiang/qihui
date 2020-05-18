@@ -169,3 +169,15 @@ page{
   padding-top: 20rpx;
   text-align: center;
 }
+.myWrap .loginOut{
+	width: 308rpx;
+	height: 88rpx;
+  line-height: 88rpx;
+  text-align: center;
+	background-color: #f3475f;
+	border-radius: 44rpx;
+	font-family: PingFangSC-Regular;
+	font-size: 32rpx;
+	color: #fff;
+  margin: 20rpx auto 0;
+}

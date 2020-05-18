@@ -6,7 +6,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    bind_mobile: ""
   },
 
   /**
@@ -19,7 +19,13 @@ Page({
   authUserInfo(res) {
     if (res.detail.userInfo) {
       app.globalData.userInfo = res.detail.userInfo
-      wx.navigateBack()
+      if (this.data.bind_mobile === 1) {
+        wx.navigateBack()
+      } else {
+        wx.navigateTo({
+          url: '../getPhone/getPhone',
+        })
+      }
     }
   },
   /**
@@ -33,7 +39,9 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    this.setData({
+      bind_mobile: app.globalData.bind_mobile
+    })
   },
 
   /**

@@ -47,29 +47,52 @@ Page({
       }
     })
   },
-  tuichu () {
-    wx.request({
-      url: app.globalData.baseUrl + `/Login/loginOut.html`,
-      header: {
-        Authorization: app.globalData.auth_code
-      },
-      method: 'POST',
+  // 退出登录
+  loginOut () {
+    wx.showModal({
+      title: '提示',
+      content: '确认退出登录吗？',
       success: (res) => {
-        if (res.data.error_code === 0) {
-          console.log(res.data)
-        } else {
-          wx.showModal({
-            title: '提示',
-            showCancel: false,
-            content: res.data.msg
+        if (res.confirm) {
+          wx.showLoading({
+            mask: true,
+            title: "加载中..."
+          });
+          wx.request({
+            url: app.globalData.baseUrl + `/Login/loginOut.html`,
+            header: {
+              Authorization: app.globalData.auth_code
+            },
+            method: 'POST',
+            success: (res) => {
+              if (res.data.error_code === 0) {
+                app.globalData.bind_mobile = 2
+                this.setData({
+                  bind_mobile: 2
+                })
+                wx.showToast({
+                  title: "退出成功",
+                  mask: true,
+                  icon: "success"
+                });
+              } else {
+                wx.showModal({
+                  title: '提示',
+                  showCancel: false,
+                  content: res.data.msg
+                })
+              }
+            },
+            fail: (res) => {
+              wx.showToast({
+                icon: 'none',
+                title: '网络请求失败',
+              })
+            }
           })
+        } else if (res.cancel) {
+          console.log('用户点击取消')
         }
-      },
-      fail: (res) => {
-        wx.showToast({
-          icon: 'none',
-          title: '网络请求失败',
-        })
       }
     })
   },
