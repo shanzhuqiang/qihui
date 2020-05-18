@@ -72,7 +72,7 @@
     <van-icon class="arrowIcon" name="arrow" size="36rpx" color="#9d9d9d"/>
     <view class="des">敬请期待</view>
   </view>
-  <view class="loginOut" bindtap="loginOut">退出登录</view>
+  <view class="loginOut" bindtap="loginOut" wx:if="{{ userInfo && bind_mobile === 1 }}">退出登录</view>
   <view style="height: 20rpx"></view>
   <!-- <view class="bottomText">-传乐科技提供技术支持-</view> -->
 </view>
