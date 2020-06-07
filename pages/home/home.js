@@ -156,6 +156,9 @@ Page({
         url: '../getPhone/getPhone',
       })
     } else {
+      if (e.currentTarget.dataset.store_state === 1) {
+        return false
+      }
       wx.navigateTo({
         url: `../goods/goods?store_id=${e.currentTarget.dataset.store_id}`,
       })

@@ -443,7 +443,8 @@ Page({
         "23:00",
         "23:30"
       ]
-      let week = ["日", "一", "二", "三", "四", "五", "六"]
+      console.log(123333, date.getDay())
+      let week = ["日", "一", "二", "三", "四", "五", "六", "日"]
       let weekShow = [`今日（周${week[date.getDay()]})`, `明日（周${week[date.getDay() + 1]})`]
       this.setData({
         weekShow: weekShow

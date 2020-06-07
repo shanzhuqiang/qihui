@@ -12,7 +12,7 @@
     </view>
   </view>
   <view class='bannerBox'>
-    <swiper autoplay bindchange='swiperChange' style="height: 100%;width: 100%">
+    <swiper autoplay bindchange='swiperChange' style="height: 100%;width: 100%" circular>
       <block wx:for="{{bannerData}}" wx:key="index">
         <swiper-item>
           <image bindchange='imageChange' src="{{item.url}}" class="bannerImg" />
@@ -36,8 +36,12 @@
     <view class="sortText {{ sortType === 'sale' ? 'active' : '' }}" bindtap="chooseType" data-type="sale">销量最高</view>
   </view>
   <view class="mainBox">
-    <view class="mainBlock" bindtap="goGoods" wx:for="{{ listData }}" wx:key="index" data-store_id="{{ item.store_id }}" wx:if="{{ item.store_state === 1 }}">
-      <image class="img" src="{{ item.logo }}"></image>
+  <!--  -->
+    <view class="mainBlock" bindtap="goGoods" wx:for="{{ listData }}" wx:key="index" data-store_id="{{ item.store_id }}" data-store_state="{{ item.store_state }}">
+      <view class="imgBox">
+        <image class="img" src="{{ item.logo }}"></image>
+        <view class="rest" wx:if="{{ item.store_state === 1 }}">商家已休息</view>
+      </view>
       <view class="rightBox">
         <view class="name">{{ item.name }}</view>
         <view class="second">

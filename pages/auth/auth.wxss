@@ -26,7 +26,7 @@
 	width: 694rpx;
 	height: 88rpx;
   line-height: 88rpx;
-	background-color: #f3475f;
+	background-color: #00b43c;
 	border-radius: 5rpx;
 	font-family: PingFangSC-Regular;
 	font-size: 32rpx;

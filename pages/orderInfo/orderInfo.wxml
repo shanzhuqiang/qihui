@@ -29,6 +29,10 @@
       <view class="num">x{{ item.goods_num }}</view>
       <view class="price">￥{{ item.item_price }}</view>
     </view>
+    <view class="itemOne" wx:if="{{ orderInfo.order_info.type === 2 }}">
+      餐盒费
+      <view class="price">￥{{ orderInfo.order_info.package_fee }}</view>
+    </view>
     <view class="itemOne">
       共计{{ orderInfo.order_info.total_goods_num }}件商品
       <view class="price">实付：<text style="color:#f73003;font-size: 30rpx;">￥{{ orderInfo.order_info.total_price }}</text></view>
