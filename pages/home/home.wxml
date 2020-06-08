@@ -40,7 +40,7 @@
     <view class="mainBlock" bindtap="goGoods" wx:for="{{ listData }}" wx:key="index" data-store_id="{{ item.store_id }}" data-store_state="{{ item.store_state }}">
       <view class="imgBox">
         <image class="img" src="{{ item.logo }}"></image>
-        <view class="rest" wx:if="{{ item.store_state === 1 }}">商家已休息</view>
+        <view class="rest" wx:if="{{ item.store_state !== 1 }}">商家已休息</view>
       </view>
       <view class="rightBox">
         <view class="name">{{ item.name }}</view>

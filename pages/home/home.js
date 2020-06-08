@@ -156,7 +156,7 @@ Page({
         url: '../getPhone/getPhone',
       })
     } else {
-      if (e.currentTarget.dataset.store_state === 1) {
+      if (e.currentTarget.dataset.store_state !== 1) {
         return false
       }
       wx.navigateTo({
