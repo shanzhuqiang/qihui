@@ -11,7 +11,7 @@
           <van-icon name="arrow" size="30rpx" color="#9d9d9d"/>
           <view class="status">{{ item.order_info.order_status_tip }}</view>
         </view>
-        <view class="time">预约时间：{{ item.order_info.app_time }}</view>
+        <view class="time">下单时间：{{ item.order_info.add_time }}</view>
         <view class="shop">
           {{ item.goods_info.length === 1 ? item.goods_info[0].goods_name : item.goods_info[0].goods_name + '等' + item.goods_info.length + '件商品' }}
           <view class="price">￥{{ item.order_info.total_price }}</view>

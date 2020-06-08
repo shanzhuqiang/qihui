@@ -30,7 +30,7 @@
 	height: 88rpx;
   margin: 30rpx auto 0;
   line-height: 88rpx;
-	background-color: #2c2e81;
+	background-color: #f3475f;
 	border-radius: 5rpx;
 	font-family: PingFangSC-Regular;
 	font-size: 32rpx;

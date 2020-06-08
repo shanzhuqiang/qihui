@@ -4,7 +4,7 @@
     <view class="loading"></view>
   </view>
   <view class="noLocationBox" wx:if="{{ !getLocation }}">
-    <image class="logo" src="../../images/logo.png"></image>
+    <image class="logo" src="../../images/logo.jpg"></image>
     <view class="name">未获取到定位</view>
     <view class="second">请检查网络定位权限</view>
     <view class="open" bindtap="goSetting">重试</view>

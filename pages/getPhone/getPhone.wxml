@@ -1,7 +1,7 @@
 <!--pages/auth/auth.wxml-->
 <view class="getPhoneWrap">
   <view class="authBox">
-    <image class='logo' src='../../images/logo.png'></image>
+    <image class='logo' src='../../images/logo.jpg'></image>
     <view class="name">骑士汇平台</view>
     <view class="text">申请获取你的微信绑定的手机号</view>
     <button class='btnBox bottonClass' open-type="getPhoneNumber" bindgetphonenumber="getPhoneNumber">获取手机号</button>
